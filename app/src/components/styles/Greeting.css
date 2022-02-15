@@ -1,7 +1,3 @@
-.greeting {
-  color: white;
-}
-
 h1 {
   font-size: 40px;
   font-weight: bold;
@@ -17,10 +13,25 @@ h2 {
   z-index: 2;
 }
 
-#an {
+.greeting {
+  color: white;
+}
+
+.n {
   position: relative;
-  animation: an 4s linear infinite;
   z-index: 1;
+}
+
+#prevAnimateN {
+  animation: prevAnimateN 4s linear infinite;
+}
+
+#fullAnimateN {
+  animation: fullAnimateN 4s linear infinite;
+}
+
+#nextAnimateN {
+  animation: nextAnimateN 4s linear infinite;
 }
 
 #animatedText {
@@ -29,81 +40,7 @@ h2 {
   font-weight: bold;
   color: #252a37;
   z-index: 2;
-}
-
-@keyframes an {
-  0% {
-    margin-left: -16px;
-  }
-  10% {
-    margin-left: 0px;
-  }
-  90% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: -16px;
-  }
-}
-
-@media (min-width: 481px) {
-  h1 {
-    font-size: 48px;
-    padding-bottom: 8px;
-  }
-
-  h2 {
-    font-size: 40px;
-  }
-
-  #animatedText {
-    margin-left: 11px;
-  }
-
-  @keyframes an {
-    0% {
-      margin-left: -20px;
-    }
-    10% {
-      margin-left: 0px;
-    }
-    90% {
-      margin-left: 0px;
-    }
-    100% {
-      margin-left: -20px;
-    }
-  }
-}
-
-@media (min-width: 769px) {
-  h1 {
-    font-size: 72px;
-    padding-bottom: 8px;
-  }
-
-  h2 {
-    font-size: 56px;
-  }
-
-  #animatedText {
-    margin-left: 13px;
-  }
-
-  @keyframes an {
-    0% {
-      margin-left: -30px;
-    }
-    10% {
-      margin-left: 0px;
-    }
-    90% {
-      margin-left: 0px;
-    }
-    100% {
-      margin-left: -30px;
-    }
-  }
+  overflow: visible;
 }
 
 #animatedText::before {
@@ -112,12 +49,45 @@ h2 {
   top: 0;
   left: 0;
   width: 0;
-  /* height: 100%; */
   color: #e35e67;
-  border-right: 2px solid #e35e67;
   overflow: hidden;
   animation: reveal 4s linear infinite, color 4s linear infinite,
     spin 4s linear infinite;
+}
+
+@keyframes prevAnimateN {
+  0%,
+  95% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -16px;
+  }
+}
+
+@keyframes fullAnimateN {
+  0% {
+    margin-left: -16px;
+  }
+  5% {
+    margin-left: 0px;
+  }
+  95% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -16px;
+  }
+}
+
+@keyframes nextAnimateN {
+  0% {
+    margin-left: -16px;
+  }
+  5%,
+  100% {
+    margin-left: 0px;
+  }
 }
 
 @keyframes reveal {
@@ -129,7 +99,7 @@ h2 {
   }
   52.5%,
   67.5% {
-    width: 105%;
+    width: 103%;
   }
 }
 
@@ -169,5 +139,107 @@ h2 {
     transform: rotateX(720deg);
     border-right: 2px solid #e35e67;
     border-radius: 0%;
+  }
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: 481px) {
+  h1 {
+    font-size: 48px;
+    padding-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  #animatedText {
+    margin-left: 11px;
+  }
+
+  @keyframes prevAnimateN {
+    0%,
+    95% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -20px;
+    }
+  }
+
+  @keyframes fullAnimateN {
+    0% {
+      margin-left: -20px;
+    }
+    5% {
+      margin-left: 0px;
+    }
+    95% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -20px;
+    }
+  }
+
+  @keyframes nextAnimateN {
+    0% {
+      margin-left: -20px;
+    }
+    5%,
+    100% {
+      margin-left: 0px;
+    }
+  }
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: 769px) {
+  h1 {
+    font-size: 72px;
+    padding-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 56px;
+  }
+
+  #animatedText {
+    margin-left: 13px;
+  }
+
+  @keyframes prevAnimateN {
+    0%,
+    95% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -26px;
+    }
+  }
+
+  @keyframes fullAnimateN {
+    0% {
+      margin-left: -30px;
+    }
+    5% {
+      margin-left: 0px;
+    }
+    95% {
+      margin-left: 0px;
+    }
+    100% {
+      margin-left: -30px;
+    }
+  }
+
+  @keyframes nextAnimateN {
+    0% {
+      margin-left: -30px;
+    }
+    5%,
+    100% {
+      margin-left: 0px;
+    }
   }
 }
