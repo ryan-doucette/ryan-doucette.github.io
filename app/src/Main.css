@@ -1,0 +1,15 @@
+.Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #252a37;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.GreetingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
