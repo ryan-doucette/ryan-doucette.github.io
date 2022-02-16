@@ -4,7 +4,7 @@ import './styles/Greeting.css';
 
 function Greeting() {
   // List of words to display with prompt "I'm a(n) _____ "
-  const thingsIAm = ['Developer', 'Applelonger', 'Eword', 'test'];
+  const thingsIAm = ['Developer', 'Atesttesttest', 'Etestest', 'test'];
   // Index of current word
   const [index, setIndex] = useState(0);
   // Duration between switching words

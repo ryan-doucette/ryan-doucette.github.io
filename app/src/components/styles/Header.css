@@ -1,0 +1,181 @@
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -100px;
+  left: -15px;
+  width: calc(100vw + 30px);
+  height: 200px;
+  background-color: #50596d;
+  animation: dropHeader 4.5s linear;
+  transform-origin: bottom left;
+}
+
+.icons {
+  opacity: 0%;
+  display: flex;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 2.5px #e35e67 solid;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#email {
+  background-image: url(../../images/mail-icon.png);
+  animation: roll 1s 1.5s linear, dropBall1 0.4s 5.5s linear forwards;
+}
+#linkedin {
+  background-image: url(../../images/linkedin-icon.png);
+  animation: roll 1s 2s linear, dropBall2 3.4s 5.7s linear forwards;
+}
+#github {
+  background-image: url(../../images/github-icon.png);
+  animation: roll 1s 2.5s linear, dropBall3 0.4s 9.4s linear forwards;
+}
+
+#square {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+}
+
+@keyframes roll {
+  0% {
+    opacity: 100%;
+    margin: 0;
+    left: -55px;
+    bottom: 50px;
+    transform: rotate(0deg);
+  }
+  15% {
+    bottom: 0px;
+  }
+  25% {
+    bottom: 30px;
+  }
+  40% {
+    bottom: 0px;
+  }
+  50% {
+    bottom: 10px;
+  }
+  55% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 0px;
+    opacity: 100%;
+    left: 100vw;
+    transform: rotate(1080deg);
+  }
+}
+
+@keyframes dropBall1 {
+  0% {
+    margin-right: 200px;
+    opacity: 100%;
+    bottom: 80px;
+  }
+  25% {
+    bottom: 40px;
+  }
+  55% {
+    bottom: 25px;
+  }
+  75% {
+    bottom: 17px;
+  }
+  100% {
+    margin-right: 200px;
+    opacity: 100%;
+    bottom: 12px;
+  }
+}
+
+@keyframes dropBall2 {
+  0% {
+    opacity: 100%;
+    bottom: 80px;
+  }
+  2.5% {
+    bottom: 40px;
+  }
+  5% {
+    bottom: 25px;
+  }
+  7.5% {
+    bottom: 17px;
+  }
+  10%,
+  94% {
+    bottom: 12px;
+  }
+  96% {
+    bottom: 40px;
+  }
+  100% {
+    opacity: 100%;
+    bottom: 12px;
+  }
+}
+
+@keyframes dropBall3 {
+  0% {
+    margin-right: -200px;
+    opacity: 100%;
+    bottom: 80px;
+  }
+  25% {
+    bottom: 40px;
+  }
+  55% {
+    bottom: 25px;
+  }
+  75% {
+    bottom: 17px;
+  }
+  100% {
+    margin-right: -200px;
+    opacity: 100%;
+    bottom: 12px;
+  }
+}
+
+@keyframes dropHeader {
+  0% {
+    transform: rotate(0deg);
+  }
+  7% {
+    transform: rotate(3.5deg);
+  }
+  8% {
+    transform: rotate(5deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  13% {
+    transform: rotate(6.5deg);
+  }
+  16% {
+    transform: rotate(10deg);
+  }
+  18% {
+    transform: rotate(9deg);
+  }
+  20%,
+  85% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
