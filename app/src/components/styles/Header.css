@@ -31,20 +31,33 @@
 #email {
   background-image: url(../../images/mail-icon.png);
   animation: roll 1s 1.5s linear, dropBall1 0.4s 5.5s linear forwards;
+  transition: 0.3s ease-in-out;
 }
 #linkedin {
   background-image: url(../../images/linkedin-icon.png);
-  animation: roll 1s 2s linear, dropBall2 3.4s 5.7s linear forwards;
+  animation: roll 1s 2s linear, dropBall2 3.4s 5.9s linear forwards;
+  transition: 0.3s ease-in-out;
 }
 #github {
   background-image: url(../../images/github-icon.png);
-  animation: roll 1s 2.5s linear, dropBall3 0.4s 9.4s linear forwards;
+  animation: roll 1s 2.5s linear, dropBall3 0.4s 9.6s linear forwards;
+  transition: 0.3s ease-in-out;
 }
-
-#square {
-  width: 30px;
-  height: 30px;
-  background-color: white;
+#email:hover {
+  transform: scale(115%);
+  border: 3.5px white solid;
+}
+#linkedin:hover {
+  transform: scale(115%);
+  border: 3.5px white solid;
+}
+#github:hover {
+  transform: scale(115%);
+  border: 3.5px white solid;
+}
+.header:hover > .icons:not(:hover) {
+  transform: scale(87%);
+  border: 0px #252a37 solid;
 }
 
 @keyframes roll {
@@ -73,7 +86,7 @@
   100% {
     bottom: 0px;
     opacity: 100%;
-    left: 100vw;
+    left: 105vw;
     transform: rotate(1080deg);
   }
 }
@@ -96,7 +109,7 @@
   100% {
     margin-right: 200px;
     opacity: 100%;
-    bottom: 12px;
+    bottom: 15px;
   }
 }
 
@@ -116,14 +129,14 @@
   }
   10%,
   94% {
-    bottom: 12px;
+    bottom: 15px;
   }
   96% {
     bottom: 40px;
   }
   100% {
     opacity: 100%;
-    bottom: 12px;
+    bottom: 15px;
   }
 }
 
@@ -145,7 +158,7 @@
   100% {
     margin-right: -200px;
     opacity: 100%;
-    bottom: 12px;
+    bottom: 15px;
   }
 }
 
@@ -177,5 +190,412 @@
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: 481px) {
+  .header {
+    top: -140px;
+    left: -25px;
+    width: calc(100vw + 50px);
+    height: 250px;
+    animation: dropHeader 4.5s linear;
+  }
+
+  .icons {
+    width: 65px;
+    height: 65px;
+  }
+
+  #email {
+    animation: roll 1s 1.5s linear, dropBall1 0.4s 5.5s linear forwards;
+  }
+  #linkedin {
+    animation: roll 1s 2s linear, dropBall2 3.4s 5.9s linear forwards;
+  }
+  #github {
+    animation: roll 1s 2.5s linear, dropBall3 0.4s 9.6s linear forwards;
+  }
+
+  @keyframes roll {
+    0% {
+      opacity: 100%;
+      margin: 0;
+      left: -55px;
+      bottom: 70px;
+      transform: rotate(0deg);
+    }
+    15% {
+      bottom: 0px;
+    }
+    25% {
+      bottom: 50px;
+    }
+    40% {
+      bottom: 0px;
+    }
+    50% {
+      bottom: 20px;
+    }
+    55% {
+      bottom: 0px;
+    }
+    60% {
+      bottom: 12px;
+    }
+    63% {
+      bottom: 0px;
+    }
+    100% {
+      bottom: 0px;
+      opacity: 100%;
+      left: 105vw;
+      transform: rotate(1080deg);
+    }
+  }
+
+  @keyframes dropBall1 {
+    0% {
+      margin-right: 225px;
+      opacity: 100%;
+      bottom: 100px;
+    }
+    25% {
+      bottom: 40px;
+    }
+    55% {
+      bottom: 25px;
+    }
+    75% {
+      bottom: 17px;
+    }
+    100% {
+      margin-right: 225px;
+      opacity: 100%;
+      bottom: 15px;
+    }
+  }
+
+  @keyframes dropBall2 {
+    0% {
+      opacity: 100%;
+      bottom: 100px;
+    }
+    2.5% {
+      bottom: 40px;
+    }
+    5% {
+      bottom: 25px;
+    }
+    7.5% {
+      bottom: 17px;
+    }
+    10%,
+    94% {
+      bottom: 15px;
+    }
+    96% {
+      bottom: 50px;
+    }
+    100% {
+      opacity: 100%;
+      bottom: 15px;
+    }
+  }
+
+  @keyframes dropBall3 {
+    0% {
+      margin-right: -225px;
+      opacity: 100%;
+      bottom: 100px;
+    }
+    25% {
+      bottom: 40px;
+    }
+    55% {
+      bottom: 25px;
+    }
+    75% {
+      bottom: 17px;
+    }
+    100% {
+      margin-right: -225px;
+      opacity: 100%;
+      bottom: 15px;
+    }
+  }
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: 769px) {
+  .header {
+    height: 260px;
+    animation: dropHeader 5s linear;
+  }
+
+  .icons {
+    width: 70px;
+    height: 70px;
+  }
+
+  #email {
+    animation: roll 1.35s 1.85s linear, dropBall1 0.75s 5.85s linear forwards;
+  }
+  #linkedin {
+    animation: roll 1.35s 2.35s linear, dropBall2 3.75s 6.25s linear forwards;
+  }
+  #github {
+    animation: roll 1.35s 2.85s linear, dropBall3 0.75s 10.35s linear forwards;
+  }
+
+  @keyframes roll {
+    0% {
+      opacity: 100%;
+      margin: 0;
+      left: -55px;
+      bottom: 70px;
+      transform: rotate(0deg);
+    }
+    15% {
+      bottom: 0px;
+    }
+    25% {
+      bottom: 40px;
+    }
+    40% {
+      bottom: 0px;
+    }
+    50% {
+      bottom: 20px;
+    }
+    55% {
+      bottom: 0px;
+    }
+    60% {
+      bottom: 12px;
+    }
+    63% {
+      bottom: 0px;
+    }
+    100% {
+      bottom: 0px;
+      opacity: 100%;
+      left: 110vw;
+      transform: rotate(1080deg);
+    }
+  }
+
+  @keyframes dropBall1 {
+    0% {
+      margin-right: 275px;
+      opacity: 100%;
+      bottom: 100px;
+    }
+    25% {
+      bottom: 40px;
+    }
+    55% {
+      bottom: 25px;
+    }
+    75% {
+      bottom: 19px;
+    }
+    100% {
+      margin-right: 275px;
+      opacity: 100%;
+      bottom: 17px;
+    }
+  }
+
+  @keyframes dropBall2 {
+    0% {
+      opacity: 100%;
+      bottom: 100px;
+    }
+    2.5% {
+      bottom: 40px;
+    }
+    5% {
+      bottom: 25px;
+    }
+    7.5% {
+      bottom: 19px;
+    }
+    10%,
+    94% {
+      bottom: 17px;
+    }
+    96% {
+      bottom: 50px;
+    }
+    100% {
+      opacity: 100%;
+      bottom: 15px;
+    }
+  }
+
+  @keyframes dropBall3 {
+    0% {
+      margin-right: -275px;
+      opacity: 100%;
+      bottom: 100px;
+    }
+    25% {
+      bottom: 40px;
+    }
+    55% {
+      bottom: 25px;
+    }
+    75% {
+      bottom: 19px;
+    }
+    100% {
+      margin-right: -275px;
+      opacity: 100%;
+      bottom: 17px;
+    }
+  }
+
+  @keyframes dropHeader {
+    0% {
+      transform: rotate(0deg);
+    }
+    7% {
+      transform: rotate(1.2deg);
+    }
+    8% {
+      transform: rotate(2deg);
+    }
+    10% {
+      transform: rotate(4deg);
+    }
+    13% {
+      transform: rotate(2.5deg);
+    }
+    16% {
+      transform: rotate(4deg);
+    }
+    18% {
+      transform: rotate(3.5deg);
+    }
+    20%,
+    85% {
+      transform: rotate(4deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: 1921px) {
+  .header {
+    top: -250px;
+    left: -75px;
+    width: calc(100vw + 150px);
+    height: 380px;
+    animation: dropHeader 4.75s linear;
+  }
+
+  .icons {
+    width: 75px;
+    height: 75px;
+  }
+
+  @keyframes roll {
+    0% {
+      opacity: 100%;
+      margin: 0;
+      left: -55px;
+      bottom: 70px;
+      transform: rotate(0deg);
+    }
+    15% {
+      bottom: 0px;
+    }
+    25% {
+      bottom: 40px;
+    }
+    40% {
+      bottom: 0px;
+    }
+    50% {
+      bottom: 20px;
+    }
+    55% {
+      bottom: 0px;
+    }
+    60% {
+      bottom: 12px;
+    }
+    63% {
+      bottom: 0px;
+    }
+    100% {
+      bottom: 0px;
+      opacity: 100%;
+      left: 110vw;
+      transform: rotate(1080deg);
+    }
+  }
+
+  @keyframes dropBall2 {
+    0% {
+      opacity: 100%;
+      bottom: 100px;
+    }
+    2.5% {
+      bottom: 40px;
+    }
+    5% {
+      bottom: 25px;
+    }
+    7.5% {
+      bottom: 17px;
+    }
+    10%,
+    94% {
+      bottom: 15px;
+    }
+    96% {
+      bottom: 60px;
+    }
+    100% {
+      opacity: 100%;
+      bottom: 15px;
+    }
+  }
+
+  @keyframes dropHeader {
+    0% {
+      transform: rotate(0deg);
+    }
+    7% {
+      transform: rotate(1.2deg);
+    }
+    8% {
+      transform: rotate(2deg);
+    }
+    10% {
+      transform: rotate(4deg);
+    }
+    13% {
+      transform: rotate(2.5deg);
+    }
+    16% {
+      transform: rotate(4deg);
+    }
+    18% {
+      transform: rotate(3.5deg);
+    }
+    20%,
+    85% {
+      transform: rotate(4deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 }
