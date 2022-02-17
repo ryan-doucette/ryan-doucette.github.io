@@ -1,13 +1,13 @@
-import './styles/Footer.css';
+import './styles/Footer.css'
 
-function Footer() {
-  return (
-    <div className="footer">
-        <div className='triangle' id='tri1'/>
-        <div className='triangle' id='tri2'/>
-        <div className='triangle' id='tri3'/>
-    </div>
-  );
+const Footer = ({menuButtonPressed}) => {
+    return (
+        <div className="footer">
+            <div className='triangle' id='tri1' onClick={menuButtonPressed}/>
+            <div className='triangle' id='tri2'/>
+            <div className='triangle' id='tri3'/>
+        </div>
+    );
 }
 
-export default Footer;
+export default Footer

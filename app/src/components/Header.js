@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import './styles/Header.css';
 
-function Header() {
+const Header = () => {
   return (
     <div className="header">
         <a className='icons' id='email' href='mailto:doucette.ry@northeastern.edu' aria-label='email' aria-hidden='true'/>

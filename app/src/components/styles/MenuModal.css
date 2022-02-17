@@ -1,0 +1,155 @@
+.menuModal {
+  background-color: #e35e67;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.closeButtonContainer {
+  position: absolute;
+  border-radius: 100%;
+  width: 55px;
+  height: 55px;
+  left: calc(50vw - 27.5px);
+  cursor: pointer;
+}
+
+#showCloseButton {
+  animation: showCloseButton 1.55s linear forwards;
+  background-color: #252a37;
+}
+
+#hideCloseButton {
+  background-color: #252a37;
+  animation: hideCloseButton 1s linear forwards;
+}
+
+@keyframes showCloseButton {
+  0%,
+  65% {
+    pointer-events: none;
+    bottom: -102px;
+  }
+  74% {
+    bottom: 30px;
+  }
+  78% {
+    bottom: 77px;
+  }
+  83% {
+    bottom: 85px;
+  }
+  87% {
+    bottom: 77px;
+  }
+  90% {
+    bottom: 60px;
+  }
+  95%,
+  100% {
+    pointer-events: all;
+    bottom: 47px;
+  }
+}
+@keyframes hideCloseButton {
+  0% {
+    pointer-events: none;
+    bottom: 47px;
+  }
+  100% {
+    pointer-events: none;
+    bottom: -102px;
+  }
+}
+
+/* ******************* TABLET VIEW ******************* */
+.closeButtonContainer {
+  width: 65px;
+  height: 65px;
+  left: calc(50vw - 32.5px);
+}
+
+@media (min-width: 481px) {
+  @keyframes showCloseButton {
+    0%,
+    65% {
+      pointer-events: none;
+      bottom: -102px;
+    }
+    74% {
+      bottom: 50px;
+    }
+    78% {
+      bottom: 110px;
+    }
+    83% {
+      bottom: 120px;
+    }
+    87% {
+      bottom: 113px;
+    }
+    90% {
+      bottom: 80px;
+    }
+    95%,
+    100% {
+      pointer-events: all;
+      bottom: 65px;
+    }
+  }
+  @keyframes hideCloseButton {
+    0% {
+      pointer-events: none;
+      bottom: 65px;
+    }
+    100% {
+      pointer-events: none;
+      bottom: -102px;
+    }
+  }
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: 481px) {
+  @keyframes showCloseButton {
+    0%,
+    65% {
+      pointer-events: none;
+      bottom: -102px;
+    }
+    74% {
+      bottom: 50px;
+    }
+    78% {
+      bottom: 120px;
+    }
+    83% {
+      bottom: 130px;
+    }
+    87% {
+      bottom: 115px;
+    }
+    90% {
+      bottom: 80px;
+    }
+    95%,
+    100% {
+      pointer-events: all;
+      bottom: 83px;
+    }
+  }
+  @keyframes hideCloseButton {
+    0% {
+      pointer-events: none;
+      bottom: 83px;
+    }
+    100% {
+      pointer-events: none;
+      bottom: -102px;
+    }
+  }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: 1921px) {
+}
