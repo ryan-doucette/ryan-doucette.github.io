@@ -3,7 +3,6 @@ h1 {
   font-weight: bold;
   padding-bottom: 8px;
 }
-
 h2 {
   font-size: 32px;
   font-weight: normal;
@@ -16,24 +15,19 @@ h2 {
 .greeting {
   color: white;
 }
-
 .n {
   position: relative;
   z-index: 1;
 }
-
 #prevAnimateN {
   animation: prevAnimateN 4s linear infinite;
 }
-
 #fullAnimateN {
   animation: fullAnimateN 4s linear infinite;
 }
-
 #nextAnimateN {
   animation: nextAnimateN 4s linear infinite;
 }
-
 #animatedText {
   position: absolute;
   margin-left: 9px;
@@ -42,7 +36,6 @@ h2 {
   z-index: 2;
   overflow: visible;
 }
-
 #animatedText::before {
   content: attr(data-text);
   position: absolute;
@@ -64,7 +57,6 @@ h2 {
     margin-left: -16px;
   }
 }
-
 @keyframes fullAnimateN {
   0% {
     margin-left: -16px;
@@ -79,7 +71,6 @@ h2 {
     margin-left: -16px;
   }
 }
-
 @keyframes nextAnimateN {
   0% {
     margin-left: -16px;
@@ -89,7 +80,6 @@ h2 {
     margin-left: 0px;
   }
 }
-
 @keyframes reveal {
   0%,
   7.5%,
@@ -102,7 +92,6 @@ h2 {
     width: 103%;
   }
 }
-
 @keyframes color {
   0% {
     color: #f54b64;
@@ -117,7 +106,6 @@ h2 {
     color: #f78361;
   }
 }
-
 @keyframes spin {
   0%,
   75% {
@@ -148,7 +136,6 @@ h2 {
     font-size: 48px;
     padding-bottom: 8px;
   }
-
   h2 {
     font-size: 40px;
   }
@@ -166,7 +153,6 @@ h2 {
       margin-left: -20px;
     }
   }
-
   @keyframes fullAnimateN {
     0% {
       margin-left: -20px;
@@ -181,7 +167,6 @@ h2 {
       margin-left: -20px;
     }
   }
-
   @keyframes nextAnimateN {
     0% {
       margin-left: -20px;
@@ -199,7 +184,6 @@ h2 {
     font-size: 72px;
     padding-bottom: 8px;
   }
-
   h2 {
     font-size: 56px;
   }
@@ -217,7 +201,6 @@ h2 {
       margin-left: -26px;
     }
   }
-
   @keyframes fullAnimateN {
     0% {
       margin-left: -30px;
@@ -232,7 +215,6 @@ h2 {
       margin-left: -30px;
     }
   }
-
   @keyframes nextAnimateN {
     0% {
       margin-left: -30px;

@@ -1,0 +1,71 @@
+.footer {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 125px;
+  width: 100vw;
+}
+.triangle {
+  position: absolute;
+  top: 32px;
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 35px solid;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+#tri1 {
+  border-bottom-color: #e35e67;
+  z-index: 3;
+}
+#tri2 {
+  border-bottom-color: #50596d;
+  z-index: 2;
+}
+#tri3 {
+  border-bottom-color: white;
+  z-index: 1;
+}
+#tri1:hover ~ #tri2 {
+  transform: translateY(-13px);
+}
+#tri1:hover ~ #tri3 {
+  transform: translateY(13px);
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: 481px) {
+  .footer {
+    height: 150px;
+  }
+  .triangle {
+    top: 28px;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-bottom: 45px solid;
+    transition: 0.3s ease-in-out;
+  }
+  #tri1:hover ~ #tri2 {
+    transform: translateY(-16px);
+  }
+  #tri1:hover ~ #tri3 {
+    transform: translateY(16px);
+  }
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: 769px) {
+  .footer {
+    height: 170px;
+  }
+  #tri1:hover ~ #tri2 {
+    transform: translateY(-18px);
+  }
+  #tri1:hover ~ #tri3 {
+    transform: translateY(18px);
+  }
+}

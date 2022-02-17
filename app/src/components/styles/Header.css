@@ -11,7 +11,6 @@
   animation: dropHeader 4.5s linear;
   transform-origin: bottom left;
 }
-
 .icons {
   opacity: 0%;
   display: flex;
@@ -27,7 +26,6 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
-
 #email {
   background-image: url(../../images/mail-icon.png);
   animation: roll 1s 1.5s linear, dropBall1 0.4s 5.5s linear forwards;
@@ -44,15 +42,15 @@
   transition: 0.3s ease-in-out;
 }
 #email:hover {
-  transform: scale(115%);
+  transform: scale(110%);
   border: 3.5px white solid;
 }
 #linkedin:hover {
-  transform: scale(115%);
+  transform: scale(110%);
   border: 3.5px white solid;
 }
 #github:hover {
-  transform: scale(115%);
+  transform: scale(110%);
   border: 3.5px white solid;
 }
 .header:hover > .icons:not(:hover) {
@@ -90,7 +88,6 @@
     transform: rotate(1080deg);
   }
 }
-
 @keyframes dropBall1 {
   0% {
     margin-right: 200px;
@@ -112,7 +109,6 @@
     bottom: 15px;
   }
 }
-
 @keyframes dropBall2 {
   0% {
     opacity: 100%;
@@ -139,7 +135,6 @@
     bottom: 15px;
   }
 }
-
 @keyframes dropBall3 {
   0% {
     margin-right: -200px;
@@ -161,7 +156,6 @@
     bottom: 15px;
   }
 }
-
 @keyframes dropHeader {
   0% {
     transform: rotate(0deg);
@@ -202,12 +196,10 @@
     height: 250px;
     animation: dropHeader 4.5s linear;
   }
-
   .icons {
     width: 65px;
     height: 65px;
   }
-
   #email {
     animation: roll 1s 1.5s linear, dropBall1 0.4s 5.5s linear forwards;
   }
@@ -254,7 +246,6 @@
       transform: rotate(1080deg);
     }
   }
-
   @keyframes dropBall1 {
     0% {
       margin-right: 225px;
@@ -276,7 +267,6 @@
       bottom: 15px;
     }
   }
-
   @keyframes dropBall2 {
     0% {
       opacity: 100%;
@@ -303,7 +293,6 @@
       bottom: 15px;
     }
   }
-
   @keyframes dropBall3 {
     0% {
       margin-right: -225px;
@@ -333,12 +322,10 @@
     height: 260px;
     animation: dropHeader 5s linear;
   }
-
   .icons {
     width: 70px;
     height: 70px;
   }
-
   #email {
     animation: roll 1.35s 1.85s linear, dropBall1 0.75s 5.85s linear forwards;
   }
@@ -385,7 +372,6 @@
       transform: rotate(1080deg);
     }
   }
-
   @keyframes dropBall1 {
     0% {
       margin-right: 275px;
@@ -407,7 +393,6 @@
       bottom: 17px;
     }
   }
-
   @keyframes dropBall2 {
     0% {
       opacity: 100%;
@@ -434,7 +419,6 @@
       bottom: 15px;
     }
   }
-
   @keyframes dropBall3 {
     0% {
       margin-right: -275px;
@@ -456,7 +440,6 @@
       bottom: 17px;
     }
   }
-
   @keyframes dropHeader {
     0% {
       transform: rotate(0deg);
@@ -498,7 +481,6 @@
     height: 380px;
     animation: dropHeader 4.75s linear;
   }
-
   .icons {
     width: 75px;
     height: 75px;
@@ -540,7 +522,6 @@
       transform: rotate(1080deg);
     }
   }
-
   @keyframes dropBall2 {
     0% {
       opacity: 100%;
@@ -567,7 +548,6 @@
       bottom: 15px;
     }
   }
-
   @keyframes dropHeader {
     0% {
       transform: rotate(0deg);
