@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './styles/CloseButton.css'
+import './styles/_closeButton.scss'
 
 const CloseButton = () => {
     const [hovering, setHovering] = useState(false);

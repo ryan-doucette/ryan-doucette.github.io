@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import './styles/Header.css';
+import './styles/_header.scss';
 
 const Header = () => {
   return (

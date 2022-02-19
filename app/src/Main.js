@@ -1,8 +1,9 @@
-import './Main.css';
+import './_main.scss';
 import Greeting from '../src/components/Greeting';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MenuModal from './components/MenuModal';
+// import Background from './components/Background';
 import { useState } from 'react';
 
 const Main = () => {
@@ -18,6 +19,7 @@ const Main = () => {
 
   return (
     <div className="Main">
+      {/* <Background/> */}
       <div className='left' id= {menuOpen === null ? null : menuOpen ? 'left-open' : 'left-closed'}/>
       <div className='right' id= {menuOpen === null ? null : menuOpen ? 'right-open' : 'right-closed'}/>
       <div className='headerContainer'>

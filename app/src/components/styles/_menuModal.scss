@@ -1,5 +1,7 @@
+@use "../../theme";
+
 .menuModal {
-  background-color: #e35e67;
+  background-color: theme.$highlight;
   width: 100%;
   height: 100%;
   display: flex;

@@ -1,3 +1,5 @@
+@use "../../theme.scss";
+
 h1 {
   font-size: 40px;
   font-weight: bold;
@@ -7,13 +9,13 @@ h2 {
   font-size: 32px;
   font-weight: normal;
   display: inline;
-  background-color: #252a37;
+  background-color: theme.$primary;
   position: relative;
   z-index: 2;
 }
 
 .greeting {
-  color: white;
+  color: theme.$alternate;
 }
 .n {
   position: relative;
@@ -32,7 +34,7 @@ h2 {
   position: absolute;
   margin-left: 9px;
   font-weight: bold;
-  color: #252a37;
+  color: theme.$primary;
   z-index: 2;
   overflow: visible;
 }
@@ -42,7 +44,7 @@ h2 {
   top: 0;
   left: 0;
   width: 0;
-  color: #e35e67;
+  color: theme.$highlight;
   overflow: hidden;
   animation: reveal 4s linear infinite, color 4s linear infinite,
     spin 4s linear infinite;
@@ -85,7 +87,7 @@ h2 {
   7.5%,
   75% {
     width: 0;
-    color: #252a37;
+    color: theme.$primary;
   }
   52.5%,
   67.5% {
@@ -110,22 +112,22 @@ h2 {
   0%,
   75% {
     transform: rotateX(0deg);
-    border-right: 2px solid #e35e67;
+    border-right: 2px solid theme.$highlight;
     border-radius: 0%;
   }
   83.3% {
     transform: rotateX(180deg);
-    border-right: 8px solid #e35e67;
+    border-right: 8px solid theme.$highlight;
     border-radius: 4px;
   }
   91.6% {
     transform: rotateX(540deg);
-    border-right: 4px solid #e35e67;
+    border-right: 4px solid theme.$highlight;
     border-radius: 2px;
   }
   100% {
     transform: rotateX(720deg);
-    border-right: 2px solid #e35e67;
+    border-right: 2px solid theme.$highlight;
     border-radius: 0%;
   }
 }

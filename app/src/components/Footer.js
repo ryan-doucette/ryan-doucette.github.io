@@ -1,4 +1,4 @@
-import './styles/Footer.css'
+import './styles/_footer.scss'
 
 const Footer = ({menuButtonPressed}) => {
     return (
