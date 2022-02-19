@@ -1,3 +1,5 @@
+@use "../../theme.scss";
+
 .header {
   position: absolute;
   display: flex;
@@ -7,7 +9,7 @@
   left: -15px;
   width: calc(100vw + 30px);
   height: 200px;
-  background-color: #50596d;
+  background-color: theme.$secondary;
   animation: dropHeader 4.5s linear;
   transform-origin: bottom left;
 }
@@ -18,7 +20,7 @@
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  border: 2.5px #e35e67 solid;
+  border: 2.5px theme.$highlight solid;
   bottom: 0;
   justify-content: center;
   align-items: center;
@@ -43,18 +45,18 @@
 }
 #email:hover {
   transform: scale(110%);
-  border: 3.5px white solid;
-  box-shadow: 0px 0px 15px 0px white;
+  border: 3.5px theme.$alternate solid;
+  box-shadow: 0px 0px 15px 0px theme.$alternate;
 }
 #linkedin:hover {
   transform: scale(110%);
-  border: 3.5px white solid;
-  box-shadow: 0px 0px 15px 0px white;
+  border: 3.5px theme.$alternate solid;
+  box-shadow: 0px 0px 15px 0px theme.$alternate;
 }
 #github:hover {
   transform: scale(110%);
-  border: 3.5px white solid;
-  box-shadow: 0px 0px 15px 0px white;
+  border: 3.5px theme.$alternate solid;
+  box-shadow: 0px 0px 15px 0px theme.$alternate;
 }
 .header:hover > .icons:not(:hover) {
   transform: scale(87%);

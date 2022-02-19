@@ -1,3 +1,5 @@
+@use "../../theme.scss";
+
 .footer {
   display: flex;
   justify-content: center;
@@ -16,15 +18,15 @@
   cursor: pointer;
 }
 #tri1 {
-  border-bottom-color: #e35e67;
+  border-bottom-color: theme.$highlight;
   z-index: 3;
 }
 #tri2 {
-  border-bottom-color: #50596d;
+  border-bottom-color: theme.$secondary;
   z-index: 2;
 }
 #tri3 {
-  border-bottom-color: white;
+  border-bottom-color: theme.$alternate;
   z-index: 1;
 }
 #tri1:hover ~ #tri2 {

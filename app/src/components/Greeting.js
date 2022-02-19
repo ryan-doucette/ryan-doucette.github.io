@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useInterval from "./UseInterval";
-import './styles/Greeting.css';
+import './styles/_greeting.scss';
 
 const Greeting = () => {
   // List of words to display with prompt "I'm a(n) _____ "

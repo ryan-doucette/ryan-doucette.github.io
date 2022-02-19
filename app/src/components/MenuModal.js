@@ -1,6 +1,6 @@
 import CloseButton from '../components/CloseButton.js';
 
-import './styles/MenuModal.css';
+import './styles/_menuModal.scss';
 
 const MenuModal = ({menuIsRevealed, closeButtonPressed}) => {
 

@@ -1,3 +1,5 @@
+@use "../../theme";
+
 /* Credit to: https://codepen.io/rsbear/pen/edGEbd */
 .closeButton {
   display: flex;
@@ -6,7 +8,7 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
-  background-color: #252a37;
+  background-color: theme.$primary;
 }
 
 #hovering {
@@ -17,7 +19,7 @@
   height: 4px;
   width: 43px;
   position: absolute;
-  background-color: white;
+  background-color: theme.$alternate;
   border-radius: 2px;
   transform: rotate(45deg);
   transition: all 0.5s ease-in-out;
@@ -27,7 +29,7 @@
   height: 4px;
   width: 43px;
   position: absolute;
-  background-color: white;
+  background-color: theme.$alternate;
   border-radius: 2px;
   transform: rotate(-45deg);
   transition: all 0.5s ease-in-out;
@@ -40,11 +42,11 @@
 
 .closeButton:hover .leftright {
   transform: rotate(-180deg);
-  background-color: white;
+  background-color: theme.$alternate;
 }
 .closeButton:hover .rightleft {
   transform: rotate(180deg);
-  background-color: white;
+  background-color: theme.$alternate;
 }
 
 @keyframes spinCloseButton {
