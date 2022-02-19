@@ -12,15 +12,21 @@
   height: 55px;
   left: calc(50vw - 27.5px);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+
+.closeButtonContainer:hover {
+  transform: scale(120%);
 }
 
 #showCloseButton {
   animation: showCloseButton 1.55s linear forwards;
-  background-color: #252a37;
 }
 
 #hideCloseButton {
-  background-color: #252a37;
   animation: hideCloseButton 1s linear forwards;
 }
 
