@@ -44,14 +44,17 @@
 #email:hover {
   transform: scale(110%);
   border: 3.5px white solid;
+  box-shadow: 0px 0px 15px 0px white;
 }
 #linkedin:hover {
   transform: scale(110%);
   border: 3.5px white solid;
+  box-shadow: 0px 0px 15px 0px white;
 }
 #github:hover {
   transform: scale(110%);
   border: 3.5px white solid;
+  box-shadow: 0px 0px 15px 0px white;
 }
 .header:hover > .icons:not(:hover) {
   transform: scale(87%);
@@ -85,7 +88,7 @@
     bottom: 0px;
     opacity: 100%;
     left: 105vw;
-    transform: rotate(1080deg);
+    transform: rotate(900deg);
   }
 }
 @keyframes dropBall1 {
@@ -369,7 +372,7 @@
       bottom: 0px;
       opacity: 100%;
       left: 110vw;
-      transform: rotate(1080deg);
+      transform: rotate(1800deg);
     }
   }
   @keyframes dropBall1 {
@@ -519,7 +522,7 @@
       bottom: 0px;
       opacity: 100%;
       left: 110vw;
-      transform: rotate(1080deg);
+      transform: rotate(2000deg);
     }
   }
   @keyframes dropBall2 {

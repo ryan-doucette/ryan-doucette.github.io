@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useInterval from "./UseInterval";
 import './styles/Greeting.css';
 
-function Greeting() {
+const Greeting = () => {
   // List of words to display with prompt "I'm a(n) _____ "
   const thingsIAm = ['Developer', 'Designer', 'Animator', 'Traveler', 'Guitarist'];
   // Index of current word
