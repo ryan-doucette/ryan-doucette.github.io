@@ -1,7 +1,7 @@
 // import { useEffect, useRef, useState } from 'react';
 import { useMousePosition } from './UseMousePosition';
 import './styles/_background.scss';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const Background = () => {
 
@@ -18,7 +18,7 @@ const Background = () => {
         console.log('distance between: ', distBetween(position.x, position.y, myX, myY));
     });
 
-    const distBetween = (x1, y1, x2, y2) => {
+    const distBetween = (x1: number, y1: number, x2: number, y2: number) => {
         let x = x2 - x1;
         let y = y2 - y1;
 
