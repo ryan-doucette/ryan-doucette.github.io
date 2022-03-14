@@ -4,24 +4,24 @@ import './styles/_greeting.scss';
 
 const Greeting = () => {
   // List of words to display with prompt "I'm a(n) _____ "
-  const thingsIAm = ['Developer', 'Designer', 'Animator', 'Traveler', 'Guitarist'];
+  const thingsIAm: string[] = ['Developer', 'Designer', 'Animator', 'Traveler', 'Guitarist'];
   // Index of current word
   const [index, setIndex] = useState(0);
   // Duration between switching words
   // ** MUST be the same value as the animations on Greeting.css or it will become unsynced **
-  const WORD_DURATION = 4000;
+  const WORD_DURATION: number = 4000;
 
   // Values for prev, curr, and next words for reference
-  const prevWord = index === 0 ? thingsIAm[thingsIAm.length - 1] : thingsIAm[index - 1];
-  const currentWord = thingsIAm[index];
-  const nextWord = index === thingsIAm.length - 1 ? thingsIAm[0] : thingsIAm[index + 1];
+  const prevWord: string = index === 0 ? thingsIAm[thingsIAm.length - 1] : thingsIAm[index - 1];
+  const currentWord: string = thingsIAm[index];
+  const nextWord: string = index === thingsIAm.length - 1 ? thingsIAm[0] : thingsIAm[index + 1];
 
   // Regex to detect if a word starts with a vowels
   var vowelRegex = '^[aieouAIEOU].*'
-  const vowelMatch = (word) => word.match(vowelRegex);
+  const vowelMatch = (word: string) => word.match(vowelRegex);
 
   // Updates the index, if the index is at the end of the list of words it is reset to 0
-  const updateIndex = (lengthOfList) => {
+  const updateIndex = (lengthOfList: number) => {
     if (index === lengthOfList - 1) {
       setIndex(0);
     }
@@ -51,8 +51,8 @@ const Greeting = () => {
   const aOrAn = vowelMatch(currentWord) ? n() : <h2> </h2>
 
   // Updates the index every WORD_DURATION milliseconds
-  useInterval(() => { // Ref for component on UseInterval.js
-    updateIndex(thingsIAm.length)
+  useInterval(() => {
+    updateIndex(thingsIAm.length);
   }, WORD_DURATION);
 
   return (

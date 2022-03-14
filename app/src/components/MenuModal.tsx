@@ -1,8 +1,9 @@
-import CloseButton from '../components/CloseButton.js';
+import CloseButton from './CloseButton';
+import React, { MouseEventHandler } from 'react';
 
 import './styles/_menuModal.scss';
 
-const MenuModal = ({menuIsRevealed, closeButtonPressed}) => {
+const MenuModal = ({menuIsRevealed, closeButtonPressed} : {menuIsRevealed: boolean | undefined, closeButtonPressed: MouseEventHandler}) => {
 
     return (
         <div className="menuModal">

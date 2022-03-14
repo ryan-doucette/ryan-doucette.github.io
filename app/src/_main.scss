@@ -11,6 +11,7 @@
 }
 .headerContainer {
   z-index: 2;
+  display: block;
 }
 .greetingContainer {
   display: flex;
@@ -31,8 +32,7 @@
   align-items: center;
   background-color: theme.$highlight;
   width: 100vw;
-  top: 100px;
-  height: calc(100vh - 100px);
+  height: 100vh;
 }
 .left {
   z-index: 1;
@@ -260,10 +260,6 @@
   .footerContainer {
     height: 150px;
   }
-  .menuModalContainer {
-    top: 110px;
-    height: calc(100vh - 110px);
-  }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
@@ -271,16 +267,8 @@
   .footerContainer {
     height: 170px;
   }
-  .menuModalContainer {
-    top: 120px;
-    height: calc(100vh - 120px);
-  }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: 1921px) {
-  .menuModalContainer {
-    top: 130px;
-    height: calc(100vh - 130px);
-  }
 }
