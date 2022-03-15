@@ -1,48 +1,150 @@
 @use "../../theme.scss";
+#desktopHeader {
+  display: none;
+}
 
 .header {
   position: absolute;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
+  height: 65px;
   top: 0px;
   left: 0px;
   width: 100vw;
   background-color: theme.$secondary;
 }
 
-.links {
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(227, 94, 103, 0.95);
+  overflow-y: hidden;
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
   text-decoration: none;
-  color: white;
+  font-size: 36px;
   font-weight: bold;
-  font-size: 100%;
-  margin-right: 10px;
-  margin-left: 10px;
+  color: theme.$alternate;
+  display: block;
+  transition: 0.3s;
 }
 
-.spacer {
-  background-color: white;
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 100%;
+.overlay a:hover,
+.overlay a:focus {
+  color: theme.$primary;
+  background-color: theme.$alternate;
 }
 
-#desktopHeader {
-  display: flex;
-  align-items: center;
-  margin-left: 40px;
-  margin-right: 40px;
+.overlay .closebtn {
+  cursor: pointer;
+  position: absolute;
+  top: -3px;
+  right: 16px;
+  font-size: 60px;
+  padding: 8px;
+  text-decoration: none;
+  color: theme.$alternate;
+  display: block;
+  transition: 0.3s;
 }
+
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: 481px) {
   .header {
+    height: 65px;
+  }
+
+  .burgerMenu {
+    display: none;
+  }
+
+  .links {
+    text-decoration: none;
+    color: theme.$alternate;
+    font-weight: bold;
+    font-size: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.25s;
+  }
+
+  .links:hover {
+    opacity: 50%;
+    transform: translateY(-2px);
+  }
+
+  .selected {
+    color: theme.$alternate;
+  }
+
+  .spacer {
+    background-color: theme.$alternate;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    transform: rotate(45deg);
+  }
+
+  #desktopHeader {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .selectionIndicator {
+    position: absolute;
+    bottom: 10px;
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 8px solid theme.$highlight;
   }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: 769px) {
   .header {
-    height: 65px;
+    height: 80px;
+  }
+
+  .links {
+    font-size: 125%;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .spacer {
+    width: 6px;
+    height: 6px;
+  }
+
+  #desktopHeader {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .selectionIndicator {
+    bottom: 14px;
   }
 }
