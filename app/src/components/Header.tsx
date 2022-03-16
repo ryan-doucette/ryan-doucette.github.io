@@ -9,11 +9,7 @@ const Header = () => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [currTab, setCurrTab] = useState(tabCategories[0]);
-  const [selectorPosition, setSelectorPosition] = useState(0);
-  const [selectorTransitionSmooth, setSelectorTransitionSmooth] = useState(true);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
-
-  const selectorWidth = 36;
 
   const handleWindowResize = useCallback(event => {
     setWindowSize(window.innerWidth);
@@ -25,20 +21,37 @@ const Header = () => {
       setDropdownOpen(false);
     }
 
-    setSelectorTransitionSmooth(false);
-    updateSelectorPosition(currTab.toLowerCase());
-
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
-  }, [handleWindowResize, currTab, windowSize]);
+  }, [handleWindowResize, windowSize]);
 
+  useEffect(() => {
+    const newParent = document.getElementById('home-container');
+    const selector = document.getElementById('selection-indicator')!;
+
+    newParent?.appendChild(selector);
+  }, [])
+
+  useEffect(() => {
+    updateSelectorPosition(currTab.toLowerCase() + '-container');
+  }, [currTab])
 
   const updateSelectorPosition = (id: string) => {
-    const pos = document.getElementById(id)?.getBoundingClientRect();
-    if(pos) {
-      setSelectorPosition(pos?.left + pos?.width / 2 - selectorWidth / 2)
-    }
+    const newParent = document.getElementById(id);
+    const selector = document.getElementById('selection-indicator')!;
+
+    selector.classList.add('selectorDown');
+
+    setTimeout(() => {
+      newParent?.appendChild(selector);
+      selector.classList.add('selectorUp');
+    }, 250);
+
+    setTimeout(() => {
+      selector.classList.remove('selectorUp');
+      selector.classList.remove('selectorDown');
+    }, 500);
   }
 
   const updateTab = (selectedTab: string) => {
@@ -74,28 +87,28 @@ const Header = () => {
       <div id='desktopHeader'>
         { tabCategories.map(category => (
           <>
+          <div id={category.toLowerCase() + '-container'} className='categoryContainer'>
             <a 
               key={category} 
               className={currTab === category ? 'selected links' : 'links'} 
               id={ category.toLowerCase() } 
               href={ '#' + category.toLowerCase() } 
-              onClick={() => {updateTab(category); updateSelectorPosition(category.toLowerCase()); setSelectorTransitionSmooth(true);}}
+              onClick={() => updateTab(category)}
             >
               { category }
             </a>
-            { 
-              tabCategories.indexOf(category) === tabCategories.length - 1 ? 
-                <></> :
-                <div className='spacer'/>    
-            }
+            
+          </div>
+          { 
+            tabCategories.indexOf(category) === tabCategories.length - 1 ? 
+              <></> :
+              <div className='spacer'/>    
+          }
           </>
         )) }
         <div 
-          className='selectionIndicator' 
-          style={ selectorTransitionSmooth ? 
-            { left: selectorPosition, transitionDuration: '0.35s', transitionTimingFunction: 'ease-in-out' } : 
-            { left: selectorPosition, transitionDuration: '0s', transitionTimingFunction: 'linear' }
-          } 
+          className='selectionIndicator'
+          id='selection-indicator' 
         />
       </div>
     </div>
