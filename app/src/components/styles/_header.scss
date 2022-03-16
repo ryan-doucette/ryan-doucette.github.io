@@ -71,6 +71,13 @@
     height: 65px;
   }
 
+  .categoryContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
   .burgerMenu {
     display: none;
   }
@@ -120,6 +127,38 @@
     border-right: 18px solid transparent;
     border-top: 8px solid theme.$highlight;
   }
+
+  .selectorDown {
+    animation: selectorDown 0.25s linear;
+  }
+
+  .selectorUp {
+    animation: selectorUp 0.25s linear;
+  }
+
+  @keyframes selectorDown {
+    0% {
+      bottom: 10px;
+    }
+    50% {
+      bottom: 5px;
+    }
+    100% {
+      bottom: -15px;
+    }
+  }
+
+  @keyframes selectorUp {
+    0% {
+      bottom: -15px;
+    }
+    50% {
+      bottom: 5px;
+    }
+    100% {
+      bottom: 10px;
+    }
+  }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
@@ -146,5 +185,80 @@
 
   .selectionIndicator {
     bottom: 14px;
+  }
+
+  @keyframes selectorDown {
+    0% {
+      bottom: 14px;
+    }
+    50% {
+      bottom: 5px;
+    }
+    100% {
+      bottom: -15px;
+    }
+  }
+
+  @keyframes selectorUp {
+    0% {
+      bottom: -15px;
+    }
+    50% {
+      bottom: 5px;
+    }
+    100% {
+      bottom: 14px;
+    }
+  }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: 1599px) {
+  .header {
+    height: 90px;
+  }
+
+  .links {
+    font-size: 140%;
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+  .spacer {
+    width: 6px;
+    height: 6px;
+  }
+
+  #desktopHeader {
+    margin-left: 55px;
+    margin-right: 55px;
+  }
+
+  .selectionIndicator {
+    bottom: 16px;
+  }
+
+  @keyframes selectorDown {
+    0% {
+      bottom: 16px;
+    }
+    50% {
+      bottom: 5px;
+    }
+    100% {
+      bottom: -18px;
+    }
+  }
+
+  @keyframes selectorUp {
+    0% {
+      bottom: -18px;
+    }
+    50% {
+      bottom: 5px;
+    }
+    100% {
+      bottom: 16px;
+    }
   }
 }
