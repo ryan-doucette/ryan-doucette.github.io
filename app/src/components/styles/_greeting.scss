@@ -4,6 +4,7 @@ h1 {
   font-size: 40px;
   font-weight: bold;
   padding-bottom: 8px;
+  display: inline;
 }
 h2 {
   font-size: 32px;
@@ -14,9 +15,15 @@ h2 {
   z-index: 2;
 }
 
+.highlightText {
+  animation: color 4s linear infinite;
+}
+
 .greeting {
   color: theme.$alternate;
+  text-align: center;
 }
+
 .n {
   position: relative;
   z-index: 1;
@@ -98,14 +105,11 @@ h2 {
   0% {
     color: #f54b64;
   }
-  33% {
+  50% {
     color: #f78361;
-  }
-  66% {
-    color: #f54b64;
   }
   100% {
-    color: #f78361;
+    color: #f54b64;
   }
 }
 @keyframes spin {

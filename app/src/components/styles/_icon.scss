@@ -37,7 +37,7 @@
 
 .topLightningBolt {
   position: absolute;
-  top: 19.25px;
+  top: 19.9px;
   margin-left: 5.5px;
   transform: rotate(130.5deg);
   width: 0;
@@ -51,7 +51,7 @@
 
 .bottomLightningBolt {
   position: absolute;
-  bottom: 19.5px;
+  bottom: 20px;
   margin-right: 5.5px;
   transform: rotate(130.5deg) scaleY(-1) scaleX(-1);
   width: 0;
@@ -165,7 +165,7 @@
   }
 
   .topLightningBolt {
-    top: 24.5px;
+    top: 24.85px;
     margin-left: 9.5px;
     transform: rotate(131.5deg);
     border-left: 33.41px solid transparent;
@@ -174,7 +174,7 @@
   }
 
   .bottomLightningBolt {
-    bottom: 24.75px;
+    bottom: 25px;
     margin-right: 9.5px;
     transform: rotate(131.5deg) scaleY(-1) scaleX(-1);
     border-left: 33.41px solid transparent;
