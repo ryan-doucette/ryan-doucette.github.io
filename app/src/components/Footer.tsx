@@ -1,5 +1,5 @@
-import './styles/_footer.scss'
 import React from 'react';
+import './styles/_footer.scss'
 
 const Footer = ({menuButtonPressed} : {menuButtonPressed: React.MouseEventHandler}) => {
     return (
