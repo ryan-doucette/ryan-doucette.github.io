@@ -21,6 +21,7 @@
   left: 0px;
   width: 100%;
   background-color: theme.$secondary;
+  overflow: hidden;
 }
 
 .overlay {
@@ -30,7 +31,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(227, 94, 103, 0.95);
+  background-color: rgba(80, 89, 109, 0.95);
   overflow-y: hidden;
   transition: 0.5s;
   transition-timing-function: ease-in-out;

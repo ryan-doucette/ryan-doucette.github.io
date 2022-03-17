@@ -20,7 +20,7 @@ const Main = () => {
   }
 
   return (
-    <div className="Main">
+    <div className="main">
       {/* <Background/> */}
       <div className='left' id= {menuOpen === undefined ? undefined : menuOpen ? 'left-open' : 'left-closed'}/>
       <div className='right' id= {menuOpen === undefined ? undefined : menuOpen ? 'right-open' : 'right-closed'}/>
