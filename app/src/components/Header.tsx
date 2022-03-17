@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
+import React, { useCallback, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import './styles/_header.scss';
 import './styles/_hamburgerStyle.scss';
-import React, { useCallback, useEffect, useState } from 'react';
+import Icon from './Icon';
 
 const Header = () => {
 
@@ -19,7 +21,7 @@ const Header = () => {
     window.addEventListener('resize', handleWindowResize);
     if(windowSize > 481) {
       setDropdownOpen(false);
-    }
+    };
 
     return () => {
       window.removeEventListener('resize', handleWindowResize);
@@ -27,15 +29,14 @@ const Header = () => {
   }, [handleWindowResize, windowSize]);
 
   useEffect(() => {
-    const newParent = document.getElementById('home-container');
+    const newTab = document.getElementById('home-container');
     const selector = document.getElementById('selection-indicator')!;
-
-    newParent?.appendChild(selector);
-  }, [])
+    newTab?.appendChild(selector);
+  }, []);
 
   useEffect(() => {
     updateSelectorPosition(currTab.toLowerCase() + '-container');
-  }, [currTab])
+  }, [currTab]);
 
   const updateSelectorPosition = (id: string) => {
     const newParent = document.getElementById(id);
@@ -52,65 +53,72 @@ const Header = () => {
       selector.classList.remove('selectorUp');
       selector.classList.remove('selectorDown');
     }, 500);
-  }
+  };
 
   const updateTab = (selectedTab: string) => {
     setCurrTab(selectedTab);
-  }
+  };
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
-  }
+  };
 
   const closeDropdown = () => {
     setDropdownOpen(false);
-  }
+  };
+
+  const iconClicked = () => {
+    setCurrTab('Home');
+  };
 
   return (
     <div className="header">
-      <div id="dropDown" className="overlay" style={dropdownOpen ? {height: '100%'} : {height: '0%'}}>
-            <div className="overlay-content">
-              {tabCategories.map(category => (
-                <a href={'#' + category.toLowerCase()} onClick={() => {closeDropdown(); updateTab(category)}}>{category}</a>
-              ))}
-            </div>
-        </div>
-      <nav className="burgerMenu" role="navigation">
-        <div id="menuToggle">
-          <input id="borgor" checked={dropdownOpen} type="checkbox" onClick={() => toggleDropdown()}/>
-          <span></span>
-          <span></span>
-          <span></span>
-          <div id="menu"/>
-        </div>
-      </nav>
-      <div id='desktopHeader'>
-        { tabCategories.map(category => (
-          <>
-          <div id={category.toLowerCase() + '-container'} className='categoryContainer'>
-            <a 
-              key={category} 
-              className={currTab === category ? 'selected links' : 'links'} 
-              id={ category.toLowerCase() } 
-              href={ '#' + category.toLowerCase() } 
-              onClick={() => updateTab(category)}
-            >
-              { category }
-            </a>
-            
+      <Icon iconPressed={() => iconClicked()}/>
+      <section className='linksSection'>
+        <nav className="burgerMenu" role="navigation">
+          <div id="menuToggle">
+            <input checked={dropdownOpen} type="checkbox" onClick={() => toggleDropdown()}/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div id="menu"/>
           </div>
-          { 
-            tabCategories.indexOf(category) === tabCategories.length - 1 ? 
-              <></> :
-              <div className='spacer'/>    
-          }
-          </>
-        )) }
-        <div 
-          className='selectionIndicator'
-          id='selection-indicator' 
-        />
-      </div>
+          </nav>
+          <div id="dropDown" className="overlay" style={dropdownOpen ? {height: '100%'} : {height: '0%'}}>
+              <div className="overlay-content">
+                {tabCategories.map(category => (
+                  <Link to={category.toLowerCase()} onClick={() => {closeDropdown(); updateTab(category)}}>{category}</Link>
+                ))}
+              </div>
+          </div>
+        <div id='desktopHeader'>
+          { tabCategories.map(category => (
+            <>
+              <div id={category.toLowerCase() + '-container'} className='categoryContainer'>
+                <Link 
+                  key={category} 
+                  className={currTab === category ? 'selected links' : 'links'} 
+                  id={ category.toLowerCase() } 
+                  to={category.toLowerCase()}
+                  onClick={() => updateTab(category)}
+                >
+                  { category }
+                </Link>
+                
+              </div>
+              { 
+                tabCategories.indexOf(category) === tabCategories.length - 1 ? 
+                  <></> :
+                  <div className='spacer'/>    
+              }
+            </>
+          )) }
+          <div 
+            className='selectionIndicator'
+            id='selection-indicator' 
+          />
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 // import { useEffect, useRef, useState } from 'react';
 import { useMousePosition } from './UseMousePosition';
-import './styles/_background.scss';
 import React, { useEffect } from 'react';
+import './styles/_background.scss';
 
 const Background = () => {
 

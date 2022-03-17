@@ -1,10 +1,5 @@
 @use "../../theme.scss";
 
-.burgerMenu {
-  overflow: visible;
-  z-index: 2;
-}
-
 #menuToggle {
   display: block;
   position: relative;
@@ -12,6 +7,7 @@
   overflow: visible;
   -webkit-user-select: none;
   user-select: none;
+  z-index: 2;
 }
 
 #menuToggle a {
@@ -33,7 +29,7 @@
   left: -5px;
   cursor: pointer;
   opacity: 0;
-  z-index: 1;
+  z-index: 2;
   -webkit-touch-callout: none;
 }
 
