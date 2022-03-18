@@ -7,6 +7,8 @@ const Footer = ({menuButtonPressed} : {menuButtonPressed: React.MouseEventHandle
             <div className='triangle' id='tri1' onClick={menuButtonPressed}/>
             <div className='triangle' id='tri2'/>
             <div className='triangle' id='tri3'/>
+            <div className='squares' id='square1'/>
+            <div className='squares' id='square2'/>
         </div>
     );
 }

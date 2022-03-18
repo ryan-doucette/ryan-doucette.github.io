@@ -5,6 +5,7 @@ h1 {
   font-weight: bold;
   padding-bottom: 8px;
   display: inline;
+  transition: 0.4s ease-in-out;
 }
 h2 {
   font-size: 32px;
@@ -12,6 +13,7 @@ h2 {
   display: inline;
   position: relative;
   z-index: 2;
+  transition: 0.4s ease-in-out;
 }
 .highlightText {
   animation: color 4s linear infinite;
