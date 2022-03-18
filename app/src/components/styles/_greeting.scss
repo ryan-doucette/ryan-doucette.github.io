@@ -10,13 +10,25 @@ h2 {
   font-size: 32px;
   font-weight: normal;
   display: inline;
-  background-color: theme.$primary;
   position: relative;
   z-index: 2;
 }
 .highlightText {
   animation: color 4s linear infinite;
 }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .greeting {
   color: theme.$alternate;
   text-align: center;

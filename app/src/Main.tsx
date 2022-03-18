@@ -3,7 +3,7 @@ import Greeting from '../src/components/Greeting';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MenuModal from './components/MenuModal';
-// import Background from './components/Background';
+import Background from './components/Background';
 import { useState } from 'react';
 import React from 'react';
 
@@ -21,9 +21,7 @@ const Main = () => {
 
   return (
     <div className="main screen">
-      {/* <Background/> */}
-      <div className='left screen' id= {menuOpen === undefined ? undefined : menuOpen ? 'left-open' : 'left-closed'}/>
-      <div className='right screen' id= {menuOpen === undefined ? undefined : menuOpen ? 'right-open' : 'right-closed'}/>
+      <Background/>
       <div className='headerContainer'>
         <Header/>
       </div>
@@ -33,7 +31,7 @@ const Main = () => {
       <div className='footerContainer' id={menuOpen === undefined ? undefined : menuOpen ? 'hide-footer' : 'show-footer'}>
         <Footer menuButtonPressed={openMenu}/>     
       </div>  
-      <div className='menuModalContainer screen'>
+      <div className='menuModalContainer screen' id= {menuOpen === undefined ? undefined : menuOpen ? 'menu-open' : 'menu-closed'}>
         <MenuModal menuIsRevealed={menuOpen} closeButtonPressed={closeMenu}/>
       </div>  
     </div>
