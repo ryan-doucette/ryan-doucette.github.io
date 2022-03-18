@@ -14,92 +14,12 @@ h2 {
   position: relative;
   z-index: 2;
 }
-
 .highlightText {
   animation: color 4s linear infinite;
 }
-
 .greeting {
   color: theme.$alternate;
   text-align: center;
-}
-
-.n {
-  position: relative;
-  z-index: 1;
-}
-#prevAnimateN {
-  animation: prevAnimateN 4s linear infinite;
-}
-#fullAnimateN {
-  animation: fullAnimateN 4s linear infinite;
-}
-#nextAnimateN {
-  animation: nextAnimateN 4s linear infinite;
-}
-#animatedText {
-  position: absolute;
-  margin-left: 9px;
-  font-weight: bold;
-  color: theme.$primary;
-  z-index: 2;
-  overflow: visible;
-}
-#animatedText::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  color: theme.$highlight;
-  overflow: hidden;
-  animation: reveal 4s linear infinite, color 4s linear infinite,
-    spin 4s linear infinite;
-}
-
-@keyframes prevAnimateN {
-  0%,
-  95% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: -16px;
-  }
-}
-@keyframes fullAnimateN {
-  0% {
-    margin-left: -16px;
-  }
-  5% {
-    margin-left: 0px;
-  }
-  95% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: -16px;
-  }
-}
-@keyframes nextAnimateN {
-  0% {
-    margin-left: -16px;
-  }
-  5%,
-  100% {
-    margin-left: 0px;
-  }
-}
-@keyframes reveal {
-  0%,
-  7.5%,
-  75% {
-    width: 0;
-    color: theme.$primary;
-  }
-  52.5%,
-  67.5% {
-    width: 103%;
-  }
 }
 @keyframes color {
   0% {
@@ -112,29 +32,6 @@ h2 {
     color: #f54b64;
   }
 }
-@keyframes spin {
-  0%,
-  75% {
-    transform: rotateX(0deg);
-    border-right: 2px solid theme.$highlight;
-    border-radius: 0%;
-  }
-  83.3% {
-    transform: rotateX(180deg);
-    border-right: 8px solid theme.$highlight;
-    border-radius: 4px;
-  }
-  91.6% {
-    transform: rotateX(540deg);
-    border-right: 4px solid theme.$highlight;
-    border-radius: 2px;
-  }
-  100% {
-    transform: rotateX(720deg);
-    border-right: 2px solid theme.$highlight;
-    border-radius: 0%;
-  }
-}
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: 481px) {
@@ -144,43 +41,6 @@ h2 {
   }
   h2 {
     font-size: 40px;
-  }
-
-  #animatedText {
-    margin-left: 11px;
-  }
-
-  @keyframes prevAnimateN {
-    0%,
-    95% {
-      margin-left: 0px;
-    }
-    100% {
-      margin-left: -20px;
-    }
-  }
-  @keyframes fullAnimateN {
-    0% {
-      margin-left: -20px;
-    }
-    5% {
-      margin-left: 0px;
-    }
-    95% {
-      margin-left: 0px;
-    }
-    100% {
-      margin-left: -20px;
-    }
-  }
-  @keyframes nextAnimateN {
-    0% {
-      margin-left: -20px;
-    }
-    5%,
-    100% {
-      margin-left: 0px;
-    }
   }
 }
 
@@ -192,42 +52,5 @@ h2 {
   }
   h2 {
     font-size: 56px;
-  }
-
-  #animatedText {
-    margin-left: 13px;
-  }
-
-  @keyframes prevAnimateN {
-    0%,
-    95% {
-      margin-left: 0px;
-    }
-    100% {
-      margin-left: -26px;
-    }
-  }
-  @keyframes fullAnimateN {
-    0% {
-      margin-left: -30px;
-    }
-    5% {
-      margin-left: 0px;
-    }
-    95% {
-      margin-left: 0px;
-    }
-    100% {
-      margin-left: -30px;
-    }
-  }
-  @keyframes nextAnimateN {
-    0% {
-      margin-left: -30px;
-    }
-    5%,
-    100% {
-      margin-left: 0px;
-    }
   }
 }

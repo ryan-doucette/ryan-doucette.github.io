@@ -1,21 +1,25 @@
 @use "./theme";
 
+$section-height: calc(100vh - 65px);
+$section-min-height: 450px;
+.screen {
+  height: $section-height;
+  min-height: $section-min-height;
+}
+
 .main {
   position: relative;
   display: flex;
   justify-content: center;
   padding-top: 65px;
-  height: calc(100vh - 65px);
   padding-left: 20px;
   padding-right: 20px;
   overflow: hidden;
   z-index: 1;
-  min-height: 450px;
 }
 .headerContainer {
   z-index: 2;
   display: block;
-  // overflow: hidden;
 }
 .greetingContainer {
   display: flex;
@@ -38,28 +42,20 @@
   align-items: center;
   background-color: theme.$highlight;
   width: 100vw;
-  height: calc(100vh - 65px);
-  min-height: 450px;
 }
 .left {
   z-index: 1;
   position: absolute;
   background-color: theme.$primary;
-  height: calc(100vh - 65px);
-  min-height: 450px;
   width: 51vw;
   left: 0;
-  min-height: 450px;
 }
 .right {
   z-index: 1;
   position: absolute;
   background-color: theme.$primary;
-  height: calc(100vh - 65px);
-  min-height: 450px;
   width: 51vw;
   right: 0;
-  min-height: 450px;
 }
 
 #left-open {
@@ -92,30 +88,30 @@
     left: 0;
   }
   25% {
-    left: -8vw;
+    left: -8%;
   }
   50% {
-    left: -15vw;
+    left: -15%;
   }
   75% {
-    left: -22.5vw;
+    left: -22.5%;
   }
   100% {
-    left: -51vw;
+    left: -51%;
   }
 }
 @keyframes close-left {
   0% {
-    left: -51vw;
+    left: -51%;
   }
   25% {
-    left: -43vw;
+    left: -43%;
   }
   50% {
-    left: -35.5vw;
+    left: -35.5%;
   }
   75% {
-    left: -28.5vw;
+    left: -28.5%;
   }
   100% {
     left: 0;
@@ -126,30 +122,30 @@
     right: 0;
   }
   25% {
-    right: -8vw;
+    right: -8%;
   }
   50% {
-    right: -15vw;
+    right: -15%;
   }
   75% {
-    right: -22.5vw;
+    right: -22.5%;
   }
   100% {
-    right: -51vw;
+    right: -51%;
   }
 }
 @keyframes close-right {
   0% {
-    right: -51vw;
+    right: -51%;
   }
   25% {
-    right: -43vw;
+    right: -43%;
   }
   50% {
-    right: -35.5vw;
+    right: -35.5%;
   }
   75% {
-    right: -28.5vw;
+    right: -28.5%;
   }
   100% {
     right: 0;
@@ -158,54 +154,54 @@
 @keyframes show-greeting {
   0%,
   50% {
-    transform: translateY(-75vh);
+    transform: translateY(-75%);
   }
   66.5% {
-    transform: translateY(-50px);
+    transform: translateY(-5%);
   }
   72% {
-    transform: translateY(25px);
+    transform: translateY(2.5%);
   }
   75% {
-    transform: translateY(40px);
+    transform: translateY(4%);
   }
   82.5% {
-    transform: translateY(50px);
+    transform: translateY(5%);
   }
   87.5% {
-    transform: translateY(45px);
+    transform: translateY(4.5%);
   }
   90% {
-    transform: translateY(40px);
+    transform: translateY(4%);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0%);
   }
 }
 @keyframes hide-greeting {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0%);
   }
   33% {
-    transform: translateY(40px);
+    transform: translateY(4%);
   }
   44% {
-    transform: translateY(45px);
+    transform: translateY(4.5%);
   }
   50% {
-    transform: translateY(50px);
+    transform: translateY(5%);
   }
   65% {
-    transform: translateY(40px);
+    transform: translateY(4%);
   }
   75% {
-    transform: translateY(25px);
+    transform: translateY(2.5%);
   }
   80% {
-    transform: translateY(-50px);
+    transform: translateY(-5%);
   }
   100% {
-    transform: translateY(-75vh);
+    transform: translateY(-75%);
   }
 }
 @keyframes show-footer {
@@ -279,47 +275,33 @@
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: 769px) {
+  $section-height: calc(100vh - 80px);
+  $section-min-height: 500px;
+
+  .screen {
+    height: $section-height;
+    min-height: $section-min-height;
+  }
   .main {
     padding-top: 80px;
-    height: calc(100vh - 80px);
     padding-left: 65px;
     padding-right: 65px;
-    min-height: 500px;
   }
   .footerContainer {
     height: 170px;
-  }
-  .left {
-    height: calc(100vh - 80px);
-    min-height: 500px;
-  }
-  .right {
-    height: calc(100vh - 80px);
-    min-height: 500px;
-  }
-  .menuModalContainer {
-    height: calc(100vh - 80px);
-    min-height: 500px;
   }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: 1899px) {
+  $section-height: calc(100vh - 90px);
+  $section-min-height: 600px;
+
+  .screen {
+    height: $section-height;
+    min-height: $section-min-height;
+  }
   .main {
     padding-top: 90px;
-    height: calc(100vh - 90px);
-    min-height: 600px;
-  }
-  .left {
-    height: calc(100vh - 90px);
-    min-height: 600px;
-  }
-  .right {
-    height: calc(100vh - 90px);
-    min-height: 600px;
-  }
-  .menuModalContainer {
-    height: calc(100vh - 90px);
-    min-height: 600px;
   }
 }

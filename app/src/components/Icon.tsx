@@ -7,8 +7,10 @@ const Icon = ({iconPressed} : {iconPressed: MouseEventHandler}) => {
         <Link to={'home'} className="iconContainer" onClick={iconPressed}>
             <div className='topTriangle'/>
             <div className='bottomTriangle'/>
-            <div className='topLightningBolt'/>
-            <div className='bottomLightningBolt'/>
+            <div className='lightningBoltContainer'>
+                <div className='topLightningBolt'/>
+                <div className='bottomLightningBolt'/>
+            </div>
         </Link>
     );
 }

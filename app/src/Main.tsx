@@ -20,10 +20,10 @@ const Main = () => {
   }
 
   return (
-    <div className="main">
+    <div className="main screen">
       {/* <Background/> */}
-      <div className='left' id= {menuOpen === undefined ? undefined : menuOpen ? 'left-open' : 'left-closed'}/>
-      <div className='right' id= {menuOpen === undefined ? undefined : menuOpen ? 'right-open' : 'right-closed'}/>
+      <div className='left screen' id= {menuOpen === undefined ? undefined : menuOpen ? 'left-open' : 'left-closed'}/>
+      <div className='right screen' id= {menuOpen === undefined ? undefined : menuOpen ? 'right-open' : 'right-closed'}/>
       <div className='headerContainer'>
         <Header/>
       </div>
@@ -33,7 +33,7 @@ const Main = () => {
       <div className='footerContainer' id={menuOpen === undefined ? undefined : menuOpen ? 'hide-footer' : 'show-footer'}>
         <Footer menuButtonPressed={openMenu}/>     
       </div>  
-      <div className='menuModalContainer'>
+      <div className='menuModalContainer screen'>
         <MenuModal menuIsRevealed={menuOpen} closeButtonPressed={closeMenu}/>
       </div>  
     </div>

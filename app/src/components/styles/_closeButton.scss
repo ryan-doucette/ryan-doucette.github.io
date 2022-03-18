@@ -12,6 +12,21 @@
   border-radius: 100%;
 }
 
+// These prevent endless spinning on Firefox mobile devices
+@-moz-document url-prefix() {
+  #hovering {
+    animation: none;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    #hovering {
+      animation: none;
+    }
+  }
+}
+
 #hovering {
   animation: spinCloseButton 2s 0.5s infinite;
 }
