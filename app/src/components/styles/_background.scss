@@ -1,17 +1,37 @@
+// from: https://codepen.io/Rowno/pen/EVEgJb
 .background {
-  background-color: purple;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%; // IE/Edge
+    height: 100%; // fallback
+    width: 100vmax;
+    height: 100vmax;
+    background: rgba(0, 0, 0, 0.1);
+    animation: background 60s linear infinite;
+  }
+
+  &:after {
+    left: 15%;
+  }
+
+  &:before {
+    right: 15%;
+    animation-delay: -20s;
+    animation-direction: reverse;
+  }
 }
 
-.test {
-  position: relative;
-  width: 0;
-  height: 0;
-  border-bottom: solid 50px black;
-  border-right: solid 30px transparent;
-  border-left: solid 30px transparent;
+@keyframes background {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

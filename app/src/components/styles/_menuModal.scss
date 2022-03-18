@@ -1,8 +1,12 @@
 @use "../../theme";
 .menuModal {
-  overflow: hidden;
   display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
+  align-items: center;
+  background-color: theme.$highlight;
+  white-space: nowrap;
 }
 .closeButtonContainer {
   position: absolute;
@@ -71,7 +75,6 @@
 .closeButtonContainer {
   width: 65px;
   height: 65px;
-  left: calc(50vw - 32.5px);
 }
 
 @media (min-width: 481px) {
