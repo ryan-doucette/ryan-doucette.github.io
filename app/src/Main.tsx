@@ -12,11 +12,9 @@ const Main = () => {
   const [menuOpen, setMenuOpen] = useState<boolean | undefined>(undefined);
   const openMenu = () => {
     setMenuOpen(true);
-    console.log(menuOpen);
   }
   const closeMenu = () => {
     setMenuOpen(false);
-    console.log(menuOpen);
   }
 
   return (

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import './styles/_header.scss';
 import './styles/_hamburgerStyle.scss';
@@ -77,7 +77,7 @@ const Header = () => {
       <section className='linksSection'>
         <nav className="burgerMenu" role="navigation">
           <div id="menuToggle">
-            <input checked={dropdownOpen} type="checkbox" onClick={() => toggleDropdown()}/>
+            <input checked={dropdownOpen} type="checkbox" onChange={() => toggleDropdown()} />
             <span></span>
             <span></span>
             <span></span>
@@ -87,16 +87,20 @@ const Header = () => {
           <div id="dropDown" className="overlay" style={dropdownOpen ? {height: '100%'} : {height: '0%'}}>
               <div className="overlay-content">
                 {tabCategories.map(category => (
-                  <Link to={category.toLowerCase()} onClick={() => {closeDropdown(); updateTab(category)}}>{category}</Link>
+                  <Link 
+                    key={category} 
+                    to={category.toLowerCase()} 
+                    onClick={() => {closeDropdown(); 
+                    updateTab(category)}}>{category}
+                  </Link>
                 ))}
               </div>
           </div>
         <div id='desktopHeader'>
           { tabCategories.map(category => (
-            <>
+            <Fragment key={category}>
               <div id={category.toLowerCase() + '-container'} className='categoryContainer'>
-                <Link 
-                  key={category} 
+                <Link
                   className={currTab === category ? 'selected links' : 'links'} 
                   id={ category.toLowerCase() } 
                   to={category.toLowerCase()}
@@ -104,14 +108,13 @@ const Header = () => {
                 >
                   { category }
                 </Link>
-                
               </div>
               { 
                 tabCategories.indexOf(category) === tabCategories.length - 1 ? 
                   <></> :
                   <div className='spacer'/>    
               }
-            </>
+            </Fragment>
           )) }
           <div 
             className='selectionIndicator'

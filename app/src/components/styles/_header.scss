@@ -28,6 +28,8 @@
   height: 0%;
   width: 100%;
   position: fixed;
+  display: flex;
+  align-items: center;
   z-index: 1;
   top: 0;
   left: 0;
@@ -39,7 +41,6 @@
 
 .overlay-content {
   position: relative;
-  top: 25%;
   width: 100%;
   text-align: center;
   margin-top: 30px;
