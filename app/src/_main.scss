@@ -1,24 +1,18 @@
 @use "./theme";
 
-$section-height: calc(100vh - 65px);
 .screen {
-  height: $section-height;
-  min-height: 450px;
+  height: 100%;
+  min-height: 515px;
 }
 
 .main {
   position: relative;
   display: flex;
   justify-content: center;
-  padding-top: 65px;
   padding-left: 20px;
   padding-right: 20px;
   overflow: hidden;
   z-index: 1;
-}
-.headerContainer {
-  z-index: 2;
-  display: block;
 }
 .greetingContainer {
   display: flex;
@@ -224,14 +218,10 @@ $section-height: calc(100vh - 65px);
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: 769px) {
-  $section-height: calc(100vh - 80px);
-
   .screen {
-    height: $section-height;
-    min-height: 500px;
+    min-height: 580px;
   }
   .main {
-    padding-top: 80px;
     padding-left: 65px;
     padding-right: 65px;
   }
@@ -242,13 +232,7 @@ $section-height: calc(100vh - 65px);
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: 1899px) {
-  $section-height: calc(100vh - 90px);
-
   .screen {
-    height: $section-height;
-    min-height: 600px;
-  }
-  .main {
-    padding-top: 90px;
+    min-height: 690px;
   }
 }

@@ -1,15 +1,28 @@
 import './_main.scss';
 import Greeting from '../src/components/Greeting';
-import Header from './components/Header';
 import Footer from './components/Footer';
 import MenuModal from './components/MenuModal';
 import Background from './components/Background';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import React from 'react';
 
 const Main = () => {
 
   const [menuOpen, setMenuOpen] = useState<boolean | undefined>(undefined);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+  const handleWindowResize = useCallback(event => {
+    setWindowHeight(window.innerHeight);
+  }, []); 
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, [handleWindowResize]);
+  
   const openMenu = () => {
     setMenuOpen(true);
   }
@@ -18,11 +31,8 @@ const Main = () => {
   }
 
   return (
-    <div className="main screen">
+    <div className="main screen" style={{ height: windowHeight }}>
       <Background/>
-      <div className='headerContainer'>
-        <Header/>
-      </div>
       <div className='greetingContainer' id= {menuOpen === undefined ? undefined : menuOpen ? 'hide-greeting' : 'show-greeting'}>
         <Greeting/>
       </div>

@@ -10,11 +10,12 @@
   white-space: nowrap;
 }
 .previewsContainer {
+  margin-top: 65px;
   width: 85%;
 }
 .closeButtonContainer {
   position: absolute;
-  top: 26px;
+  top: 85px;
   left: 30px;
   width: 48px;
   height: 48px;
@@ -83,7 +84,7 @@
     transform: translateY(-8%);
   }
   38% {
-    transform: translateY(-11%);
+    transform: translateY(-10%);
   }
   51% {
     transform: translateY(-8%);
@@ -126,97 +127,23 @@
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: 481px) {
   .closeButtonContainer {
-    top: 24px;
+    top: 85px;
     left: 30px;
   }
-
-  // @keyframes showPreview {
-  //   0%,
-  //   65% {
-  //     pointer-events: none;
-  //     bottom: -102px;
-  //   }
-  //   74% {
-  //     bottom: 50px;
-  //   }
-  //   78% {
-  //     bottom: 110px;
-  //   }
-  //   83% {
-  //     bottom: 120px;
-  //   }
-  //   87% {
-  //     bottom: 113px;
-  //   }
-  //   90% {
-  //     bottom: 80px;
-  //   }
-  //   95%,
-  //   100% {
-  //     pointer-events: all;
-  //     bottom: 65px;
-  //   }
-  // }
-  // @keyframes hideCloseButton {
-  //   0% {
-  //     pointer-events: none;
-  //     bottom: 65px;
-  //   }
-  //   100% {
-  //     pointer-events: none;
-  //     bottom: -102px;
-  //   }
-  // }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: 769px) {
   .previewsContainer {
+    margin-top: 80px;
     width: 65%;
   }
   .closeButtonContainer {
-    top: 28px;
+    top: 100px;
     left: 58px;
     width: 55px;
     height: 55px;
   }
-  // @keyframes showPreview {
-  //   0%,
-  //   50% {
-  //     transform: translateY(150%);
-  //   }
-  //   66.5% {
-  //     transform: translateY(5%);
-  //   }
-  //   72% {
-  //     transform: translateY(-2.5%);
-  //   }
-  //   75% {
-  //     transform: translateY(-4%);
-  //   }
-  //   82.5% {
-  //     transform: translateY(-5%);
-  //   }
-  //   87.5% {
-  //     transform: translateY(-4.5%);
-  //   }
-  //   90% {
-  //     transform: translateY(-4%);
-  //   }
-  //   100% {
-  //     transform: translateY(0%);
-  //   }
-  // }
-  // @keyframes hidePreview {
-  //   0% {
-  //     pointer-events: none;
-  //     bottom: 83px;
-  //   }
-  //   100% {
-  //     pointer-events: none;
-  //     bottom: -102px;
-  //   }
-  // }
 }
 
 /* ******************* DESKTOP VIEW 2 ******************* */
@@ -229,7 +156,7 @@
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: 1899px) {
   .closeButtonContainer {
-    top: 32px;
+    top: 110px;
     left: 66px;
     width: 60px;
     height: 60px;

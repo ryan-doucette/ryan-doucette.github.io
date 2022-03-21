@@ -10,22 +10,22 @@ const categories: category[] = [
         },
         {
             identifier: 'Skills',
-            description: "I'm a frontend software developer currently interning at Smartsheet",
+            description: "Fluency within computer science and design is important to me",
             link: 'Skills'
         },
         {
             identifier: 'Experience',
-            description: "I'm a frontend software developer currently interning at Smartsheet",
+            description: "Professional experience and personal projects have shaped my practices",
             link: 'Experience'
         },
         {
             identifier: 'Ruumzy',
-            description: "I'm a frontend software developer currently interning at Smartsheet",
+            description: "The future of subletting apartments is here",
             link: 'Experience'
         },
         {
             identifier: 'Contact',
-            description: "I'm a frontend software developer currently interning at Smartsheet",
+            description: "I'm always looking for new projects, feel free to reach out!",
             link: 'Contact'
         },
 ];

@@ -5,11 +5,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //   background-color: blue;
   padding: 24px;
+  overflow: hidden;
+}
+.previewContainer {
+  transform-origin: bottom;
+  overflow: hidden;
+}
+#preview-transitioning {
+  animation: previewTransitioning 0.5s forwards;
 }
 .toggleSection {
-  //   background-color: green;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -37,6 +43,25 @@
   animation: spinSelectedOption 0.5s ease-in-out;
 }
 
+@keyframes previewTransitioning {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-500px);
+  }
+  51% {
+    display: none;
+  }
+  52% {
+    display: block;
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 @keyframes spinSelectedOption {
   0% {
     transform: rotate(45deg);
@@ -57,12 +82,67 @@
     margin-left: 15px;
     margin-right: 15px;
   }
+
+  @keyframes previewTransitioning {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(-750px);
+    }
+    51% {
+      display: none;
+    }
+    52% {
+      display: block;
+      transform: translateX(750px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: 769px) {
+  @keyframes previewTransitioning {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(-1000px);
+    }
+    51% {
+      display: none;
+    }
+    52% {
+      display: block;
+      transform: translateX(1000px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: 1899px) {
+  @keyframes previewTransitioning {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(-1500px);
+    }
+    51% {
+      display: none;
+    }
+    52% {
+      display: block;
+      transform: translateX(1500px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
 }

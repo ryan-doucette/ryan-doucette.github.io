@@ -6,9 +6,9 @@ import './styles/_preview.scss';
 const Preview = ({currentCategory} : {currentCategory:category}) => {
     return (
         <div className="preview">
-            <div className='previewImage'/>
-            <div className='description'>{currentCategory.description}</div>
-            <Link to={currentCategory.link.toLowerCase()} className='tellMeMore'>tell me more</Link>
+            <div className='previewImage' id='preview-image'/>
+            <div className='description' id='description'>{currentCategory.description}</div>
+            <Link to={currentCategory.link.toLowerCase()} className='tellMeMore' id='more-button'>{currentCategory.identifier === 'Contact' ? 'contact' : 'tell me more'}</Link>
         </div>
     );
 }

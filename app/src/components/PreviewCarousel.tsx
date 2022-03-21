@@ -8,21 +8,31 @@ import categories from './PreviewData';
 
 const PreviewCarousel = ({menuRevealed} : {menuRevealed:boolean|undefined}) => {
 
-    const [currOption, setCurrOption] = useState(categories[0])
+    const [currOption, setCurrOption] = useState(categories[0]);
+    const [currTab, setCurrTab] = useState(categories[0]);
+    const [previewTransitioning, setPreviewTransitioning] = useState(false);
+    // duration is previewDuration / 1000 seconds
+    const previewDuration: number = 7000;
 
     useEffect(() => {
         if(menuRevealed) {
             setCurrOption(categories[0]);
+            setCurrTab(categories[0]);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [menuRevealed]);
 
-    useEffect(() => {
-
-    });
-
     const toggleSection = (selectedCategory: category) => {
-        setCurrOption(selectedCategory);
+        setPreviewTransitioning(true);
+        setCurrTab(selectedCategory);
+        // wait till half animation is done
+        setTimeout(() => {
+            setCurrOption(selectedCategory);
+        }, 250);
+        // wait till full animation is done
+        setTimeout(() => {
+            setPreviewTransitioning(false);
+        }, 500);    
     }
 
     const autoScrollOptions = () => {
@@ -32,26 +42,27 @@ const PreviewCarousel = ({menuRevealed} : {menuRevealed:boolean|undefined}) => {
             if (category.identifier === currOption.identifier) {
                 currIndex = categories.indexOf(category);                
                 const nextIndex: number = currIndex === categories.length - 1 ? 0 : currIndex + 1;
-                setCurrOption(categories[nextIndex]);
+                toggleSection(categories[nextIndex]);
             }
         })
     };
 
     useInterval(() => {
         autoScrollOptions();
-    }, 7500); 
+    }, previewDuration); 
 
     return (
         <div className="previewCarousel">
-            <Preview currentCategory={currOption}/>
+            <div className='previewContainer' id={previewTransitioning ? 'preview-transitioning' : undefined}>
+                <Preview currentCategory={currOption}/>
+            </div>
             <section className='toggleSection'>
                 { categories.map((category) => (
-             
                     <div 
                         key={category.identifier} 
                         className='option'
-                        id = {currOption.identifier === category.identifier ? 'selected' : undefined}
-                        onClick={() => toggleSection(category)}
+                        id = {currTab.identifier === category.identifier ? 'selected' : undefined}
+                        onClick={() => previewTransitioning ? null :  toggleSection(category)}
                     />
                 )) }
             </section>
