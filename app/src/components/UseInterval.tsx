@@ -1,24 +1,33 @@
-// From: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
-import { useEffect, useRef } from 'react';
+// Initial component from: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
+// Revisions made based on Adam Katz response: https://stackoverflow.com/questions/66043252/react-hooks-useinterval-reset-after-button-click
+import { MutableRefObject, useEffect, useRef } from 'react';
 
 const useInterval = (callback: any, delay: number) => {
-  const savedCallback = useRef<any>();
+  const intervalIdRef: MutableRefObject<any> = useRef();
 
-  // Remember the latest callback.
+  // handle tick
   useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
+    const tick = () => {
+      callback();
+    };
 
-  // Set up the interval.
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
     if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
+      intervalIdRef.current = setInterval(tick, delay);
     }
-  }, [delay]);
-}
+
+    const id = intervalIdRef.current;
+    return () => {
+      clearInterval(id);
+    };
+  });
+
+  // handle unmount
+  useEffect(() => {
+    const id = intervalIdRef.current;
+    return () => {
+      clearInterval(id);
+    };
+  }, []);
+};
 
 export default useInterval;

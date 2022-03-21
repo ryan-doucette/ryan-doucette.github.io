@@ -1,6 +1,7 @@
 @use "../../theme";
 .menuModal {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -8,16 +9,22 @@
   background-color: theme.$highlight;
   white-space: nowrap;
 }
+.previewsContainer {
+  margin-top: 65px;
+  width: 85%;
+}
 .closeButtonContainer {
   position: absolute;
-  width: 55px;
-  height: 55px;
+  top: 85px;
+  left: 30px;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.3s ease-in-out;
-  z-index: 1000;
+  margin-bottom: 100px;
 }
 
 .closeButtonContainer:hover {
@@ -25,139 +32,133 @@
   -webkit-transform: scale(1.2, 1.2);
 }
 
+#showPreview {
+  animation: showPreview 2s linear forwards;
+}
+#hidePreview {
+  animation: hidePreview 1s linear forwards;
+}
 #showCloseButton {
-  animation: showCloseButton 1.55s linear forwards;
+  animation: showCloseButton 2s linear forwards;
+}
+#hideCloseButton {
+  animation: hideCloseButton 0.3s 0.2s linear forwards;
 }
 
-#hideCloseButton {
-  animation: hideCloseButton 1s linear forwards;
+@keyframes showPreview {
+  0%,
+  55% {
+    transform: translateY(300%);
+  }
+  64% {
+    transform: translateY(5%);
+  }
+  66% {
+    transform: translateY(-4.5%);
+  }
+  69% {
+    transform: translateY(-8%);
+  }
+  72% {
+    transform: translateY(-11%);
+  }
+  75% {
+    transform: translateY(-8%);
+  }
+  77% {
+    transform: translateY(-5%);
+  }
+  79%,
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes hidePreview {
+  0% {
+    transform: translateY(0%);
+  }
+  15% {
+    transform: translateY(-5%);
+  }
+  25% {
+    transform: translateY(-8%);
+  }
+  38% {
+    transform: translateY(-10%);
+  }
+  51% {
+    transform: translateY(-8%);
+  }
+  61% {
+    transform: translateY(-4.5%);
+  }
+  68% {
+    transform: translateY(5%);
+  }
+  90%,
+  100% {
+    transform: translateY(300%);
+  }
 }
 
 @keyframes showCloseButton {
   0%,
-  65% {
-    pointer-events: none;
-    bottom: -102px;
+  75% {
+    transform: translateX(-200px);
   }
-  74% {
-    bottom: 30px;
+  79% {
+    transform: translateX(-50px);
   }
-  78% {
-    bottom: 77px;
-  }
-  83% {
-    bottom: 85px;
-  }
-  87% {
-    bottom: 77px;
-  }
-  90% {
-    bottom: 60px;
-  }
-  95%,
+  85%,
   100% {
-    pointer-events: all;
-    bottom: 47px;
+    transform: translateX(0px);
   }
 }
+
 @keyframes hideCloseButton {
   0% {
-    pointer-events: none;
-    bottom: 47px;
+    transform: translateX(0px);
   }
   100% {
-    pointer-events: none;
-    bottom: -102px;
+    transform: translateX(-200px);
   }
 }
 
 /* ******************* TABLET VIEW ******************* */
-.closeButtonContainer {
-  width: 65px;
-  height: 65px;
-}
-
 @media (min-width: 481px) {
-  @keyframes showCloseButton {
-    0%,
-    65% {
-      pointer-events: none;
-      bottom: -102px;
-    }
-    74% {
-      bottom: 50px;
-    }
-    78% {
-      bottom: 110px;
-    }
-    83% {
-      bottom: 120px;
-    }
-    87% {
-      bottom: 113px;
-    }
-    90% {
-      bottom: 80px;
-    }
-    95%,
-    100% {
-      pointer-events: all;
-      bottom: 65px;
-    }
-  }
-  @keyframes hideCloseButton {
-    0% {
-      pointer-events: none;
-      bottom: 65px;
-    }
-    100% {
-      pointer-events: none;
-      bottom: -102px;
-    }
+  .closeButtonContainer {
+    top: 85px;
+    left: 30px;
   }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
-@media (min-width: 481px) {
-  @keyframes showCloseButton {
-    0%,
-    65% {
-      pointer-events: none;
-      bottom: -102px;
-    }
-    74% {
-      bottom: 50px;
-    }
-    78% {
-      bottom: 120px;
-    }
-    83% {
-      bottom: 130px;
-    }
-    87% {
-      bottom: 115px;
-    }
-    90% {
-      bottom: 80px;
-    }
-    95%,
-    100% {
-      pointer-events: all;
-      bottom: 83px;
-    }
+@media (min-width: 769px) {
+  .previewsContainer {
+    margin-top: 80px;
+    width: 65%;
   }
-  @keyframes hideCloseButton {
-    0% {
-      pointer-events: none;
-      bottom: 83px;
-    }
-    100% {
-      pointer-events: none;
-      bottom: -102px;
-    }
+  .closeButtonContainer {
+    top: 100px;
+    left: 58px;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* ******************* DESKTOP VIEW 2 ******************* */
+@media (min-width: 980px) {
+  .previewsContainer {
+    width: 55%;
   }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
-@media (min-width: 1921px) {
+@media (min-width: 1899px) {
+  .closeButtonContainer {
+    top: 110px;
+    left: 66px;
+    width: 60px;
+    height: 60px;
+  }
 }

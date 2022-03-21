@@ -41,14 +41,6 @@
   align-items: center;
 }
 
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    .lightningBoltContainer {
-      margin-right: 5px;
-    }
-  }
-}
-
 .topLightningBolt {
   position: absolute;
   top: 19.9px;

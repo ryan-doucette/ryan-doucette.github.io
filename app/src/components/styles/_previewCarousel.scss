@@ -1,0 +1,148 @@
+@use "../../theme.scss";
+
+.previewCarousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  overflow: hidden;
+}
+.previewContainer {
+  transform-origin: bottom;
+  overflow: hidden;
+}
+#preview-transitioning {
+  animation: previewTransitioning 0.5s forwards;
+}
+.toggleSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+}
+.option {
+  transform: rotate(45deg);
+  width: 13px;
+  height: 13px;
+  border: 2px theme.$alternate solid;
+  margin-left: 13px;
+  margin-right: 13px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.option:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: rotate(135deg);
+}
+
+#selected {
+  background-color: theme.$alternate;
+  animation: spinSelectedOption 0.5s ease-in-out;
+}
+
+@keyframes previewTransitioning {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-500px);
+  }
+  51% {
+    display: none;
+  }
+  52% {
+    display: block;
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes spinSelectedOption {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: 481px) {
+  .toggleSection {
+    margin-top: 28px;
+  }
+  .option {
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  @keyframes previewTransitioning {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(-750px);
+    }
+    51% {
+      display: none;
+    }
+    52% {
+      display: block;
+      transform: translateX(750px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: 769px) {
+  @keyframes previewTransitioning {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(-1000px);
+    }
+    51% {
+      display: none;
+    }
+    52% {
+      display: block;
+      transform: translateX(1000px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: 1899px) {
+  @keyframes previewTransitioning {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(-1500px);
+    }
+    51% {
+      display: none;
+    }
+    52% {
+      display: block;
+      transform: translateX(1500px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}
