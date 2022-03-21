@@ -59,11 +59,15 @@ const PreviewCarousel = ({menuRevealed} : {menuRevealed:boolean|undefined}) => {
             <section className='toggleSection'>
                 { categories.map((category) => (
                     <div 
-                        key={category.identifier} 
-                        className='option'
-                        id = {currTab.identifier === category.identifier ? 'selected' : undefined}
+                        className='optionContainer'
                         onClick={() => previewTransitioning ? null :  toggleSection(category)}
-                    />
+                    >
+                        <div 
+                            key={category.identifier} 
+                            className='option'
+                            id = {currTab.identifier === category.identifier ? 'selected' : undefined}
+                        />
+                    </div>
                 )) }
             </section>
         </div>
