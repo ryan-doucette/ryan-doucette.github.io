@@ -32,8 +32,8 @@
 }
 
 .leftright {
-  height: 4px;
-  width: 43px;
+  height: 3px;
+  width: 32px;
   position: absolute;
   background-color: theme.$alternate;
   border-radius: 2px;
@@ -42,8 +42,8 @@
 }
 
 .rightleft {
-  height: 4px;
-  width: 43px;
+  height: 3px;
+  width: 32px;
   position: absolute;
   background-color: theme.$alternate;
   border-radius: 2px;
@@ -74,5 +74,31 @@
   }
   100% {
     transform: rotate(720deg);
+  }
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: 481px) {
+  .leftright {
+    height: 3px;
+    width: 32px;
+  }
+
+  .rightleft {
+    height: 3px;
+    width: 32px;
+  }
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: 769px) {
+  .leftright {
+    height: 4px;
+    width: 38px;
+  }
+
+  .rightleft {
+    height: 4px;
+    width: 38px;
   }
 }

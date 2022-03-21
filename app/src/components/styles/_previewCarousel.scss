@@ -1,12 +1,12 @@
 @use "../../theme.scss";
 
 .previewCarousel {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   //   background-color: blue;
+  padding: 24px;
 }
 .toggleSection {
   //   background-color: green;
@@ -14,16 +14,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 45px;
-  margin-bottom: 30px;
+  margin-top: 28px;
 }
 .option {
   transform: rotate(45deg);
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   border: 2px theme.$alternate solid;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 13px;
+  margin-right: 13px;
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
@@ -45,4 +44,25 @@
   100% {
     transform: rotate(135deg);
   }
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: 481px) {
+  .toggleSection {
+    margin-top: 28px;
+  }
+  .option {
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: 769px) {
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: 1899px) {
 }

@@ -1,10 +1,9 @@
 @use "./theme";
 
 $section-height: calc(100vh - 65px);
-$section-min-height: 450px;
 .screen {
   height: $section-height;
-  min-height: $section-min-height;
+  min-height: 450px;
 }
 
 .main {
@@ -47,16 +46,16 @@ $section-min-height: 450px;
   animation: open-menu 0.5s 0.75s linear forwards;
 }
 #menu-closed {
-  animation: close-menu 0.5s linear forwards;
+  animation: close-menu 1.5s linear forwards;
 }
 #show-greeting {
-  animation: show-greeting 1s linear forwards;
+  animation: show-greeting 2.25s linear forwards;
 }
 #hide-greeting {
   animation: hide-greeting 0.65s linear forwards;
 }
 #show-footer {
-  animation: show-footer 1s linear forwards;
+  animation: show-footer 2.25s linear forwards;
 }
 #hide-footer {
   animation: hide-footer 0.65s linear forwards;
@@ -66,13 +65,13 @@ $section-min-height: 450px;
   0% {
     width: 0;
   }
-  20% {
+  50% {
     width: 3%;
   }
-  35% {
+  65% {
     width: 10%;
   }
-  50% {
+  80% {
     width: 20%;
   }
   100% {
@@ -80,16 +79,17 @@ $section-min-height: 450px;
   }
 }
 @keyframes close-menu {
-  0% {
+  0%,
+  66% {
     width: 100%;
   }
-  50% {
+  80% {
     width: 20%;
   }
-  65% {
+  81% {
     width: 10%;
   }
-  80% {
+  83% {
     width: 3%;
   }
   100% {
@@ -99,27 +99,29 @@ $section-min-height: 450px;
 
 @keyframes show-greeting {
   0%,
-  50% {
+  70% {
+    display: block;
     transform: translateY(-75%);
   }
-  66.5% {
+  77% {
     transform: translateY(-5%);
   }
-  72% {
+  81% {
     transform: translateY(2.5%);
   }
-  75% {
+  83% {
     transform: translateY(4%);
   }
-  82.5% {
+  84% {
     transform: translateY(5%);
   }
-  87.5% {
+  85% {
     transform: translateY(4.5%);
   }
-  90% {
+  87% {
     transform: translateY(4%);
   }
+  91%,
   100% {
     transform: translateY(0%);
   }
@@ -152,28 +154,29 @@ $section-min-height: 450px;
 }
 @keyframes show-footer {
   0%,
-  50% {
+  70% {
     pointer-events: none;
     bottom: -170px;
   }
-  66.5% {
+  77% {
     bottom: -80px;
   }
-  72% {
+  81% {
     bottom: 25px;
   }
-  75% {
+  83% {
     bottom: 40px;
   }
-  82.5% {
+  84% {
     bottom: 50px;
   }
-  87.5% {
+  85% {
     bottom: 45px;
   }
-  90% {
+  87% {
     bottom: 40px;
   }
+  91%,
   100% {
     pointer-events: all;
     bottom: 0;
@@ -222,11 +225,10 @@ $section-min-height: 450px;
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: 769px) {
   $section-height: calc(100vh - 80px);
-  $section-min-height: 500px;
 
   .screen {
     height: $section-height;
-    min-height: $section-min-height;
+    min-height: 500px;
   }
   .main {
     padding-top: 80px;
@@ -241,11 +243,10 @@ $section-min-height: 450px;
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: 1899px) {
   $section-height: calc(100vh - 90px);
-  $section-min-height: 600px;
 
   .screen {
     height: $section-height;
-    min-height: $section-min-height;
+    min-height: 600px;
   }
   .main {
     padding-top: 90px;

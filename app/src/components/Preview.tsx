@@ -6,8 +6,8 @@ import './styles/_preview.scss';
 const Preview = ({currentCategory} : {currentCategory:category}) => {
     return (
         <div className="preview">
-            {/* Image */}
-            <h2>{currentCategory.description}</h2>
+            <div className='previewImage'/>
+            <div className='description'>{currentCategory.description}</div>
             <Link to={currentCategory.link.toLowerCase()} className='tellMeMore'>tell me more</Link>
         </div>
     );
