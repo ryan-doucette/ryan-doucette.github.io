@@ -1,12 +1,12 @@
-import './_main.scss';
-import Greeting from '../src/components/Greeting';
-import Footer from './components/Footer';
-import MenuModal from './components/MenuModal';
-import Background from './components/Background';
+import './styles/_home.scss';
+import Greeting from '../home/Greeting';
+import Footer from '../home/Footer';
+import MenuModal from './menuModal/MenuModal';
+import Background from './Background';
 import { useCallback, useEffect, useState } from 'react';
 import React from 'react';
 
-const Main = () => {
+const Home = () => {
 
   const [menuOpen, setMenuOpen] = useState<boolean | undefined>(undefined);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
@@ -31,7 +31,7 @@ const Main = () => {
   }
 
   return (
-    <div className="main screen" style={{ height: windowHeight }}>
+    <div className="home screen" style={{ height: windowHeight }}>
       <Background/>
       <div className='greetingContainer' id= {menuOpen === undefined ? undefined : menuOpen ? 'hide-greeting' : 'show-greeting'}>
         <Greeting/>
@@ -46,4 +46,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default Home;

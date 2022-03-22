@@ -1,11 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './styles/_header.scss';
 import './styles/_hamburgerStyle.scss';
 import Icon from './Icon';
 
 const Header = () => {
+
+  const currentPath = useLocation().pathname;
+  const currentTab: string = currentPath === '/' ? 'home' : currentPath.slice(1);
+
+  useEffect(() => {
+    updateSelectorPosition(currentTab + '-container');
+  }, [currentPath, currentTab])
 
   const tabCategories: string[] = ['Home', 'About', 'Skills', 'Experience', 'Contact']; 
 
@@ -33,10 +40,6 @@ const Header = () => {
     const selector = document.getElementById('selection-indicator')!;
     newTab?.appendChild(selector);
   }, []);
-
-  useEffect(() => {
-    updateSelectorPosition(currTab.toLowerCase() + '-container');
-  }, [currTab]);
 
   const updateSelectorPosition = (id: string) => {
     const newParent = document.getElementById(id);
@@ -89,7 +92,7 @@ const Header = () => {
                 {tabCategories.map(category => (
                   <Link 
                     key={category} 
-                    to={category.toLowerCase()} 
+                    to={category === 'Home' ? '/' : category.toLowerCase()} 
                     onClick={() => {closeDropdown(); 
                     updateTab(category)}}>{category}
                   </Link>
@@ -103,7 +106,7 @@ const Header = () => {
                 <Link
                   className={currTab === category ? 'selected links' : 'links'} 
                   id={ category.toLowerCase() } 
-                  to={category.toLowerCase()}
+                  to={category === 'Home' ? '/' : category.toLowerCase()}
                   onClick={() => updateTab(category)}
                 >
                   { category }
