@@ -1,11 +1,11 @@
-@use "./theme";
+@use "../../../../theme";
 
 .screen {
   height: 100%;
   min-height: 515px;
 }
 
-.main {
+.home {
   position: relative;
   display: flex;
   justify-content: center;
@@ -207,7 +207,7 @@
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: 481px) {
-  .main {
+  .home {
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -221,7 +221,7 @@
   .screen {
     min-height: 580px;
   }
-  .main {
+  .home {
     padding-left: 65px;
     padding-right: 65px;
   }

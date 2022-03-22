@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Preview from './Preview';
 import './styles/_previewCarousel.scss';
-import useInterval from './UseInterval';
+import useInterval from '../../../../customHooks/UseInterval';
 import category from 'customTypes';
 import categories from './PreviewData';
 

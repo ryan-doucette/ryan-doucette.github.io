@@ -4,7 +4,7 @@ import './styles/_icon.scss';
 
 const Icon = ({iconPressed} : {iconPressed: MouseEventHandler}) => {
     return (
-        <Link to={'home'} className="iconContainer" onClick={iconPressed}>
+        <Link to={'/'} className="iconContainer" onClick={iconPressed}>
             <div className='topTriangle'/>
             <div className='bottomTriangle'/>
             <div className='lightningBoltContainer'>
