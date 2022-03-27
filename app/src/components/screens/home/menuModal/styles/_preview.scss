@@ -7,14 +7,14 @@
   align-items: center;
   white-space: normal;
   text-align: center;
-  padding: 16px;
-  height: 50%;
+  padding: 18px;
 }
 .previewImage {
-  width: 135px;
-  height: 135px;
+  width: 220px;
+  height: 110px;
   margin-bottom: 12px;
-  background-color: green;
+  background-repeat: "no-repeat";
+  background-size: cover;
 }
 .description {
   color: theme.$alternate;
@@ -46,10 +46,33 @@
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: 481px) {
   .preview {
-    padding: 12px;
+    padding: 20px;
   }
   .previewImage {
     margin-bottom: 12px;
+  }
+  .tellMeMore {
+    width: 130px;
+    height: 32px;
+    border: 2px theme.$alternate solid;
+    border-radius: 8px;
+    font-size: 20px;
+  }
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: 769px) {
+  .preview {
+    padding: 30px;
+  }
+  .previewImage {
+    width: 300px;
+    height: 150px;
+    margin-bottom: 12px;
+  }
+  .description {
+    font-size: 32px;
+    line-height: 36px;
   }
   .tellMeMore {
     width: 160px;
@@ -57,19 +80,6 @@
     border: 2px theme.$alternate solid;
     border-radius: 8px;
     font-size: 24px;
-  }
-}
-
-/* ******************* DESKTOP VIEW ******************* */
-@media (min-width: 769px) {
-  .previewImage {
-    width: 175px;
-    height: 175px;
-    margin-bottom: 12px;
-  }
-  .description {
-    font-size: 32px;
-    line-height: 36px;
   }
 }
 
@@ -84,8 +94,8 @@
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: 1899px) {
   .previewImage {
-    width: 190px;
-    height: 190px;
+    width: 350px;
+    height: 175px;
     margin-bottom: 18px;
   }
   .description {
@@ -94,5 +104,18 @@
   }
   .tellMeMore {
     margin-top: 24px;
+  }
+}
+
+/* ******************* SMALL MOBILE VIEW ******************* */
+@media (max-width: 367px) {
+  .previewImage {
+    width: 160px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  .description {
+    font-size: 24px;
+    line-height: 28px;
   }
 }

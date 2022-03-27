@@ -5,12 +5,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 20px;
   overflow: hidden;
 }
 .previewContainer {
   transform-origin: bottom;
   overflow: hidden;
+  background-color: theme.$primary;
+  box-shadow: 2px 2px 16px rgba($color: #000000, $alpha: 0.6);
+  border-radius: 20px;
 }
 #preview-transitioning {
   animation: previewTransitioning 0.5s forwards;
@@ -20,7 +23,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 28px;
+  margin-top: 16px;
 }
 .optionContainer {
   display: flex;
@@ -52,20 +55,20 @@
 
 @keyframes previewTransitioning {
   0% {
-    transform: translateX(0px);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateX(-500px);
+    transform: translateY(-450px);
   }
   51% {
     display: none;
   }
   52% {
     display: block;
-    transform: translateX(500px);
+    transform: translateY(-450px);
   }
   100% {
-    transform: translateX(0px);
+    transform: translateY(0px);
   }
 }
 
@@ -81,47 +84,53 @@
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: 481px) {
   .toggleSection {
-    margin-top: 28px;
+    margin-top: 16px;
   }
 
   @keyframes previewTransitioning {
     0% {
-      transform: translateX(0px);
+      transform: translateY(0px);
     }
     50% {
-      transform: translateX(-750px);
+      transform: translateY(-350px);
     }
     51% {
       display: none;
     }
     52% {
       display: block;
-      transform: translateX(750px);
+      transform: translateY(-350px);
     }
     100% {
-      transform: translateX(0px);
+      transform: translateY(0px);
     }
   }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: 769px) {
+  .toggleSection {
+    margin-top: 28px;
+  }
+  .previewContainer {
+    // box-shadow: 2px 2px 19px rgba($color: #000000, $alpha: 0.6);
+  }
   @keyframes previewTransitioning {
     0% {
-      transform: translateX(0px);
+      transform: translateY(0px);
     }
     50% {
-      transform: translateX(-1000px);
+      transform: translateY(-500px);
     }
     51% {
       display: none;
     }
     52% {
       display: block;
-      transform: translateX(1000px);
+      transform: translateY(-500px);
     }
     100% {
-      transform: translateX(0px);
+      transform: translateY(0px);
     }
   }
 }
@@ -130,20 +139,41 @@
 @media (min-width: 1899px) {
   @keyframes previewTransitioning {
     0% {
-      transform: translateX(0px);
+      transform: translateY(0px);
     }
     50% {
-      transform: translateX(-1500px);
+      transform: translateY(-1500px);
     }
     51% {
       display: none;
     }
     52% {
       display: block;
-      transform: translateX(1500px);
+      transform: translateY(-1500px);
     }
     100% {
-      transform: translateX(0px);
+      transform: translateY(0px);
     }
+  }
+}
+
+/* ******************* SMALL MOBILE VIEW ******************* */
+@media (max-width: 367px) {
+  .optionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+  .option {
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+    border: 2px theme.$alternate solid;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
   }
 }

@@ -90,6 +90,14 @@
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: 769px) {
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      .lightningBoltContainer {
+        margin-right: 5px;
+      }
+    }
+  }
+
   .iconContainer {
     width: 70px;
     height: 70px;
