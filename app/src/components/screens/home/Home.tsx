@@ -2,7 +2,6 @@ import './styles/_home.scss';
 import Greeting from '../home/Greeting';
 import Footer from '../home/Footer';
 import MenuModal from './menuModal/MenuModal';
-import Background from './Background';
 import { useState } from 'react';
 import React from 'react';
 
@@ -18,7 +17,6 @@ const Home = () => {
 
   return (
     <div className="home">
-      <Background/>
       <div className='greetingContainer' id= {menuOpen === undefined ? undefined : menuOpen ? 'hide-greeting' : 'show-greeting'}>
         <Greeting/>
       </div>
