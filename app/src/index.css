@@ -6,9 +6,17 @@
   /* overflow-x: hidden; */
   /* overscroll-behavior-x: none; */
 }
-
+.Toastify__toast-container {
+  opacity: 95%;
+}
+.Toastify__toast-body {
+  color: #252a37;
+  font: "Helvetica Neue";
+  font-weight: bold;
+}
 body {
   background-color: #252a37;
+  /* background-color: green; */
   height: 100%;
   width: 100%;
   position: relative;

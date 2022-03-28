@@ -1,11 +1,8 @@
 @use "../../../../theme";
-
-.screen {
-  height: 100%;
-  min-height: 515px;
-}
+@use "../../../../breakpoints";
 
 .home {
+  height: 100%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -28,6 +25,7 @@
   z-index: 1;
 }
 .menuModalContainer {
+  height: 100%;
   z-index: 1;
   position: absolute;
   display: flex;
@@ -206,7 +204,7 @@
 }
 
 /* ******************* TABLET VIEW ******************* */
-@media (min-width: 481px) {
+@media (min-width: breakpoints.$tablet) {
   .home {
     padding-left: 50px;
     padding-right: 50px;
@@ -217,10 +215,7 @@
 }
 
 /* ******************* DESKTOP VIEW ******************* */
-@media (min-width: 769px) {
-  .screen {
-    min-height: 580px;
-  }
+@media (min-width: breakpoints.$desktop) {
   .home {
     padding-left: 65px;
     padding-right: 65px;
@@ -231,8 +226,5 @@
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
-@media (min-width: 1899px) {
-  .screen {
-    min-height: 690px;
-  }
+@media (min-width: breakpoints.$big-desktop) {
 }

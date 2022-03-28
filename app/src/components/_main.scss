@@ -1,0 +1,34 @@
+@use "../breakpoints";
+@use "../minScreenHeights";
+@use "../headerHeight";
+
+.screen {
+  margin-top: headerHeight.$mobile;
+}
+.minHeightController {
+  min-height: minScreenHeights.$mobile;
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: breakpoints.$tablet) {
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$desktop) {
+  .screen {
+    margin-top: headerHeight.$desktop;
+  }
+  .minHeightController {
+    min-height: minScreenHeights.$tablet;
+  }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$big-desktop) {
+  .screen {
+    margin-top: headerHeight.$big-desktop;
+  }
+  .minHeightController {
+    min-height: minScreenHeights.$desktop;
+  }
+}

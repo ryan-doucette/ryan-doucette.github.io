@@ -1,4 +1,5 @@
 @use "../../../theme";
+@use "../../../breakpoints";
 
 .iconContainer {
   width: 55px;
@@ -89,7 +90,7 @@
 }
 
 /* ******************* DESKTOP VIEW ******************* */
-@media (min-width: 769px) {
+@media (min-width: breakpoints.$desktop) {
   @media not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance: none) {
       .lightningBoltContainer {
@@ -157,7 +158,7 @@
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
-@media (min-width: 1899px) {
+@media (min-width: breakpoints.$big-desktop) {
   .iconContainer {
     width: 80px;
     height: 80px;
