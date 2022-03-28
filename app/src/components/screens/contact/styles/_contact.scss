@@ -5,6 +5,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  width: fit-content;
 }
 .formContainer {
   margin-top: 36px;
@@ -13,6 +14,8 @@
   margin-left: 20px;
   margin-right: 20px;
   display: flex;
+  min-width: 300px;
+  transition: 0.3s ease-in-out;
 }
 .sectionTitle {
   font-weight: bold;
@@ -24,7 +27,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-width: 100%;
   box-sizing: border-box;
   padding: 16px;
 }
@@ -50,9 +52,13 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+input {
+  font-family: Helvetica, Arial, sans-serif;
+}
 textarea {
   resize: none;
   height: 200px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .infoIconContainer {
   display: flex;
@@ -64,11 +70,14 @@ textarea {
   height: 50px;
   width: 50px;
   border-radius: 100%;
+  box-shadow: 1px 1px 10px rgba($color: #000000, $alpha: 0.6);
   background-repeat: "no-repeat";
   background-size: cover;
   cursor: pointer;
-  margin-left: 10px;
-  margin-right: 10px;
+}
+#githubIcon {
+  margin-left: 12px;
+  margin-right: 12px;
 }
 #emailToCopy {
   display: none;
@@ -93,6 +102,7 @@ textarea {
   min-height: 23px;
 }
 .formSubmitButton {
+  cursor: pointer;
   width: 150px;
   height: 40px;
   align-self: center;
@@ -104,9 +114,12 @@ textarea {
   margin-top: 4px;
   font-size: 16px;
   background-color: theme.$primary;
+  box-shadow: 1px 1px 10px rgba($color: #000000, $alpha: 0.6);
 }
 #buttonDisabled {
+  cursor: not-allowed;
   opacity: 50%;
+  box-shadow: none;
 }
 input:focus {
   outline: none;
@@ -120,12 +133,137 @@ textarea:focus {
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
+  .contact {
+    align-items: center;
+  }
+  .formContainer {
+    padding-bottom: 36px;
+  }
+  .formSection {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .shadowContainer {
+    display: flex;
+  }
+  .contactInfoContainer {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    justify-content: space-between;
+  }
+  .infoIcon {
+    height: 45px;
+    width: 45px;
+  }
+  #githubIcon {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .infoDetails {
+    margin-top: 8px;
+  }
+  .inputContainer {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  textarea {
+    height: 250px;
+  }
+  .inputBox {
+    margin-bottom: 12px;
+    max-height: 125px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid theme.$primary;
+    min-height: 23px;
+  }
+}
+
+/* ******************* VIEW WHEN BURGER MENU HIDDEN ******************* */
+@media (min-width: breakpoints.$hide-burger-menu) {
+  .contactInfoContainer {
+    width: 45%;
+  }
+  .inputContainer {
+    width: 55%;
+  }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {
+  .contact {
+    width: 100%;
+  }
+  .formContainer {
+    margin-left: 40px;
+    margin-right: 40px;
+    max-width: 800px;
+    margin-top: 48px;
+  }
+  .contactInfoContainer {
+    width: 40%;
+  }
+  .inputContainer {
+    width: 60%;
+  }
+  .sectionTitle {
+    font-size: 40px;
+    margin-bottom: 10px;
+    line-height: 42px;
+  }
+  .formSection {
+    box-sizing: border-box;
+    padding: 32px;
+  }
+  .shadowContainer {
+    box-shadow: 3px 3px 32px rgba($color: #000000, $alpha: 0.9);
+  }
+  .infoDetails {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  .infoIcon {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 2px 2px 14px rgba($color: #000000, $alpha: 0.6);
+  }
+  .formTitle {
+    font-size: 20px;
+  }
+  .formText {
+    font-size: 20px;
+  }
+  .inputBox {
+    max-height: 200px;
+  }
+  .formSubmitButton {
+    width: 170px;
+    height: 45px;
+    box-shadow: 2px 2px 14px rgba($color: #000000, $alpha: 0.6);
+  }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
+  .formContainer {
+    max-width: 900px;
+  }
+  .contactInfoContainer {
+    width: 35%;
+  }
+  .inputContainer {
+    width: 65%;
+  }
+  .infoIcon {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
 }

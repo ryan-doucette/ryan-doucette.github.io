@@ -1,6 +1,6 @@
 import React, {useRef, MutableRefObject, useState} from 'react';
 import copy from 'copy-to-clipboard';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import mailIcon from '../../../images/mail-icon.png';
@@ -26,12 +26,12 @@ const Contact = () => {
     e.preventDefault();
     toast("Your message has been successfully sent!");
 
-    // emailjs.sendForm('service_q1tyh1j', 'template_w56wgdz', form.current, 'D5NkrUoF8woFcFdfW')
-    //   .then((result) => {
-    //       console.log(result.text);
-    //   }, (error) => {
-    //       console.log(error.text);
-    //   });
+    emailjs.sendForm('service_q1tyh1j', 'template_w56wgdz', form.current, 'D5NkrUoF8woFcFdfW')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
 
       setNameInput('');
       setEmailnput('');
@@ -54,18 +54,21 @@ const Contact = () => {
       <div className='formContainer'>
         <div className='shadowContainer'>
           <section className='contactInfoContainer formSection infoText'>
-            <h2 className='sectionTitle'>Get in touch!</h2>
-            <div className='infoDetails'>I love to collaborate. Please feel free to reach out through the form or any of my other outlets.</div>
+            <div>
+              <h2 className='sectionTitle'>Get in touch!</h2>
+              <div className='infoDetails'>I love to collaborate. Please feel free to reach out through the form or any of my other outlets.</div>
+            </div>
             <div className='infoIconContainer'>
               <div 
                 onClick={() => {handleCopyEmail()}} 
-                className='infoIcon' 
+                className='infoIcon'
+                id='mailIcon' 
                 style={{ backgroundImage:`url(${mailIcon})`}}
               >
                 <div id='emailToCopy'>doucette.ry@northeastern.edu</div>
               </div>
-              <a href='https://github.com/ryan-doucette/' className='infoIcon' style={{ backgroundImage:`url(${githubIcon})`}}> </a>
-              <a href='https://www.linkedin.com/in/ryan-doucette/' className='infoIcon' style={{ backgroundImage:`url(${linkedinIcon})`}}> </a>
+              <a href='https://github.com/ryan-doucette/' className='infoIcon' id='githubIcon' style={{ backgroundImage:`url(${githubIcon})`}}> </a>
+              <a href='https://www.linkedin.com/in/ryan-doucette/' className='infoIcon' id='linkedInIcon' style={{ backgroundImage:`url(${linkedinIcon})`}}> </a>
             </div>
           </section>
           <section className='inputContainer formSection formText'>
