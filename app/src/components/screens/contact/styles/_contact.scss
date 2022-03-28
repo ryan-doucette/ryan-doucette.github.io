@@ -70,10 +70,15 @@ textarea {
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  box-shadow: 1px 1px 10px rgba($color: #000000, $alpha: 0.6);
+  box-shadow: 1px 1px 10px rgba($color: #000000, $alpha: 0.7);
   background-repeat: "no-repeat";
   background-size: cover;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.infoIcon:hover {
+  transform: scale(1.2);
+  box-shadow: 1px 1px 7px rgba($color: #000000, $alpha: 0.6);
 }
 #githubIcon {
   margin-left: 12px;
@@ -115,6 +120,11 @@ textarea {
   font-size: 16px;
   background-color: theme.$primary;
   box-shadow: 1px 1px 10px rgba($color: #000000, $alpha: 0.6);
+  transition: 0.3s ease-in-out;
+}
+.formSubmitButton:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 1px 7px rgba($color: #000000, $alpha: 0.6);
 }
 #buttonDisabled {
   cursor: not-allowed;
@@ -233,7 +243,10 @@ textarea:focus {
     width: 50px;
     margin-left: 10px;
     margin-right: 10px;
-    box-shadow: 2px 2px 14px rgba($color: #000000, $alpha: 0.6);
+    box-shadow: 1px 1px 14px rgba($color: #000000, $alpha: 0.7);
+  }
+  .infoIcon:hover {
+    box-shadow: 1px 1px 7px rgba($color: #000000, $alpha: 0.8);
   }
   .formTitle {
     font-size: 20px;
