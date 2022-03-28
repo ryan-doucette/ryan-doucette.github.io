@@ -1,4 +1,5 @@
 @use "../../../../../theme";
+@use "../../../../../breakpoints";
 
 .preview {
   display: flex;
@@ -44,7 +45,7 @@
 }
 
 /* ******************* TABLET VIEW ******************* */
-@media (min-width: 481px) {
+@media (min-width: breakpoints.$tablet) {
   .preview {
     padding: 20px;
   }
@@ -61,7 +62,7 @@
 }
 
 /* ******************* DESKTOP VIEW ******************* */
-@media (min-width: 769px) {
+@media (min-width: breakpoints.$desktop) {
   .preview {
     padding: 30px;
   }
@@ -92,7 +93,7 @@
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
-@media (min-width: 1899px) {
+@media (min-width: breakpoints.$big-desktop) {
   .previewImage {
     width: 350px;
     height: 175px;
@@ -108,7 +109,7 @@
 }
 
 /* ******************* SMALL MOBILE VIEW ******************* */
-@media (max-width: 367px) {
+@media (max-width: breakpoints.$small-mobile) {
   .previewImage {
     width: 160px;
     height: 80px;

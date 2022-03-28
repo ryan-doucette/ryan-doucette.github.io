@@ -1,4 +1,5 @@
 @use "../../../../../theme";
+@use "../../../../../breakpoints";
 
 /* Credit to: https://codepen.io/rsbear/pen/edGEbd */
 .closeButton {
@@ -78,7 +79,7 @@
 }
 
 /* ******************* TABLET VIEW ******************* */
-@media (min-width: 481px) {
+@media (min-width: breakpoints.$tablet) {
   .leftright {
     height: 3px;
     width: 32px;
@@ -91,7 +92,7 @@
 }
 
 /* ******************* DESKTOP VIEW ******************* */
-@media (min-width: 769px) {
+@media (min-width: breakpoints.$desktop) {
   .leftright {
     height: 4px;
     width: 38px;

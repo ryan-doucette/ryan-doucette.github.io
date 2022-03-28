@@ -1,4 +1,5 @@
 @use "../../../../../theme";
+@use "../../../../../breakpoints";
 
 .previewCarousel {
   display: flex;
@@ -82,7 +83,7 @@
 }
 
 /* ******************* TABLET VIEW ******************* */
-@media (min-width: 481px) {
+@media (min-width: breakpoints.$tablet) {
   .toggleSection {
     margin-top: 16px;
   }
@@ -108,12 +109,9 @@
 }
 
 /* ******************* DESKTOP VIEW ******************* */
-@media (min-width: 769px) {
+@media (min-width: breakpoints.$desktop) {
   .toggleSection {
     margin-top: 28px;
-  }
-  .previewContainer {
-    // box-shadow: 2px 2px 19px rgba($color: #000000, $alpha: 0.6);
   }
   @keyframes previewTransitioning {
     0% {
@@ -136,7 +134,7 @@
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
-@media (min-width: 1899px) {
+@media (min-width: breakpoints.$big-desktop) {
   @keyframes previewTransitioning {
     0% {
       transform: translateY(0px);
@@ -158,7 +156,7 @@
 }
 
 /* ******************* SMALL MOBILE VIEW ******************* */
-@media (max-width: 367px) {
+@media (max-width: breakpoints.$small-mobile) {
   .optionContainer {
     display: flex;
     justify-content: center;

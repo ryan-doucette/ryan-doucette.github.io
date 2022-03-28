@@ -1,10 +1,11 @@
 @use "../../../../theme";
+@use "../../../../breakpoints";
 
 .footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 .triangle {
@@ -80,7 +81,7 @@
 }
 
 /* ******************* TABLET VIEW ******************* */
-@media (min-width: 481px) {
+@media (min-width: breakpoints.$tablet) {
   .footer {
     height: 150px;
   }
@@ -105,7 +106,7 @@
 }
 
 /* ******************* DESKTOP VIEW ******************* */
-@media (min-width: 769px) {
+@media (min-width: breakpoints.$desktop) {
   .footer {
     height: 170px;
   }
