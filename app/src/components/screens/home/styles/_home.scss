@@ -34,22 +34,28 @@
   width: 0;
   overflow: hidden;
 }
-#menu-open {
+.menu-open {
   animation: open-menu 0.5s 0.75s linear forwards;
 }
-#menu-closed {
+.menu-closed {
   animation: close-menu 1.5s linear forwards;
 }
-#show-greeting {
+.show-greeting {
   animation: show-greeting 2.25s linear forwards;
 }
-#hide-greeting {
+.show-greeting-initial {
+  animation: show-greeting-initial 0.65s linear forwards;
+}
+.hide-greeting {
   animation: hide-greeting 0.65s linear forwards;
 }
-#show-footer {
+.show-footer {
   animation: show-footer 2.25s linear forwards;
 }
-#hide-footer {
+.show-footer-initial {
+  animation: show-footer-intial 0.65s linear forwards;
+}
+.hide-footer {
   animation: hide-footer 0.65s linear forwards;
 }
 
@@ -118,6 +124,32 @@
     transform: translateY(0%);
   }
 }
+@keyframes show-greeting-initial {
+  0% {
+    transform: translateY(-75%);
+  }
+  20% {
+    transform: translateY(-5%);
+  }
+  25% {
+    transform: translateY(2.5%);
+  }
+  45% {
+    transform: translateY(4%);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  56% {
+    transform: translateY(4.5%);
+  }
+  67% {
+    transform: translateY(4%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 @keyframes hide-greeting {
   0% {
     transform: translateY(0%);
@@ -174,6 +206,32 @@
     bottom: 0;
   }
 }
+@keyframes show-footer-intial {
+  0% {
+    bottom: -170px;
+  }
+  10% {
+    bottom: -140px;
+  }
+  25% {
+    bottom: 25px;
+  }
+  45% {
+    bottom: 40px;
+  }
+  50% {
+    bottom: 50px;
+  }
+  56% {
+    bottom: 45px;
+  }
+  67% {
+    bottom: 40px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
 @keyframes hide-footer {
   0% {
     pointer-events: none;
@@ -199,7 +257,7 @@
   }
   100% {
     pointer-events: none;
-    bottom: -170px;
+    bottom: -200px;
   }
 }
 

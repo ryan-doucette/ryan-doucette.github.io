@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import category from 'customTypes';
 import './styles/_preview.scss';
+import { CurrentScreenContext } from '../../../../current-screen-context';
+import handleNavigate from '../../../../screenNavigationHandler';
 
 import about from './previewImgs/aboutPreviewImg.png';
 import skills from './previewImgs/skillsPreviewImg.png';
@@ -31,11 +33,31 @@ const Preview = ({currentCategory} : {currentCategory:category}) => {
         }
     }, [currentCategory]);
 
+    const navigate = useNavigate();
+
     return (
         <div className="preview">
             <div className='previewImage' id='preview-image' style={{ backgroundImage:`url(${currentImg})` }}/>
             <div className='description' id='description'>{currentCategory.description}</div>
-            <Link to={currentCategory.link.toLowerCase()} className='tellMeMore' id='more-button'>{currentCategory.identifier === 'Contact' ? 'contact' : 'tell me more'}</Link>
+            {
+                currentCategory.identifier === 'Ruumzy' ? 
+                    <a href='https://ruumzy.com/' className='tellMeMore' id='more-button'>check it out</a>
+                    :
+                    <CurrentScreenContext.Consumer>
+                        {({currentScreen, toggleCurrentScreen}) => (
+                            <div 
+                                onClick={() => {
+                                    toggleCurrentScreen(currentCategory.link);
+                                    handleNavigate(currentCategory.link, currentScreen, navigate);
+                                }} 
+                                className='tellMeMore' 
+                                id='more-button'
+                            >
+                                {currentCategory.identifier === 'Contact' ? 'contact' : 'tell me more'}
+                            </div>
+                        )}
+                    </CurrentScreenContext.Consumer>
+            }
         </div>
     );
 }

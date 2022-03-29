@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom';
 import './styles/_header.scss';
 import './styles/_hamburgerStyle.scss';
 import Icon from './Icon';
+import { CurrentScreenContext } from '../../current-screen-context';
+import handleNavigate from '../../screenNavigationHandler'; 
 
 const Header = () => {
 
@@ -14,7 +16,7 @@ const Header = () => {
     updateSelectorPosition(currentTab + '-container');
   }, [currentPath, currentTab])
 
-  const tabCategories: string[] = ['Home', 'About', 'Skills', 'Experience', 'Contact']; 
+  const tabCategories: string[] = ['Home', 'About', 'Skills', 'Experience', 'Contact'];
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [currTab, setCurrTab] = useState(tabCategories[0]);
@@ -70,13 +72,11 @@ const Header = () => {
     setDropdownOpen(false);
   };
 
-  const iconClicked = () => {
-    setCurrTab('Home');
-  };
+  const navigate = useNavigate();
 
   return (
     <div className="header">
-      <Icon iconPressed={() => iconClicked()}/>
+      <Icon />
       <section className='linksSection'>
         <nav className="burgerMenu" role="navigation">
           <div id="menuToggle">
@@ -90,12 +90,20 @@ const Header = () => {
           <div id="dropDown" className="overlay" style={dropdownOpen ? {height: '100%'} : {height: '0%'}}>
               <div className="overlay-content">
                 {tabCategories.map(category => (
-                  <Link 
-                    key={category} 
-                    to={category === 'Home' ? '/' : category.toLowerCase()} 
-                    onClick={() => {closeDropdown(); 
-                    updateTab(category)}}>{category}
-                  </Link>
+                  <CurrentScreenContext.Consumer key={category}>
+                    {({currentScreen, toggleCurrentScreen}) => (
+                      <ul
+                        key={category} 
+                        onClick={() => {
+                          closeDropdown(); 
+                          updateTab(category);
+                          toggleCurrentScreen(category);
+                          handleNavigate(category, currentScreen, navigate);
+                        }}>
+                          {category}
+                      </ul>
+                    )}
+                  </CurrentScreenContext.Consumer>
                 ))}
               </div>
           </div>
@@ -103,14 +111,21 @@ const Header = () => {
           { tabCategories.map(category => (
             <Fragment key={category}>
               <div id={category.toLowerCase() + '-container'} className='categoryContainer'>
-                <Link
-                  className={currTab === category ? 'selected links' : 'links'} 
-                  id={ category.toLowerCase() } 
-                  to={category === 'Home' ? '/' : category.toLowerCase()}
-                  onClick={() => updateTab(category)}
-                >
-                  { category }
-                </Link>
+                <CurrentScreenContext.Consumer key={category}>
+                  {({currentScreen, toggleCurrentScreen}) => (
+                    <div
+                      className={currTab === category ? 'selected links' : 'links'} 
+                      id={ category.toLowerCase() } 
+                      onClick={() => {
+                        updateTab(category);
+                        toggleCurrentScreen(category);
+                        handleNavigate(category, currentScreen, navigate);
+                      }}
+                    >
+                      { category }
+                    </div>
+                  )}
+                </CurrentScreenContext.Consumer>
               </div>
               { 
                 tabCategories.indexOf(category) === tabCategories.length - 1 ? 
