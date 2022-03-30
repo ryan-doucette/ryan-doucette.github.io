@@ -33,16 +33,16 @@
   -webkit-transform: scale(1.2, 1.2);
 }
 
-#showPreview {
+.showPreview {
   animation: showPreview 2s linear forwards;
 }
-#hidePreview {
+.hidePreview {
   animation: hidePreview 1s linear forwards;
 }
-#showCloseButton {
+.showCloseButton {
   animation: showCloseButton 2s linear forwards;
 }
-#hideCloseButton {
+.hideCloseButton {
   animation: hideCloseButton 0.3s 0.2s linear forwards;
 }
 

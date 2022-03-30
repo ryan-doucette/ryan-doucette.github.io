@@ -1,14 +1,11 @@
 const handleNavigate = (category: string, currentScreen: string, navigate: any) => {
     console.log("NAVIGATE: " + currentScreen + " TO " + category);
-    console.log("PREVIOUS SCREEN: " + currentScreen);
     const transitionLength = () => {
         switch(currentScreen) {
             case 'Home': 
-                console.log('home');
                 return 1000;
             case 'Menu': 
-                console.log('menu');
-                return 1500;
+                return 1800;
             case 'About':
                 return 1000;
             case 'Skills':

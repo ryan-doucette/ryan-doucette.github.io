@@ -31,8 +31,16 @@ const Home = () => {
         footer?.classList.add('hide-footer');
       }
       else {
-        // setMenuOpen(false);
-        // Manipulate modal css animations
+        const previewCarouselElement = document.getElementById('previewCarousel');
+        const menuCloseButtonElement = document.getElementById('menuCloseButton');
+        const menuModal = document.getElementById('home-menu-modal');
+
+        menuModal?.classList.add('menu-closed');
+        previewCarouselElement?.classList.add('hidePreview');
+        menuCloseButtonElement?.classList.add('hideCloseButton');
+        menuModal?.classList.remove('menu-open');
+        previewCarouselElement?.classList.remove('showPreview');
+        menuCloseButtonElement?.classList.remove('showCloseButton');
       }
     }
   }, [currentScreen, menuOpen]);
