@@ -8,7 +8,7 @@
   animation: show-greeting 2.25s linear forwards;
 }
 .show-greeting-initial {
-  animation: show-greeting-initial 0.65s linear forwards;
+  animation: show-greeting-initial 0.9s linear forwards;
 }
 .hide-greeting {
   animation: hide-greeting 0.65s linear forwards;
@@ -17,7 +17,7 @@
   animation: show-footer 2.25s linear forwards;
 }
 .show-footer-initial {
-  animation: show-footer-intial 0.65s linear forwards;
+  animation: show-footer-intial 0.9s linear forwards;
 }
 .hide-footer {
   animation: hide-footer 0.65s linear forwards;
@@ -92,24 +92,24 @@
     transform: translateY(-75%);
   }
   20% {
-    transform: translateY(-5%);
+    transform: translateY(-10%);
   }
   25% {
-    transform: translateY(2.5%);
+    transform: translateY(0%);
   }
-  45% {
+  32% {
     transform: translateY(4%);
   }
-  50% {
+  36% {
     transform: translateY(5%);
   }
-  56% {
+  40% {
     transform: translateY(4.5%);
   }
-  67% {
+  42% {
     transform: translateY(4%);
   }
-  100% {
+  55% {
     transform: translateY(0%);
   }
 }
@@ -171,27 +171,27 @@
 }
 @keyframes show-footer-intial {
   0% {
-    bottom: -170px;
+    bottom: -200px;
   }
-  10% {
+  12% {
     bottom: -140px;
   }
-  25% {
-    bottom: 25px;
+  22% {
+    bottom: -30px;
   }
-  45% {
+  28% {
     bottom: 40px;
   }
-  50% {
+  30% {
     bottom: 50px;
   }
-  56% {
+  40% {
     bottom: 45px;
   }
-  67% {
+  42% {
     bottom: 40px;
   }
-  100% {
+  55% {
     bottom: 0;
   }
 }
