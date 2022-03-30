@@ -42,15 +42,15 @@ const Main = () => {
   }, [handleWindowResize]);
 
     return (
-    <div className='screen minHeightController' style={{height: windowHeight}}>
-    <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/skills' element={<Skills/>}/>
-        <Route path='/experience' element={<Experience/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-    </Routes>
-    </div>
+      <div className='screen minHeightController' style={{height: windowHeight}}>
+        <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/skills' element={<Skills/>}/>
+            <Route path='/experience' element={<Experience/>}/>
+            <Route path='/contact' element={<Contact/>}/>
+        </Routes>
+      </div>
     )
 };
 

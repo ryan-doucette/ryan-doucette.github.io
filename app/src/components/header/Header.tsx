@@ -1,23 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { Fragment, useCallback, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom';
 import './styles/_header.scss';
 import './styles/_hamburgerStyle.scss';
 import Icon from './Icon';
+import { CurrentScreenContext } from '../../current-screen-context';
+import handleNavigate from '../../screenNavigationHandler'; 
 
 const Header = () => {
 
   const currentPath = useLocation().pathname;
   const currentTab: string = currentPath === '/' ? 'home' : currentPath.slice(1);
-
-  useEffect(() => {
-    updateSelectorPosition(currentTab + '-container');
-  }, [currentPath, currentTab])
-
-  const tabCategories: string[] = ['Home', 'About', 'Skills', 'Experience', 'Contact']; 
+  const tabCategories: string[] = ['home', 'about', 'skills', 'experience', 'contact'];
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [currTab, setCurrTab] = useState(tabCategories[0]);
+  const [currTab, setCurrTab] = useState(currentTab);
+  const [initialSelector, setInitialSelector] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const handleWindowResize = useCallback(event => {
@@ -36,10 +34,16 @@ const Header = () => {
   }, [handleWindowResize, windowSize]);
 
   useEffect(() => {
-    const newTab = document.getElementById('home-container');
-    const selector = document.getElementById('selection-indicator')!;
-    newTab?.appendChild(selector);
-  }, []);
+    if (initialSelector) {
+      updateSelectorPosition(currentTab + '-container');
+    }
+    else {
+      const newTab = document.getElementById(currentTab + '-container');
+      const selector = document.getElementById('selection-indicator')!;
+      newTab?.appendChild(selector);
+      setInitialSelector(true);
+    }
+  }, [currentTab, initialSelector]);
 
   const updateSelectorPosition = (id: string) => {
     const newParent = document.getElementById(id);
@@ -70,13 +74,11 @@ const Header = () => {
     setDropdownOpen(false);
   };
 
-  const iconClicked = () => {
-    setCurrTab('Home');
-  };
+  const navigate = useNavigate();
 
   return (
     <div className="header">
-      <Icon iconPressed={() => iconClicked()}/>
+      <Icon />
       <section className='linksSection'>
         <nav className="burgerMenu" role="navigation">
           <div id="menuToggle">
@@ -90,27 +92,42 @@ const Header = () => {
           <div id="dropDown" className="overlay" style={dropdownOpen ? {height: '100%'} : {height: '0%'}}>
               <div className="overlay-content">
                 {tabCategories.map(category => (
-                  <Link 
-                    key={category} 
-                    to={category === 'Home' ? '/' : category.toLowerCase()} 
-                    onClick={() => {closeDropdown(); 
-                    updateTab(category)}}>{category}
-                  </Link>
+                  <CurrentScreenContext.Consumer key={category}>
+                    {({currentScreen, toggleCurrentScreen}) => (
+                      <ul
+                        key={category} 
+                        onClick={() => {
+                          closeDropdown(); 
+                          updateTab(category);
+                          toggleCurrentScreen(category);
+                          handleNavigate(category, currentScreen, navigate);
+                        }}>
+                          {category}
+                      </ul>
+                    )}
+                  </CurrentScreenContext.Consumer>
                 ))}
               </div>
           </div>
         <div id='desktopHeader'>
           { tabCategories.map(category => (
             <Fragment key={category}>
-              <div id={category.toLowerCase() + '-container'} className='categoryContainer'>
-                <Link
-                  className={currTab === category ? 'selected links' : 'links'} 
-                  id={ category.toLowerCase() } 
-                  to={category === 'Home' ? '/' : category.toLowerCase()}
-                  onClick={() => updateTab(category)}
-                >
-                  { category }
-                </Link>
+              <div id={category + '-container'} className='categoryContainer'>
+                <CurrentScreenContext.Consumer key={category}>
+                  {({currentScreen, toggleCurrentScreen}) => (
+                    <div
+                      className={currTab === category ? 'selected links' : 'links'} 
+                      id={ category.toLowerCase() } 
+                      onClick={() => {
+                        updateTab(category);
+                        toggleCurrentScreen(category);
+                        handleNavigate(category, currentScreen, navigate);
+                      }}
+                    >
+                      { category.charAt(0).toUpperCase() + category.slice(1) }
+                    </div>
+                  )}
+                </CurrentScreenContext.Consumer>
               </div>
               { 
                 tabCategories.indexOf(category) === tabCategories.length - 1 ? 

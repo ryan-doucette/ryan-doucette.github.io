@@ -11,7 +11,7 @@ const PreviewCarousel = ({menuRevealed} : {menuRevealed:boolean|undefined}) => {
     const [currOption, setCurrOption] = useState(categories[0]);
     const [currTab, setCurrTab] = useState(categories[0]);
     const [previewTransitioning, setPreviewTransitioning] = useState(false);
-    // duration is previewDuration / 1000 seconds
+    // duration is (previewDuration / 1000 seconds)
     const previewDuration: number = 7000;
 
     useEffect(() => {
@@ -59,8 +59,9 @@ const PreviewCarousel = ({menuRevealed} : {menuRevealed:boolean|undefined}) => {
             <section className='toggleSection'>
                 { categories.map((category) => (
                     <div 
+                        key={category.identifier}
                         className='optionContainer'
-                        onClick={() => previewTransitioning ? null :  toggleSection(category)}
+                        onClick={() => previewTransitioning ? null : toggleSection(category)}
                     >
                         <div 
                             key={category.identifier} 

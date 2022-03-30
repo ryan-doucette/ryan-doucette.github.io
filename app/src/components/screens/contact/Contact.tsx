@@ -1,4 +1,4 @@
-import React, {useRef, MutableRefObject, useState} from 'react';
+import React, {useRef, MutableRefObject, useState, useContext, useEffect} from 'react';
 import copy from 'copy-to-clipboard';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,9 +7,20 @@ import mailIcon from '../../../images/mail-icon.png';
 import githubIcon from '../../../images/github-icon.png';
 import linkedinIcon from '../../../images/linkedin-icon.png';
 import './styles/_contact.scss';
+import { CurrentScreenContext } from '../../../current-screen-context';
 
 const Contact = () => {
   const form = useRef() as MutableRefObject<HTMLFormElement>;
+  const currentScreen = useContext(CurrentScreenContext);
+
+  useEffect(() => {
+    if (currentScreen.currentScreen === 'contact') {
+      // Enter animation
+    }
+    else {
+      // Exit animation
+    }
+  }, [currentScreen]);
 
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailnput] = useState('');
@@ -28,9 +39,9 @@ const Contact = () => {
 
     emailjs.sendForm('service_q1tyh1j', 'template_w56wgdz', form.current, 'D5NkrUoF8woFcFdfW')
       .then((result) => {
-          console.log(result.text);
+          // console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+          // console.log(error.text);
       });
 
       setNameInput('');
@@ -73,14 +84,14 @@ const Contact = () => {
           </section>
           <section className='inputContainer formSection formText'>
             <h2 className='sectionTitle'>Contact me</h2>
-            <form className='form formText' ref={form} onSubmit={sendEmail}>
+            <form className='form formText' ref={form}>
               <label className='formTitle'>Name*</label>
               <input className='formText inputBox' value={nameInput} onChange={(e) => setNameInput(e.target.value)} type="text" name="name" />
               <label className='formTitle'>Email*</label>
               <input className='formText inputBox' value={emailInput} onChange={(e) => setEmailnput(e.target.value)} type="email" name="email" />
               <label className='formTitle'>Message*</label>
               <textarea className='formText inputBox' value={messageInput} onChange={(e) => setMessageInput(e.target.value)} name="message" />
-              <input disabled={!validInput} className='formSubmitButton' id={!validInput ? 'buttonDisabled' : undefined} type="submit" value="SUBMIT" />
+              <input onClick={sendEmail} disabled={!validInput} className='formSubmitButton' id={!validInput ? 'buttonDisabled' : undefined} type="submit" value="SUBMIT" />
             </form>
           </section>
         </div>

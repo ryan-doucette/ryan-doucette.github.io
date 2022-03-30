@@ -51,7 +51,7 @@
   margin-top: 30px;
 }
 
-.overlay a {
+.overlay ul {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
@@ -59,10 +59,11 @@
   color: theme.$alternate;
   display: block;
   transition: 0.3s;
+  cursor: pointer;
 }
 
-.overlay a:hover,
-.overlay a:focus {
+.overlay ul:hover,
+.overlay ul:focus {
   color: theme.$primary;
   background-color: theme.$alternate;
 }
@@ -87,6 +88,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    cursor: pointer;
   }
 
   .links {
