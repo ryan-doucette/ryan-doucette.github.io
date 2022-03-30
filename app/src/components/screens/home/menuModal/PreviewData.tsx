@@ -4,29 +4,29 @@ import category from 'customTypes';
 
 const categories: category[] = [
     {
-        identifier: 'About',
+        identifier: 'about',
         description: "I'm a frontend software developer currently interning at Smartsheet",
-        link: 'About'
+        link: 'about'
     },
     {
-        identifier: 'Skills',
+        identifier: 'skills',
         description: "Fluency within computer science and design is important to me",
-        link: 'Skills'
+        link: 'skills'
     },
     {
-        identifier: 'Experience',
+        identifier: 'experience',
         description: "Professional experience and personal projects have shaped my practices",
-        link: 'Experience'
+        link: 'experience'
     },
     {
-        identifier: 'Ruumzy',
+        identifier: 'ruumzy',
         description: "The future of subletting apartments is here",
-        link: 'Experience'
+        link: 'experience'
     },
     {
-        identifier: 'Contact',
+        identifier: 'contact',
         description: "I'm always looking for new projects, feel free to reach out!",
-        link: 'Contact'
+        link: 'contact'
     },
 ];
 

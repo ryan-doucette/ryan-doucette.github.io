@@ -11,15 +11,11 @@ const Header = () => {
 
   const currentPath = useLocation().pathname;
   const currentTab: string = currentPath === '/' ? 'home' : currentPath.slice(1);
-
-  useEffect(() => {
-    updateSelectorPosition(currentTab + '-container');
-  }, [currentPath, currentTab])
-
-  const tabCategories: string[] = ['Home', 'About', 'Skills', 'Experience', 'Contact'];
+  const tabCategories: string[] = ['home', 'about', 'skills', 'experience', 'contact'];
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [currTab, setCurrTab] = useState(tabCategories[0]);
+  const [currTab, setCurrTab] = useState(currentTab);
+  const [initialSelector, setInitialSelector] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const handleWindowResize = useCallback(event => {
@@ -38,10 +34,16 @@ const Header = () => {
   }, [handleWindowResize, windowSize]);
 
   useEffect(() => {
-    const newTab = document.getElementById('home-container');
-    const selector = document.getElementById('selection-indicator')!;
-    newTab?.appendChild(selector);
-  }, []);
+    if (initialSelector) {
+      updateSelectorPosition(currentTab + '-container');
+    }
+    else {
+      const newTab = document.getElementById(currentTab + '-container');
+      const selector = document.getElementById('selection-indicator')!;
+      newTab?.appendChild(selector);
+      setInitialSelector(true);
+    }
+  }, [currentTab, initialSelector]);
 
   const updateSelectorPosition = (id: string) => {
     const newParent = document.getElementById(id);
@@ -110,7 +112,7 @@ const Header = () => {
         <div id='desktopHeader'>
           { tabCategories.map(category => (
             <Fragment key={category}>
-              <div id={category.toLowerCase() + '-container'} className='categoryContainer'>
+              <div id={category + '-container'} className='categoryContainer'>
                 <CurrentScreenContext.Consumer key={category}>
                   {({currentScreen, toggleCurrentScreen}) => (
                     <div
@@ -122,7 +124,7 @@ const Header = () => {
                         handleNavigate(category, currentScreen, navigate);
                       }}
                     >
-                      { category }
+                      { category.charAt(0).toUpperCase() + category.slice(1) }
                     </div>
                   )}
                 </CurrentScreenContext.Consumer>

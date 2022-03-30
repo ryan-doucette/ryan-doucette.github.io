@@ -1,31 +1,27 @@
 const handleNavigate = (category: string, currentScreen: string, navigate: any) => {
-    console.log("NAVIGATE: " + currentScreen + " TO " + category);
     const transitionLength = () => {
         switch(currentScreen) {
-            case 'Home': 
+            case 'home': 
                 return 1000;
-            case 'Menu': 
+            case 'menu': 
                 return 1800;
-            case 'About':
+            case 'about':
                 return 1000;
-            case 'Skills':
+            case 'skills':
                 return 1000;
-            case 'Experience':
+            case 'experience':
                 return 1000;
-            case 'Contact':
+            case 'contact':
                 return 1000;
         } 
     }
 
     setTimeout(() => {
-        if(category === 'Home') {
+        if(category === 'home') {
             navigate('/');
         }
-        else if(category === 'Menu') {
-            // 
-        }
-        else {
-            navigate(category.toLowerCase());
+        else if (category !== 'menu'){
+            navigate(category);
         }
     }, transitionLength());
 }

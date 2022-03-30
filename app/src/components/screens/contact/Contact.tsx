@@ -14,11 +14,11 @@ const Contact = () => {
   const currentScreen = useContext(CurrentScreenContext);
 
   useEffect(() => {
-    if (currentScreen.currentScreen === 'Contact') {
-      console.log('entering: ' + currentScreen.currentScreen);
+    if (currentScreen.currentScreen === 'contact') {
+      // Enter animation
     }
     else {
-      console.log('leaving contact to: ' + currentScreen.currentScreen);
+      // Exit animation
     }
   }, [currentScreen]);
 
@@ -39,9 +39,9 @@ const Contact = () => {
 
     emailjs.sendForm('service_q1tyh1j', 'template_w56wgdz', form.current, 'D5NkrUoF8woFcFdfW')
       .then((result) => {
-          console.log(result.text);
+          // console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+          // console.log(error.text);
       });
 
       setNameInput('');

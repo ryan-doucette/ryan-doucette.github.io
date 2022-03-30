@@ -15,19 +15,19 @@ const Preview = ({currentCategory} : {currentCategory:category}) => {
     const [currentImg, setCurrentImg] = useState(ruumzy);
     useEffect(() => {
         switch (currentCategory.identifier) {
-            case 'About':
+            case 'about':
                 setCurrentImg(about);
                 break;
-            case 'Skills':
+            case 'skills':
                 setCurrentImg(skills);
                 break;
-            case 'Experience':
+            case 'experience':
                 setCurrentImg(experience);
                 break;
-            case 'Ruumzy':
+            case 'ruumzy':
                 setCurrentImg(ruumzy);
                 break;
-            case 'Contact':
+            case 'contact':
                 setCurrentImg(contact);
                 break;
         }
@@ -40,7 +40,7 @@ const Preview = ({currentCategory} : {currentCategory:category}) => {
             <div className='previewImage' id='preview-image' style={{ backgroundImage:`url(${currentImg})` }}/>
             <div className='description' id='description'>{currentCategory.description}</div>
             {
-                currentCategory.identifier === 'Ruumzy' ? 
+                currentCategory.identifier === 'ruumzy' ? 
                     <a href='https://ruumzy.com/' className='tellMeMore' id='more-button'>check it out</a>
                     :
                     <CurrentScreenContext.Consumer>
@@ -53,7 +53,7 @@ const Preview = ({currentCategory} : {currentCategory:category}) => {
                                 className='tellMeMore' 
                                 id='more-button'
                             >
-                                {currentCategory.identifier === 'Contact' ? 'contact' : 'tell me more'}
+                                {currentCategory.identifier === 'contact' ? 'contact' : 'tell me more'}
                             </div>
                         )}
                     </CurrentScreenContext.Consumer>
