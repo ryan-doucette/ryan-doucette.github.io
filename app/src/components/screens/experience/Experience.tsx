@@ -1,17 +1,20 @@
 import React, {useEffect, useContext} from 'react';
 import { CurrentScreenContext } from '../../../current-screen-context';
+import './styles/_experience.scss';
+import './transitions/_experienceTransitions.scss';
+import { enterExperienceTransition, leaveExperienceTransition } from './transitions/ExperienceTransitions';
 
 const Experience = () => {
-  const currentScreen = useContext(CurrentScreenContext);
+  const screenContext = useContext(CurrentScreenContext);
 
   useEffect(() => {
-    if(currentScreen.currentScreen === 'experience') { 
-      // Enter animation
+    if(screenContext.currentScreen === 'experience') { 
+      enterExperienceTransition();
     }    
     else {
-      // Exit animation
+      leaveExperienceTransition();
     }
-  }, [currentScreen]);
+  }, [screenContext]);
   return (
     <div className="experience">
  

@@ -13,16 +13,16 @@ import { intialHomeEnterTransition, leaveHomeTransition, openMenuTransition, clo
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState<boolean | undefined>(undefined);
-  const currentScreen = useContext(CurrentScreenContext);
+  const screenContext = useContext(CurrentScreenContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     // If the user is entering the home screen
-    if (currentScreen.currentScreen === 'home' && menuOpen === undefined) {
+    if (screenContext.currentScreen === 'home' && menuOpen === undefined) {
       intialHomeEnterTransition();
     }
     // If the user is exiting the home or menu screen
-    else if(currentScreen.currentScreen !== 'home' && currentScreen.currentScreen !== 'menu') {
+    else if(screenContext.currentScreen !== 'home' && screenContext.currentScreen !== 'menu') {
       if(!menuOpen) {
         leaveHomeTransition();
       }
@@ -39,7 +39,7 @@ const Home = () => {
         openMenuTransition();
       }
     }
-  }, [currentScreen, menuOpen]);
+  }, [screenContext, menuOpen]);
   
   const openMenu = () => {
     setMenuOpen(true);

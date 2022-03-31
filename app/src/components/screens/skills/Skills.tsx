@@ -1,17 +1,20 @@
 import React, {useContext, useEffect} from 'react';
 import { CurrentScreenContext } from '../../../current-screen-context';
+import './styles/_skills.scss';
+import './transitions/_skillsTransitions.scss';
+import { enterSkillsTransition, leaveSkillsTransition } from './transitions/SkillsTransitions';
 
 const Skills = () => {
-  const currentScreen = useContext(CurrentScreenContext);
+  const screenContext = useContext(CurrentScreenContext);
 
   useEffect(() => {
-    if(currentScreen.currentScreen === 'skills') { 
-      // Enter animation
+    if(screenContext.currentScreen === 'skills') { 
+      enterSkillsTransition();
     }    
     else {
-      // Exit animation
+      leaveSkillsTransition();
     }
-  }, [currentScreen]);
+  }, [screenContext]);
   return (
     <div className="skills">
  

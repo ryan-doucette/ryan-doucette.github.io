@@ -7,20 +7,22 @@ import mailIcon from '../../../images/mail-icon.png';
 import githubIcon from '../../../images/github-icon.png';
 import linkedinIcon from '../../../images/linkedin-icon.png';
 import './styles/_contact.scss';
+import './transitions/_contactTransitions.scss';
+import { enterContactTransition, leaveContactTransition } from './transitions/ContactTransitions';
 import { CurrentScreenContext } from '../../../current-screen-context';
 
 const Contact = () => {
   const form = useRef() as MutableRefObject<HTMLFormElement>;
-  const currentScreen = useContext(CurrentScreenContext);
+  const screenContext = useContext(CurrentScreenContext);
 
   useEffect(() => {
-    if (currentScreen.currentScreen === 'contact') {
-      // Enter animation
+    if (screenContext.currentScreen === 'contact') {
+      enterContactTransition();
     }
     else {
-      // Exit animation
+      leaveContactTransition();
     }
-  }, [currentScreen]);
+  }, [screenContext]);
 
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailnput] = useState('');
@@ -61,7 +63,7 @@ const Contact = () => {
         draggable
         pauseOnHover={false}
       />
-      <div className='formContainer'>
+      <div className='formContainer' id='contactContainer'>
         <div className='shadowContainer'>
           <section className='contactInfoContainer formSection infoText'>
             <div>
