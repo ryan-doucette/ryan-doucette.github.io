@@ -1,0 +1,91 @@
+.showPreview {
+    animation: showPreview 2s linear forwards;
+}
+.hidePreview {
+    animation: hidePreview 1s linear forwards;
+}
+.showCloseButton {
+    animation: showCloseButton 2s linear forwards;
+}
+.hideCloseButton {
+    animation: hideCloseButton 0.3s 0.2s linear forwards;
+}
+  
+@keyframes showPreview {
+    0%,
+    55% {
+        transform: translateY(300%);
+    }
+    64% {
+        transform: translateY(5%);
+    }
+    66% {
+        transform: translateY(-4.5%);
+    }
+    69% {
+        transform: translateY(-8%);
+    }
+    72% {
+        transform: translateY(-11%);
+    }
+    75% {
+        transform: translateY(-8%);
+    }
+    77% {
+        transform: translateY(-5%);
+    }
+    79%,
+    100% {
+        transform: translateY(0%);
+    }
+}
+@keyframes hidePreview {
+    0% {
+        transform: translateY(0%);
+    }
+    15% {
+        transform: translateY(-5%);
+    }
+    25% {
+        transform: translateY(-8%);
+    }
+    38% {
+        transform: translateY(-10%);
+    }
+    51% {
+        transform: translateY(-8%);
+    }
+    61% {
+        transform: translateY(-4.5%);
+    }
+    68% {
+        transform: translateY(5%);
+    }
+    90%,
+    100% {
+        transform: translateY(300%);
+    }
+}
+
+@keyframes showCloseButton {
+    0%,
+    75% {
+        transform: translateX(-200px);
+    }
+    79% {
+        transform: translateX(-50px);
+    }
+    85%,
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes hideCloseButton {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-200px);
+    }
+}

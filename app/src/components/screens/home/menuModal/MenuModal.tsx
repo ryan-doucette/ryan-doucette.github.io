@@ -1,6 +1,7 @@
 import CloseButton from './CloseButton';
 import React, { MouseEventHandler } from 'react';
 import './styles/_menuModal.scss';
+import '../transitions/_menuModalTransitions.scss';
 import PreviewCarousel from './PreviewCarousel';
 
 const MenuModal = ({menuIsRevealed, closeButtonPressed} : {menuIsRevealed: boolean | undefined, closeButtonPressed: MouseEventHandler}) => {
