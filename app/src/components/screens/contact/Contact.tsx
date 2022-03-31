@@ -35,13 +35,12 @@ const Contact = () => {
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-    toast("Your message has been successfully sent!");
 
     emailjs.sendForm('service_q1tyh1j', 'template_w56wgdz', form.current, 'D5NkrUoF8woFcFdfW')
       .then((result) => {
-          // console.log(result.text);
+        toast("Your message has been successfully sent!");
       }, (error) => {
-          // console.log(error.text);
+          toast.error("There was a problem sending your message, please contact me directly instead. Sorry for the inconvenience.");
       });
 
       setNameInput('');
@@ -53,7 +52,7 @@ const Contact = () => {
     <div className="contact">
       <ToastContainer 
         position="bottom-right"
-        autoClose={3000}
+        autoClose={5000}
         hideProgressBar
         newestOnTop={false}
         closeOnClick
