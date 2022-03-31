@@ -17,8 +17,12 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // If the user is entering the home screen
+    if (currentScreen.currentScreen === 'home' && menuOpen === undefined) {
+      intialHomeEnterTransition();
+    }
     // If the user is exiting the home or menu screen
-    if(currentScreen.currentScreen !== 'home' && currentScreen.currentScreen !== 'menu') {
+    else if(currentScreen.currentScreen !== 'home' && currentScreen.currentScreen !== 'menu') {
       if(!menuOpen) {
         leaveHomeTransition();
       }
@@ -27,16 +31,12 @@ const Home = () => {
       }
     }
     else {
-      // If the user is on the home or menu screen
+      // If the user is already on the home or menu screen
       if(menuOpen === false) {
         closeMenuTransition();
       }
-      else if(menuOpen) {
+      else if(menuOpen === true) {
         openMenuTransition();
-      }
-      // If the user is entering the home screen / page refresh
-      else {
-        intialHomeEnterTransition();
       }
     }
   }, [currentScreen, menuOpen]);
