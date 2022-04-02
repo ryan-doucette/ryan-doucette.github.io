@@ -98,9 +98,11 @@ const Header = () => {
                         key={category} 
                         onClick={() => {
                           closeDropdown(); 
-                          updateTab(category);
-                          toggleCurrentScreen(category);
-                          handleNavigate(category, currentScreen, navigate);
+                          setTimeout(() => {
+                            updateTab(category);
+                            toggleCurrentScreen(category);
+                            handleNavigate(category, currentScreen, navigate);
+                          }, 500);
                         }}>
                           {category}
                       </ul>
