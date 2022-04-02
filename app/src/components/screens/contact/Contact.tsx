@@ -8,7 +8,7 @@ import githubIcon from '../../../images/github-icon.png';
 import linkedinIcon from '../../../images/linkedin-icon.png';
 import './styles/_contact.scss';
 import './transitions/_contactTransitions.scss';
-import { enterContactTransition, leaveContactTransition } from './transitions/ContactTransitions';
+import { leaveContactTransition } from './transitions/ContactTransitions';
 import { CurrentScreenContext } from '../../../current-screen-context';
 
 const Contact = () => {
@@ -16,10 +16,7 @@ const Contact = () => {
   const screenContext = useContext(CurrentScreenContext);
 
   useEffect(() => {
-    if (screenContext.currentScreen === 'contact') {
-      enterContactTransition();
-    }
-    else {
+    if (screenContext.currentScreen !== 'contact') {
       leaveContactTransition();
     }
   }, [screenContext]);

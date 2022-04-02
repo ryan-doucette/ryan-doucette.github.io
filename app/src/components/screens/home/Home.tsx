@@ -9,7 +9,7 @@ import handleNavigate from '../../../screenNavigationHandler';
 import { useState, useContext, useEffect } from 'react';
 import React from 'react';
 import './transitions/HomeTransitions';
-import { intialHomeEnterTransition, leaveHomeTransition, openMenuTransition, closeMenuTransition, leaveMenuTransition } from './transitions/HomeTransitions';
+import { leaveHomeTransition, openMenuTransition, closeMenuTransition, leaveMenuTransition } from './transitions/HomeTransitions';
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState<boolean | undefined>(undefined);
@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     // If the user is entering the home screen
     if (screenContext.currentScreen === 'home' && menuOpen === undefined) {
-      intialHomeEnterTransition();
+      // Transition handeled in screenNavigationHandler
     }
     // If the user is exiting the home or menu screen
     else if(screenContext.currentScreen !== 'home' && screenContext.currentScreen !== 'menu') {

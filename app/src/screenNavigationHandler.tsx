@@ -1,4 +1,7 @@
-const handleNavigate = (category: string, currentScreen: string, navigate: any) => {
+import { intialHomeEnterTransition } from './components/screens/home/transitions/HomeTransitions';
+import { enterContactTransition } from './components/screens/contact/transitions/ContactTransitions';
+
+const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any) => {
     const transitionLength = () => {
         switch(currentScreen) {
             case 'home': 
@@ -16,12 +19,37 @@ const handleNavigate = (category: string, currentScreen: string, navigate: any) 
         } 
     }
 
+    const addEnterTransitions = () => {
+        switch(nextScreen) {
+            case 'home': 
+                intialHomeEnterTransition();
+                break;
+            case 'menu': 
+                break;
+            case 'about':
+                break;
+            case 'skills':
+                break;
+            case 'experience':
+                break;
+            case 'contact':
+                enterContactTransition();
+                break;
+        } 
+    }
+
     setTimeout(() => {
-        if(category === 'home') {
-            navigate('/');
+        if(nextScreen === 'home' && currentScreen === 'menu') {
+            // Do nothing
+            // Transitions are handled within the Home component
         }
-        else if (category !== 'menu'){
-            navigate(category);
+        else if(nextScreen === 'home') {
+            navigate('/');
+            addEnterTransitions();
+        }
+        else if (nextScreen !== 'menu'){
+            navigate(nextScreen);
+            addEnterTransitions();
         }
     }, transitionLength());
 }
