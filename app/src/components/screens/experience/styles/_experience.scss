@@ -1,15 +1,52 @@
 @use "../../../../theme";
 @use "../../../../breakpoints";
 
-// .experience {
-// }
+.experience {
+    height: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    z-index: 1;
+    margin: 24px;
+}
+.experiencePreviewsContainer {
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    margin-top: 32px;
+    padding-bottom: 32px;
+    justify-content: center;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, 100%);
+    background-color: red;
+}
+.experiencePreview {
+    background-color: theme.$alternate;
+    border-radius: 8px;
+    width: 100%;
+    height: 240px;
+    cursor: pointer;
+}
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
+    .experiencePreviewsContainer {
+        height: fit-content;
+        margin: 32px;
+        grid-template-columns: repeat(auto-fill, 432px);
+        max-width: 1350px;
+    }
+
+    .experiencePreview {
+        height: 240px;
+    }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {
+    .experience {
+        margin: 62px;
+    }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */

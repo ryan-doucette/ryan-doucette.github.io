@@ -2,45 +2,6 @@
 @use "../minScreenHeights";
 @use "../headerHeight";
 
-// .fade-enter {
-//   opacity: 0;
-//   transform: translate(0, 25px);
-// }
-// .fade-enter.fade-enter-active {
-//   opacity: 1;
-//   transform: translate(0, 0);
-//   transition: opacity 400ms ease-out 150ms, transform 450ms ease 150ms;
-// }
-// .fade-exit {
-//   display: none;
-// }
-// .fade-exit.fade-exit-active {
-//   display: none;
-// }
-// .fade-enter {
-//   opacity: 0;
-//   transform: translate(0, 25px);
-//   height: 0;
-// }
-// .fade-enter.fade-enter-active {
-//   opacity: 1;
-//   height: 100%;
-//   transform: translate(0, 0);
-//   transition: height 0s ease 450ms, opacity 400ms ease-out 450ms,
-//     transform 450ms ease 450ms;
-// }
-// .fade-exit {
-//   opacity: 1;
-//   transform: translate(0, 0);
-//   height: 100%;
-// }
-// .fade-exit.fade-exit-active {
-//   opacity: 0;
-//   transform: translate(0, 25px);
-//   height: 0;
-//   transition: height 0s ease 350ms, opacity 300ms ease-out, transform 350ms ease;
-// }
-
 .screen {
   margin-top: headerHeight.$mobile;
 }
