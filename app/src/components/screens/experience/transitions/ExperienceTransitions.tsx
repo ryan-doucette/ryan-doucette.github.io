@@ -53,7 +53,7 @@ export const leaveExperienceTransition = () => {
 
 export const showExperiencePreviews = () => {
     const experiencePreviewsContainer = document.getElementById('experience-previews-container');
-    const fullExperienceContainer = document.getElementById('full-experience-coontainer');
+    const fullExperienceContainer = document.getElementById('full-experience-container');
     const experienceScreen = document.getElementById('experienceScreen');
 
     experiencePreviewsContainer!.style.display = 'none';
@@ -70,7 +70,7 @@ export const showExperiencePreviews = () => {
 
 export const hideExperienceContainers = () => {
     const experiencePreviewsContainer = document.getElementById('experience-previews-container');
-    const fullExperienceContainer = document.getElementById('full-experience-coontainer');
+    const fullExperienceContainer = document.getElementById('full-experience-container');
     const experienceScreen = document.getElementById('experienceScreen');
 
     fullExperienceContainer!.style.display = 'none';
@@ -92,7 +92,7 @@ export const hideExperienceContainers = () => {
 }
 
 export const leaveExperienceFull = () => {
-    const fullExperienceContainer = document.getElementById('full-experience-coontainer');
+    const fullExperienceContainer = document.getElementById('full-experience-container');
     fullExperienceContainer?.classList.add('experience-full-hidden');
     fullExperienceContainer?.classList.remove('experience-full-shown');
 }

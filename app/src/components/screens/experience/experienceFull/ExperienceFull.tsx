@@ -10,7 +10,9 @@ const ExperienceFull = ({closeButtonPressed, currentItem} : {currentItem:experie
             <div className='experienceCloseButtonContainer' onClick={closeButtonPressed}>
                 <CloseButton/>
             </div>
-            <img className='experienceFullImage' src={currentItem?.image} alt={currentItem?.title + ' image'}/>
+            <div className='experienceFullImageContainer'>
+                <img className='experienceFullImage' src={currentItem?.image} alt={currentItem?.title + ' image'}/>
+            </div>
             <section className='experienceFullText'>
                 <div className='experienceFullTitle'>{currentItem?.title}</div>
                 <div className='experienceFullDescription'>{currentItem?.description}</div>

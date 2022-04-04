@@ -76,12 +76,11 @@ const Experience = () => {
         id='experience-previews-container'
       >
         { experienceItems.map((item) => (
-          <CurrentScreenContext.Consumer>
+          <CurrentScreenContext.Consumer key={item.identifier}>
             {({toggleCurrentScreen}) => (
               <div 
                 className='experiencePreviewContainer' 
                 id={'experience-preview-' + experienceItems.indexOf(item).toString()} 
-                key={item.identifier}
                 onClick={() => {
                   handleOpenFullExperience(item);
                   toggleCurrentScreen('experienceFull');
@@ -99,7 +98,7 @@ const Experience = () => {
       </div>
       <div 
         className='fullExperienceContainer' 
-        id='full-experience-coontainer'
+        id='full-experience-container'
         style={{display: 'none'}}
       >
         <CurrentScreenContext.Consumer>
