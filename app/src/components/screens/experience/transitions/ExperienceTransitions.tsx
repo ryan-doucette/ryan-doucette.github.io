@@ -66,6 +66,19 @@ export const showExperiencePreviews = () => {
     const experienceScreen = document.getElementById('experienceScreen');
     const resumeButtonContainer = document.getElementById('resume-button-container');
 
+    const contactElement0 = document.getElementById('experience-preview-0');
+    const contactElement1 = document.getElementById('experience-preview-1');
+    const contactElement2 = document.getElementById('experience-preview-2');
+    const contactElement3 = document.getElementById('experience-preview-3');
+    const contactElement4 = document.getElementById('experience-preview-4');
+    const contactElement5 = document.getElementById('experience-preview-5');
+
+    contactElement0?.classList.remove('enter-experience-preview-0');
+    contactElement1?.classList.remove('enter-experience-preview-1');
+    contactElement2?.classList.remove('enter-experience-preview-2');
+    contactElement3?.classList.remove('enter-experience-preview-3');
+    contactElement4?.classList.remove('enter-experience-preview-4');
+    contactElement5?.classList.remove('enter-experience-preview-5');
 
     experiencePreviewsContainer!.style.display = 'none';
     resumeButtonContainer!.style.display = 'none';
