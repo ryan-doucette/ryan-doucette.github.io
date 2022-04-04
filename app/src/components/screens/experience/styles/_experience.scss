@@ -31,9 +31,105 @@
     padding-bottom: 32px;
     justify-content: center;
 }
+.resumeButtonContainer {
+    z-index: 2;
+    background-color:theme.$highlight;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 80px;
+    right: 16px;
+    width: 60px;
+    height: 60px;
+    border-radius: 32.5px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 2px 2px 24px rgba($color: #000000, $alpha: 0.8);
+    border: transparent solid 3px;
+}
+.resumeIcon {
+    width: 33px;
+}
+.resumeButtonCloseContents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.resumeButtonOpenContents {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+}
+.showResumeButtonContents {
+    display: flex;
+    animation: displayResumeButtonContents 0.2s linear;
+}
+.showCloseResumeButtonContents {
+    display: flex;
+}
+.hideResumeButtonContents {
+    display: none;
+}
+.resumeCloseButton {
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.navigateToResumeButton {
+    color: theme.$primary;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: theme.$alternate;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+.navigateToResumeButton:hover {
+    color: theme.$alternate;
+    background-color: theme.$primary;
+}
+.resumeButtonContainerOpen {
+    width: calc(100% - 38px);
+    max-width: 340px;
+    justify-content: space-between;
+    align-items: center;
+    cursor:auto;
+}
+.resumeButtonContainerClose {
+    width: 60px;
+    justify-content: center;
+}
+.resumeButtonContainer:hover {
+    border: theme.$alternate solid 3px;
+}
+
+
+@keyframes displayResumeButtonContents {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 /* ******************* TABLET VIEW ******************* */
-@media (min-width: breakpoints.$tablet) {}
+@media (min-width: breakpoints.$tablet) {
+    .resumeButtonContainerOpen {
+        width: 400px;
+        justify-content: space-between;
+        align-items: center;
+        cursor:auto;
+    }
+}
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {
@@ -45,7 +141,33 @@
     }
     .fullExperienceContainer {
         align-items: center;
-    }    
+    }
+    .resumeButtonContainer {
+        top: 105px;
+        right: 100px;
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+    }
+    .resumeIcon {
+        width: 40px;
+    }
+    .resumeCloseButton {
+        width: 45px;
+        height: 45px;
+    }
+    .navigateToResumeButton {
+        font-size: 20px;
+        padding: 14px;
+        border-radius: 12px;
+    }
+    .resumeButtonContainerOpen {
+        width: 400px;
+        max-width: 400px;
+    }
+    .resumeButtonContainerClose {
+        width: 70px;
+    }
 }
 
 /* ******************* CENTER PREVIEWS, NO MORE OVERFLOW ******************* */
@@ -64,5 +186,45 @@
     .experiencePreviewContainer {
         width: 278.4px;
         height: 288px;
+    }
+    .resumeButtonContainer {
+        top: 135px;
+        right: 120px;
+        width: 90px;
+        height: 90px;
+        border-radius: 45px;
+    }
+    .resumeIcon {
+        width: 45px;
+    }
+    .resumeButtonContainerOpen {
+        width: 400px;
+        max-width: 400px;
+    }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (max-width: breakpoints.$small-mobile) {
+    .resumeButtonContainer {
+        top: 80px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+        border-radius: 45px;
+    }
+    .resumeIcon {
+        width: 25px;
+    }
+    .resumeButtonContainerOpen {
+        width: calc(100% - 40px);
+    }
+    .resumeCloseButton {
+        width: 35px;
+        height: 35px;
+    }
+    .navigateToResumeButton {
+        font-size: 10px;
+        padding: 12px;
+        border-radius: 6px;
     }
 }

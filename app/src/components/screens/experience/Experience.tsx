@@ -2,16 +2,19 @@ import React, {useEffect, useContext, useState, useRef, useCallback } from 'reac
 import { CurrentScreenContext } from '../../../current-screen-context';
 import './styles/_experience.scss';
 import './transitions/_experienceTransitions.scss';
-import { leaveExperienceTransition, showExperiencePreviews, hideExperienceContainers, leaveExperienceFull } from './transitions/ExperienceTransitions';
+import { leaveExperienceTransition, showExperiencePreviews, hideExperienceContainers, leaveExperienceFull, openResumeButtonContainer, closeResumeButtonContainer } from './transitions/ExperienceTransitions';
 import experienceItems from './ExperienceData';
 import ExperiencePreview from './experiencePreview/ExperiencePreview';
 import ExperienceFull from './experienceFull/ExperienceFull';
 import { experienceItem } from 'customTypes';
+import resumeIcon from './images/resume.png';
+import CloseButton from '../home/menuModal/CloseButton';
 
 const Experience = () => {
   const screenContext = useContext(CurrentScreenContext);
   const [selectedExperience, setSelectedExperience] = useState<undefined | experienceItem>(undefined);
   const [fullExperienceShown, setFullExperienceShown] = useState<undefined | boolean>(undefined);
+  const [resumeButtonContainerOpen, setResumeButtonContainerOpen] = useState<undefined | boolean>(undefined);;
 
   useEffect(() => {
     if(screenContext.currentScreen !== 'experience' && screenContext.currentScreen !== 'experienceFull') { 
@@ -69,8 +72,38 @@ const Experience = () => {
     setFullExperienceShown(false);
   };
 
+  useEffect(() => {
+    if(resumeButtonContainerOpen === true) {
+      openResumeButtonContainer();
+    } 
+    else if(resumeButtonContainerOpen === false) {
+      closeResumeButtonContainer();
+    }
+  }, [resumeButtonContainerOpen]);
+
   return (
     <div className="experience" id='experienceScreen' ref={experienceScreen}>
+      <div 
+        id='resume-button-container' 
+        className='resumeButtonContainer'
+        onClick={() => {if (resumeButtonContainerOpen !== true) setResumeButtonContainerOpen(true)}}
+      >
+        <section className='resumeButtonCloseContents' id='resume-button-close-contents'>
+          <img className='resumeIcon' alt='resume icon' src={resumeIcon}/>
+        </section>
+        <section className='resumeButtonOpenContents' id='resume-button-open-contents'>
+          <div className='resumeCloseButton' onClick={() => setResumeButtonContainerOpen(false)}>
+            <CloseButton/>
+          </div>
+          <a 
+            href='https://github.com/ryan-doucette/ryan-doucette-resume/blob/master/Ryan%20Doucette%20Resume%202021-2022.pdf' 
+            className='navigateToResumeButton'
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            CHECK OUT MY RESUME</a>
+        </section>
+      </div>
       <div 
         className='experiencePreviewsContainer' 
         id='experience-previews-container'
@@ -82,6 +115,7 @@ const Experience = () => {
                 className='experiencePreviewContainer' 
                 id={'experience-preview-' + experienceItems.indexOf(item).toString()} 
                 onClick={() => {
+                  setResumeButtonContainerOpen(false);
                   handleOpenFullExperience(item);
                   toggleCurrentScreen('experienceFull');
                 }}

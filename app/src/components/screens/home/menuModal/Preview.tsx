@@ -10,7 +10,7 @@ const Preview = ({currentItem} : {currentItem:previewItem}) => {
 
     return (
         <div className="preview">
-            <div className='previewImage' id='preview-image' style={{ backgroundImage:`url(${currentItem.image})` }}/>
+            <img className='previewImage' id='preview-image' alt={currentItem.identifier + ' image'} src={currentItem.image}/>
             <div className='description' id='description'>{currentItem.description}</div>
             {
                 currentItem.identifier === 'ruumzy' ? 

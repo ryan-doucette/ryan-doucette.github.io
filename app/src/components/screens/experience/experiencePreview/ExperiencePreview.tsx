@@ -5,7 +5,7 @@ import './_experiencePreview.scss';
 const ExperiencePreview = ({image, title, subTitle} : {image : string, title: string, subTitle: string}) => {
     return (
         <div className='experiencePreview'>
-            <div className='experiencePreviewImage' style={{ backgroundImage:`url(${image})` }}/>
+            <img className='experiencePreviewImage' alt={title + ' image'} src={image}/>
             <div className='previewLabels'>
                 <div className='experiencePreviewTitle'>{title}</div>
                 <div className='experiencePreviewSubTitle'>{subTitle}</div>  

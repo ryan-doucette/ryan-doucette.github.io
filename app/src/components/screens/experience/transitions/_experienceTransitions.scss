@@ -95,10 +95,36 @@
 @keyframes show-experience-item {
     0% {
         opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.resume-button-shown {
+    animation: resume-button-shown 0.3s forwards; 
+}
+.resume-button-hidden {
+    animation: resume-button-hidden 0.3s forwards; 
+}
+
+@keyframes resume-button-shown {
+    0% {
+        opacity: 0%;
         transform: translateY(30px);
     }
     100% {
         opacity: 100%;
         transform: translateY(0px);
+    }
+}
+@keyframes resume-button-hidden {
+    50% {
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateY(30px);
     }
 }

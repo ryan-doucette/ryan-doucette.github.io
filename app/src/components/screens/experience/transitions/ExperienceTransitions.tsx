@@ -5,6 +5,7 @@ export const enterExperienceTransition = () => {
     const contactElement3 = document.getElementById('experience-preview-3');
     const contactElement4 = document.getElementById('experience-preview-4');
     const contactElement5 = document.getElementById('experience-preview-5');
+    const resumeButtonContainer = document.getElementById('resume-button-container');
 
     contactElement0?.classList.add('enter-experience-preview-0');
     contactElement0?.classList.remove('leave-experience-preview-0');
@@ -23,6 +24,9 @@ export const enterExperienceTransition = () => {
 
     contactElement5?.classList.add('enter-experience-preview-5');
     contactElement5?.classList.remove('leave-experience-preview-5');
+
+    resumeButtonContainer?.classList.add('enter-experience-preview-0');
+    resumeButtonContainer?.classList.remove('leave-experience-preview-0');
 }
 export const leaveExperienceTransition = () => {
     const contactElement0 = document.getElementById('experience-preview-0');
@@ -31,6 +35,7 @@ export const leaveExperienceTransition = () => {
     const contactElement3 = document.getElementById('experience-preview-3');
     const contactElement4 = document.getElementById('experience-preview-4');
     const contactElement5 = document.getElementById('experience-preview-5');
+    const resumeButtonContainer = document.getElementById('resume-button-container');
 
     contactElement0?.classList.add('leave-experience-preview-0');
     contactElement0?.classList.remove('enter-experience-preview-0');
@@ -49,22 +54,34 @@ export const leaveExperienceTransition = () => {
 
     contactElement5?.classList.add('leave-experience-preview-5');
     contactElement5?.classList.remove('enter-experience-preview-5');
+
+    resumeButtonContainer?.classList.remove('resume-button-shown');
+    resumeButtonContainer?.classList.add('leave-experience-preview-0');
+    resumeButtonContainer?.classList.remove('enter-experience-preview-0');
 }
 
 export const showExperiencePreviews = () => {
     const experiencePreviewsContainer = document.getElementById('experience-previews-container');
     const fullExperienceContainer = document.getElementById('full-experience-container');
     const experienceScreen = document.getElementById('experienceScreen');
+    const resumeButtonContainer = document.getElementById('resume-button-container');
+
 
     experiencePreviewsContainer!.style.display = 'none';
+    resumeButtonContainer!.style.display = 'none';
+
     fullExperienceContainer?.classList.add('experience-full-hidden');
     fullExperienceContainer?.classList.remove('experience-full-shown');
     experiencePreviewsContainer?.classList.remove('experience-previews-hidden');
+
+    resumeButtonContainer?.classList.remove('resume-button-hidden');
     setTimeout(() => {
         experienceScreen!.style.height = '100%';
         fullExperienceContainer!.style.display = 'none';
         experiencePreviewsContainer!.style.display = 'grid';
+        resumeButtonContainer!.style.display = 'flex';
         experiencePreviewsContainer?.classList.add('experience-previews-shown');
+        resumeButtonContainer?.classList.add('resume-button-shown');
     }, 300);
 }
 
@@ -72,11 +89,16 @@ export const hideExperienceContainers = () => {
     const experiencePreviewsContainer = document.getElementById('experience-previews-container');
     const fullExperienceContainer = document.getElementById('full-experience-container');
     const experienceScreen = document.getElementById('experienceScreen');
+    const resumeButtonContainer = document.getElementById('resume-button-container');
 
     fullExperienceContainer!.style.display = 'none';
     experiencePreviewsContainer?.classList.remove('experience-previews-shown');
     experiencePreviewsContainer?.classList.add('experience-previews-hidden');
     fullExperienceContainer?.classList.remove('experience-full-hidden');
+
+    resumeButtonContainer?.classList.remove('enter-experience-preview-0');
+    resumeButtonContainer?.classList.remove('resume-button-shown');
+    resumeButtonContainer?.classList.add('resume-button-hidden');
     setTimeout(() => {
         if (window.innerWidth > 768) {
             experienceScreen!.style.height = '100%';
@@ -86,6 +108,7 @@ export const hideExperienceContainers = () => {
         }
         experienceScreen!.classList.add('experience-scroll');
         experiencePreviewsContainer!.style.display = 'none';
+        resumeButtonContainer!.style.display = 'none';
         fullExperienceContainer!.style.display = 'flex';
         fullExperienceContainer?.classList.add('experience-full-shown');
     }, 300);
@@ -95,4 +118,38 @@ export const leaveExperienceFull = () => {
     const fullExperienceContainer = document.getElementById('full-experience-container');
     fullExperienceContainer?.classList.add('experience-full-hidden');
     fullExperienceContainer?.classList.remove('experience-full-shown');
+}
+
+export const openResumeButtonContainer = () => {
+    const resumeButtonContainer = document.getElementById('resume-button-container');
+    const resumeButtonOpenContents = document.getElementById('resume-button-open-contents');
+    const resumeButtonCloseContents = document.getElementById('resume-button-close-contents');
+
+    resumeButtonContainer?.classList.add('resumeButtonContainerOpen');
+    resumeButtonContainer?.classList.remove('resumeButtonContainerClose');
+
+    resumeButtonCloseContents?.classList.add('hideResumeButtonContents');
+    resumeButtonCloseContents?.classList.remove('showResumeButtonContents');
+
+    resumeButtonOpenContents?.classList.remove('hideResumeButtonContents');
+    setTimeout(() => {
+        resumeButtonOpenContents?.classList.add('showResumeButtonContents');
+    }, 300);
+}
+
+export const closeResumeButtonContainer = () => {
+    const resumeButtonContainer = document.getElementById('resume-button-container');
+    const resumeButtonOpenContents = document.getElementById('resume-button-open-contents');
+    const resumeButtonCloseContents = document.getElementById('resume-button-close-contents');
+
+    resumeButtonContainer?.classList.add('resumeButtonContainerClose');
+    resumeButtonContainer?.classList.remove('resumeButtonContainerOpen');
+
+    resumeButtonOpenContents?.classList.add('hideResumeButtonContents');
+    resumeButtonOpenContents?.classList.remove('showResumeButtonContents');
+
+    resumeButtonCloseContents?.classList.remove('hideResumeButtonContents');
+    setTimeout(() => {
+        resumeButtonCloseContents?.classList.add('showCloseResumeButtonContents');
+    }, 300);
 }
