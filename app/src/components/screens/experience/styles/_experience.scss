@@ -7,7 +7,9 @@
     position: relative;
     justify-content: center;
     z-index: 1;
-    margin: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
 }
 .experiencePreviewsContainer {
     display: grid;
@@ -16,39 +18,51 @@
     margin-top: 32px;
     padding-bottom: 32px;
     justify-content: center;
-    grid-gap: 24px;
-    grid-template-columns: repeat(auto-fill, 100%);
-    background-color: red;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, 232px);
 }
-.experiencePreview {
-    background-color: theme.$alternate;
-    border-radius: 8px;
-    width: 100%;
+.experiencePreviewContainer {
+    width: 232px;
     height: 240px;
-    cursor: pointer;
+}
+.fullExperienceContainer {
+    margin-top: 32px;
+    width: 100%;
+    padding-bottom: 32px;
+    justify-content: center;
 }
 
 /* ******************* TABLET VIEW ******************* */
-@media (min-width: breakpoints.$tablet) {
-    .experiencePreviewsContainer {
-        height: fit-content;
-        margin: 32px;
-        grid-template-columns: repeat(auto-fill, 432px);
-        max-width: 1350px;
-    }
-
-    .experiencePreview {
-        height: 240px;
-    }
-}
+@media (min-width: breakpoints.$tablet) {}
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {
+    .experiencePreviewsContainer {
+        margin: 0px;
+        padding-bottom: 32px;
+        padding-top: 32px;
+        max-width: 1000px;
+    }
+    .fullExperienceContainer {
+        align-items: center;
+    }    
+}
+
+/* ******************* CENTER PREVIEWS, NO MORE OVERFLOW ******************* */
+@media (min-width: 792px) {
     .experience {
-        margin: 62px;
+        align-items: center;
     }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
+    .experiencePreviewsContainer {
+        grid-template-columns: repeat(auto-fill, 278.4px);
+        gap: 32px;
+    }
+    .experiencePreviewContainer {
+        width: 278.4px;
+        height: 288px;
+    }
 }

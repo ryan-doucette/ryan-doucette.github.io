@@ -1,0 +1,97 @@
+@use "../../../../theme";
+@use "../../../../breakpoints";
+
+.experienceFullContainer {
+    position: relative;
+    width:100%;
+    max-width: 300px;
+    border-radius: 8px;
+    height: fit-content;
+    background-color: theme.$alternate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    color: theme.$primary;
+    box-shadow: 2px 2px 24px rgba($color: #000000, $alpha: 0.8);
+}
+.experienceFullImage {
+    width: 100%;
+    height: auto;
+    background-color: grey;
+}
+.experienceFullTitle {
+    margin-top: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.experienceFullDescription {
+    margin-top: 4px;
+    font-size: 16px;
+}
+.experienceCloseButtonContainer {
+    transform: scale(0.9);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    background-color: theme.$alternate;
+    border-radius: 100%;
+    padding: 8px;
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: breakpoints.$tablet) {}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$desktop) {
+    .experienceFullContainer {
+        flex-direction: row;
+        max-width: 850px;
+    }
+    .experienceFullTitle {
+        margin-top: 0px;
+        font-size: 32px;
+    }
+    .experienceFullDescription {
+        font-size: 20px;
+    }
+    .experienceFullImage {
+        align-self: flex-start;
+        width: 350px;
+        height: auto;
+        margin-right: 24px;
+    }
+    .experienceCloseButtonContainer {
+        transform: scale(0.8);
+        padding: 4px;
+    }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$big-desktop) {
+    .experienceFullContainer {
+        flex-direction: row;
+        max-width: 900px;
+    }
+    .experienceFullTitle {
+        font-size: 32px;
+    }
+    .experienceFullDescription {
+        font-size: 24px;
+    }
+    .experienceFullImage {
+        width: 400px;
+        height: auto;
+    }
+    .experienceCloseButtonContainer {
+        transform: scale(0.8);
+        padding: 4px;
+    }
+}

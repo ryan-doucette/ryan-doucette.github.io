@@ -1,47 +1,48 @@
 // eslint-disable-next-line
 import React from 'react';
 import {experienceItem} from 'customTypes';
+import testImg from './images/test-01.png';
 
 const experienceItems: experienceItem[] = [
     {
         identifier: 'ruumzy',
         title: 'Ruumzy',
-        subtitle: 'Subletting app',
-        description: 'Ruumzy subletting app description',
-        image: '',
+        subtitle: 'Apartment Sublet Solution',
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        image: testImg,
     },
     {
         identifier: 'website',
-        title: 'Website',
-        subtitle: '',
+        title: 'This Website',
+        subtitle: 'Fun Personal Project',
         description: '',
         image: '',
     },
     {
         identifier: 'blueport',
         title: 'Blueport',
-        subtitle: '',
+        subtitle: 'Frontend Dev Co-op',
         description: '',
         image: '',
     },
     {
         identifier: 'stateStreet',
-        title: 'State Street Global Advisors',
-        subtitle: '',
+        title: 'SSGA',
+        subtitle: 'Project Manager Co-op',
         description: '',
         image: '',
     },
     {
         identifier: 'smartsheet',
         title: 'Smartsheet',
-        subtitle: '',
+        subtitle: 'Frontend Dev Internship',
         description: '',
         image: '',
     },
     {
         identifier: 'scrutiny',
         title: 'ScrutinyFB',
-        subtitle: '',
+        subtitle: 'Fantasy Football Assistant',
         description: '',
         image: '',
     },

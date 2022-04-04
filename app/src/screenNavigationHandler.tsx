@@ -1,5 +1,6 @@
 import { intialHomeEnterTransition } from './components/screens/home/transitions/HomeTransitions';
 import { enterContactTransition } from './components/screens/contact/transitions/ContactTransitions';
+import { enterExperienceTransition } from './components/screens/experience/transitions/ExperienceTransitions';
 
 const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any) => {
     const transitionLength = () => {
@@ -13,7 +14,9 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
             case 'skills':
                 return 1000;
             case 'experience':
-                return 1000;
+                return 1500;
+            case 'experienceFull':
+                return 600;
             case 'contact':
                 return 500;
         } 
@@ -24,13 +27,12 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
             case 'home': 
                 intialHomeEnterTransition();
                 break;
-            case 'menu': 
-                break;
             case 'about':
                 break;
             case 'skills':
                 break;
             case 'experience':
+                enterExperienceTransition();
                 break;
             case 'contact':
                 enterContactTransition();
@@ -39,15 +41,11 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
     }
 
     setTimeout(() => {
-        if(nextScreen === 'home' && currentScreen === 'menu') {
-            // Do nothing
-            // Transitions are handled within the Home component
-        }
-        else if(nextScreen === 'home') {
+        if(nextScreen === 'home') {
             navigate('/');
             addEnterTransitions();
         }
-        else if (nextScreen !== 'menu'){
+        else {
             navigate(nextScreen);
             addEnterTransitions();
         }
