@@ -10,6 +10,7 @@ import { experienceItem } from 'customTypes';
 import resumeIcon from './images/resume.png';
 import CloseButton from '../home/menuModal/CloseButton';
 import { useNavigationType } from 'react-router-dom';
+import resume from '../../../resume/ryan_doucette_resume_2021_2022.pdf';
 
 const Experience = () => {
   const screenContext = useContext(CurrentScreenContext);
@@ -104,7 +105,7 @@ const Experience = () => {
             <CloseButton/>
           </div>
           <a 
-            href='https://github.com/ryan-doucette/ryan-doucette-resume/blob/master/Ryan%20Doucette%20Resume%202021-2022.pdf' 
+            href={resume}
             className='navigateToResumeButton'
             target="_blank"
             rel="noreferrer noopener"
