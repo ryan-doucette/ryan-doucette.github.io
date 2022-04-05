@@ -3,9 +3,7 @@ import './styles/_background.scss';
 
 const Background = () => {
     return (
-        <div className="background">
-
-        </div>
+        <div className="background"></div>
     );
 }
 
