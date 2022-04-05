@@ -11,5 +11,7 @@ declare module 'customTypes' {
         subtitle: string,
         description: string,
         image: string,
+        buttonLabel?: string,
+        buttonLink?: string,
     }
 }
