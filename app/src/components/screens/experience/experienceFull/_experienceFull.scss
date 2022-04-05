@@ -1,0 +1,138 @@
+@use "../../../../theme";
+@use "../../../../breakpoints";
+
+.experienceFullContainer {
+    position: relative;
+    width:100%;
+    max-width: 300px;
+    border-radius: 8px;
+    height: fit-content;
+    background-color: theme.$alternate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    color: theme.$primary;
+    box-shadow: 2px 2px 24px rgba($color: #000000, $alpha: 0.8);
+}
+.experienceFullImage {
+    width: 100%;
+}
+.experienceFullButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    background-color: theme.$highlight;
+    margin-top: 10px;
+    padding: 16px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: theme.$alternate;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 2px 16px rgba($color: #000000, $alpha: 0.6);
+}
+.experienceFullButtonLabel {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.experienceFullButton:hover {
+    background-color: theme.$primary;
+}
+.experienceFullTitle {
+    margin-top: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.experienceFullDescription {
+    margin-top: 4px;
+    font-size: 16px;
+}
+.experienceCloseButtonContainer {
+    transform: scale(0.9);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    background-color: theme.$alternate;
+    border-radius: 100%;
+    padding: 8px;
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: breakpoints.$tablet) {}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$desktop) {
+    .experienceFullContainer {
+        flex-direction: row;
+        max-width: 850px;
+    }
+    .experienceFullImageContainer {
+        width: 350px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 24px;
+    }
+    .experienceFullButton {
+        margin-top: 20px;
+    }
+    .experienceFullTitle {
+        margin-top: 0px;
+        font-size: 32px;
+    }
+    .experienceFullDescription {
+        font-size: 20px;
+    }
+    .experienceFullImage {
+        align-self: flex-start;
+        width: 350px;
+        height: auto;
+    }
+    .experienceCloseButtonContainer {
+        transform: scale(0.8);
+        padding: 4px;
+    }
+    .experienceFullButton {
+        width: 300px;
+    }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$big-desktop) {
+    .experienceFullContainer {
+        flex-direction: row;
+        max-width: 900px;
+    }
+    .experienceFullTitle {
+        font-size: 32px;
+    }
+    .experienceFullDescription {
+        font-size: 24px;
+    }
+    .experienceFullImageContainer {
+        width: 400px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 24px;
+    }
+    .experienceFullImage {
+        width: 400px;
+        height: auto;
+    }
+    .experienceCloseButtonContainer {
+        transform: scale(0.8);
+        padding: 4px;
+    }
+}

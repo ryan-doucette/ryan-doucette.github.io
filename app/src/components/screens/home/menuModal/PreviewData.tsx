@@ -1,33 +1,44 @@
 // eslint-disable-next-line
 import React from 'react';
-import category from 'customTypes';
+import aboutImg from './previewImgs/aboutPreviewImg.png';
+import skillsImg from './previewImgs/skillsPreviewImg.png';
+import experienceImg from './previewImgs/experiencePreviewImg.png';
+import ruumzyImg from './previewImgs/ruumzyPreviewImg.png';
+import contactImg from './previewImgs/contactPreviewImg.png';
 
-const categories: category[] = [
+import {previewItem} from 'customTypes';
+
+const previewItems: previewItem[] = [
     {
         identifier: 'about',
         description: "I'm a frontend software developer currently interning at Smartsheet",
-        link: 'about'
+        link: 'about',
+        image: aboutImg
     },
     {
         identifier: 'skills',
         description: "Fluency within computer science and design is important to me",
-        link: 'skills'
+        link: 'skills',
+        image: skillsImg,
     },
     {
         identifier: 'experience',
         description: "Professional experience and personal projects have shaped my practices",
-        link: 'experience'
+        link: 'experience',
+        image: experienceImg,
     },
     {
         identifier: 'ruumzy',
         description: "The future of subletting apartments is here",
-        link: 'experience'
+        link: 'experience',
+        image: ruumzyImg,
     },
     {
         identifier: 'contact',
         description: "I'm always looking for new projects, feel free to reach out!",
-        link: 'contact'
+        link: 'contact',
+        image: contactImg,
     },
 ];
 
-export default categories;
+export default previewItems;

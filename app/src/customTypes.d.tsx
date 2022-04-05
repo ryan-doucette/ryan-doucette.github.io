@@ -1,8 +1,17 @@
 declare module 'customTypes' {
-    type category = {
+    export type previewItem = {
         identifier: string,
         description: string,
-        link: string
+        link: string,
+        image: string,
     }
-    export default category;
+    export type experienceItem = {
+        identifier: string,
+        title: string,
+        subtitle: string,
+        description: string,
+        image: string,
+        buttonLabel?: string,
+        buttonLink?: string,
+    }
 }

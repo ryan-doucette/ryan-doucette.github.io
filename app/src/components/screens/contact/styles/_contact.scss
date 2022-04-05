@@ -6,17 +6,17 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: fit-content;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
   z-index: 1;
 }
 .formContainer {
   margin-top: 36px;
   padding-bottom: 64px;
   height: fit-content;
-  margin-left: 20px;
-  margin-right: 20px;
   display: flex;
-  min-width: 300px;
   transition: 0.3s ease-in-out;
   z-index: 1;
 }
@@ -46,6 +46,7 @@
 }
 .infoDetails {
   font-size: 16px;
+  margin-top: 8px;
 }
 .formText {
   color: theme.$primary;

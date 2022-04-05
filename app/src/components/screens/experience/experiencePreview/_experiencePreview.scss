@@ -1,0 +1,58 @@
+@use "../../../../theme";
+@use "../../../../breakpoints";
+
+.experiencePreview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 24px rgba($color: #000000, $alpha: 0.8);
+    background-color: theme.$alternate;
+    color: theme.$primary;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    transition: 0.3s ease-in-out;
+}
+.experiencePreview:hover {
+    background-color: theme.$highlight;
+    color: theme.$alternate;
+    transform: scale(1.06);
+}
+.experiencePreviewImage {
+    align-self: center;
+    width: 100%;
+    height: 155px;
+    background-repeat: "no-repeat";
+    background-size: cover;
+    background-color: grey;
+}
+.experiencePreviewTitle {
+    font-weight: bold;
+    font-size: 24px;
+}
+.experiencePreviewSubTitle {
+    font-size: 16px;
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: breakpoints.$tablet) {}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$desktop) {}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$big-desktop) {
+    .experiencePreviewImage {
+        height: 191px;
+    }
+    .experiencePreviewTitle {
+        font-weight: bold;
+        font-size: 28px;
+    }
+    .experiencePreviewSubTitle {
+        font-size: 20px;
+    }
+}

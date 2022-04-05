@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Main from './components/Main';
 import Header from './components/header/Header';
 import Background from './components/background/Background';
 import { CurrentScreenContext } from './current-screen-context';
+import { useLocation } from 'react-router-dom';
 
 const App = () => {
-  
+  const location = useLocation();
+
   const getUrl = () => {
-    const url = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+    const url = location.pathname.substring(1);
     if (url.length === 0) {
       return 'home';
     }
@@ -15,6 +17,12 @@ const App = () => {
       return url;
     }
   }
+
+  useEffect(() => {
+    window.onpopstate = e => {
+      window.location.reload();
+   }
+  }, [location.pathname]);
 
   const [currentScreen, setCurrentScreen] = useState(getUrl());
   const toggleCurrentScreen = (currentScreen: string) => { 

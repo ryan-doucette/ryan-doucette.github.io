@@ -66,18 +66,6 @@
   background-color: theme.$alternate;
 }
 
-@keyframes spinCloseButton {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(105deg);
-  }
-  100% {
-    transform: rotate(720deg);
-  }
-}
-
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
   .leftright {

@@ -104,7 +104,7 @@ const Header = () => {
                             handleNavigate(category, currentScreen, navigate);
                           }, 500);
                         }}>
-                          {category}
+                          { category.charAt(0).toUpperCase() + category.slice(1) }
                       </ul>
                     )}
                   </CurrentScreenContext.Consumer>

@@ -4,8 +4,6 @@ import Greeting from '../home/Greeting';
 import Footer from '../home/Footer';
 import MenuModal from './menuModal/MenuModal';
 import { CurrentScreenContext } from '../../../current-screen-context';
-import { useNavigate } from 'react-router-dom';
-import handleNavigate from '../../../screenNavigationHandler';
 import { useState, useContext, useEffect } from 'react';
 import React from 'react';
 import './transitions/HomeTransitions';
@@ -14,7 +12,6 @@ import { leaveHomeTransition, openMenuTransition, closeMenuTransition, leaveMenu
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState<boolean | undefined>(undefined);
   const screenContext = useContext(CurrentScreenContext);
-  const navigate = useNavigate();
 
   useEffect(() => {
     // If the user is entering the home screen
@@ -60,25 +57,23 @@ const Home = () => {
               menuButtonPressed={() => {
                 openMenu(); 
                 toggleCurrentScreen('menu');
-                handleNavigate('menu', 'home', navigate);
               }}
             />
           )}
         </CurrentScreenContext.Consumer>  
       </div>  
       <div className='menuModalContainer' id='home-menu-modal'>
-      <CurrentScreenContext.Consumer>
-          {({toggleCurrentScreen}) => (
-            <MenuModal 
-              menuIsRevealed={menuOpen} 
-              closeButtonPressed={() => {
-                closeMenu(); 
-                toggleCurrentScreen('home');
-                handleNavigate('home', 'menu', navigate);
-              }}
-            />
-          )}
-        </CurrentScreenContext.Consumer>  
+        <CurrentScreenContext.Consumer>
+            {({toggleCurrentScreen}) => (
+              <MenuModal 
+                menuIsRevealed={menuOpen} 
+                closeButtonPressed={() => {
+                  closeMenu(); 
+                  toggleCurrentScreen('home');
+                }}
+              />
+            )}
+          </CurrentScreenContext.Consumer>  
       </div>  
     </div>
   );

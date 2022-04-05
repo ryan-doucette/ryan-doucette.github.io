@@ -3,26 +3,26 @@ import React, { useEffect, useState } from 'react';
 import Preview from './Preview';
 import './styles/_previewCarousel.scss';
 import useInterval from '../../../../customHooks/UseInterval';
-import category from 'customTypes';
-import categories from './PreviewData';
+import {previewItem} from 'customTypes';
+import previewItems from './PreviewData';
 
 const PreviewCarousel = ({menuRevealed} : {menuRevealed:boolean|undefined}) => {
 
-    const [currOption, setCurrOption] = useState(categories[0]);
-    const [currTab, setCurrTab] = useState(categories[0]);
+    const [currOption, setCurrOption] = useState(previewItems[0]);
+    const [currTab, setCurrTab] = useState(previewItems[0]);
     const [previewTransitioning, setPreviewTransitioning] = useState(false);
     // duration is (previewDuration / 1000 seconds)
     const previewDuration: number = 7000;
 
     useEffect(() => {
         if(menuRevealed) {
-            setCurrOption(categories[0]);
-            setCurrTab(categories[0]);
+            setCurrOption(previewItems[0]);
+            setCurrTab(previewItems[0]);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [menuRevealed]);
 
-    const toggleSection = (selectedCategory: category) => {
+    const toggleSection = (selectedCategory: previewItem) => {
         setPreviewTransitioning(true);
         setCurrTab(selectedCategory);
         // wait till half animation is done
@@ -38,11 +38,11 @@ const PreviewCarousel = ({menuRevealed} : {menuRevealed:boolean|undefined}) => {
     const autoScrollOptions = () => {
         let currIndex: number;
         // This is a bit hacky.. using a custom type did not allow me to use indexOf as expected
-        categories.forEach((category) => {
-            if (category.identifier === currOption.identifier) {
-                currIndex = categories.indexOf(category);                
-                const nextIndex: number = currIndex === categories.length - 1 ? 0 : currIndex + 1;
-                toggleSection(categories[nextIndex]);
+        previewItems.forEach((item) => {
+            if (item.identifier === currOption.identifier) {
+                currIndex = previewItems.indexOf(item);                
+                const nextIndex: number = currIndex === previewItems.length - 1 ? 0 : currIndex + 1;
+                toggleSection(previewItems[nextIndex]);
             }
         })
     };
@@ -54,19 +54,19 @@ const PreviewCarousel = ({menuRevealed} : {menuRevealed:boolean|undefined}) => {
     return (
         <div className="previewCarousel">
             <div className='previewContainer' id={previewTransitioning ? 'preview-transitioning' : undefined}>
-                <Preview currentCategory={currOption}/>
+                <Preview currentItem={currOption}/>
             </div>
             <section className='toggleSection'>
-                { categories.map((category) => (
+                { previewItems.map((item) => (
                     <div 
-                        key={category.identifier}
+                        key={item.identifier}
                         className='optionContainer'
-                        onClick={() => previewTransitioning ? null : toggleSection(category)}
+                        onClick={() => previewTransitioning ? null : toggleSection(item)}
                     >
                         <div 
-                            key={category.identifier} 
+                            key={item.identifier} 
                             className='option'
-                            id = {currTab.identifier === category.identifier ? 'selected' : undefined}
+                            id = {currTab.identifier === item.identifier ? 'selected' : undefined}
                         />
                     </div>
                 )) }
