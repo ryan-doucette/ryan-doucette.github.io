@@ -99,9 +99,14 @@ const Header = () => {
                         onClick={() => {
                           closeDropdown(); 
                           setTimeout(() => {
-                            updateTab(category);
-                            toggleCurrentScreen(category);
-                            handleNavigate(category, currentScreen, navigate);
+                            if(currentScreen === 'menu' && category === 'home') {
+                              return;
+                            }
+                            else {
+                              updateTab(category);
+                              toggleCurrentScreen(category);
+                              handleNavigate(category, currentScreen, navigate);
+                            }
                           }, 500);
                         }}>
                           { category.charAt(0).toUpperCase() + category.slice(1) }
@@ -121,9 +126,14 @@ const Header = () => {
                       className={currTab === category ? 'selected links' : 'links'} 
                       id={ category.toLowerCase() } 
                       onClick={() => {
-                        updateTab(category);
-                        toggleCurrentScreen(category);
-                        handleNavigate(category, currentScreen, navigate);
+                        if(currentScreen === 'menu' && category === 'home') {
+                          return;
+                        }
+                        else {
+                          updateTab(category);
+                          toggleCurrentScreen(category);
+                          handleNavigate(category, currentScreen, navigate);
+                        }
                       }}
                     >
                       { category.charAt(0).toUpperCase() + category.slice(1) }

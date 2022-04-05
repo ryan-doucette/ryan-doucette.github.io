@@ -13,8 +13,13 @@ const Icon = () => {
                 <div 
                     className="iconContainer" 
                     onClick={() => {
-                        handleNavigate('home', currentScreen, navigate);
-                        toggleCurrentScreen('home');
+                        if(currentScreen === 'menu') {
+                            return;
+                        }
+                        else {
+                            handleNavigate('home', currentScreen, navigate);
+                            toggleCurrentScreen('home');
+                        }
                     }}
                 >
                     <div className='topTriangle'/>

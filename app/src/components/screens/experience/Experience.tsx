@@ -9,7 +9,7 @@ import ExperienceFull from './experienceFull/ExperienceFull';
 import { experienceItem } from 'customTypes';
 import resumeIcon from './images/resume.png';
 import CloseButton from '../home/menuModal/CloseButton';
-import { useLocation, useNavigationType } from 'react-router-dom';
+import { useNavigationType } from 'react-router-dom';
 
 const Experience = () => {
   const screenContext = useContext(CurrentScreenContext);
