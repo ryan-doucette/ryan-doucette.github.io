@@ -8,12 +8,20 @@ import { useState, useContext, useEffect } from 'react';
 import React from 'react';
 import './transitions/HomeTransitions';
 import { leaveHomeTransition, openMenuTransition, closeMenuTransition, leaveMenuTransition } from './transitions/HomeTransitions';
+import { useNavigationType } from 'react-router-dom';
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState<boolean | undefined>(undefined);
   const screenContext = useContext(CurrentScreenContext);
+  const [preventPopExit, setPreventPopExit] = useState(false);
 
+  const navType = useNavigationType();
+  
   useEffect(() => {
+    if (navType === 'POP' && preventPopExit === false) {
+      setPreventPopExit(true);
+      return;
+    }
     // If the user is entering the home screen
     if (screenContext.currentScreen === 'home' && menuOpen === undefined) {
       // Transition handeled in screenNavigationHandler
@@ -36,7 +44,7 @@ const Home = () => {
         openMenuTransition();
       }
     }
-  }, [screenContext, menuOpen]);
+  }, [screenContext, menuOpen, navType, preventPopExit]);
   
   const openMenu = () => {
     setMenuOpen(true);

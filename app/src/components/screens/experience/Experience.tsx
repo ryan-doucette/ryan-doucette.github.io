@@ -9,14 +9,22 @@ import ExperienceFull from './experienceFull/ExperienceFull';
 import { experienceItem } from 'customTypes';
 import resumeIcon from './images/resume.png';
 import CloseButton from '../home/menuModal/CloseButton';
+import { useLocation, useNavigationType } from 'react-router-dom';
 
 const Experience = () => {
   const screenContext = useContext(CurrentScreenContext);
   const [selectedExperience, setSelectedExperience] = useState<undefined | experienceItem>(undefined);
   const [fullExperienceShown, setFullExperienceShown] = useState<undefined | boolean>(undefined);
-  const [resumeButtonContainerOpen, setResumeButtonContainerOpen] = useState<undefined | boolean>(undefined);;
+  const [resumeButtonContainerOpen, setResumeButtonContainerOpen] = useState<undefined | boolean>(undefined);
+  const [preventPopExit, setPreventPopExit] = useState(false);
+
+  const navType = useNavigationType();
 
   useEffect(() => {
+    if (navType === 'POP' && preventPopExit === false) {
+      setPreventPopExit(true);
+      return;
+    }
     if(screenContext.currentScreen !== 'experience' && screenContext.currentScreen !== 'experienceFull') { 
       if (fullExperienceShown === false || fullExperienceShown === undefined) {
         leaveExperienceTransition();
@@ -25,7 +33,7 @@ const Experience = () => {
         leaveExperienceFull();
       }
     }    
-  }, [fullExperienceShown, screenContext]);
+  }, [fullExperienceShown, navType, preventPopExit, screenContext]);
 
   useEffect(() => {
     if (fullExperienceShown !== undefined) {

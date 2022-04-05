@@ -14,7 +14,15 @@ const Preview = ({currentItem} : {currentItem:previewItem}) => {
             <div className='description' id='description'>{currentItem.description}</div>
             {
                 currentItem.identifier === 'ruumzy' ? 
-                    <a href='https://ruumzy.com/' className='tellMeMore' id='more-button'>check it out</a>
+                    <a 
+                        href='https://ruumzy.com/'
+                        className='tellMeMore' 
+                        id='more-button'
+                        target="_blank"
+                        rel="noreferrer noopener"
+                    >
+                            check it out
+                    </a>
                     :
                     <CurrentScreenContext.Consumer>
                         {({currentScreen, toggleCurrentScreen}) => (

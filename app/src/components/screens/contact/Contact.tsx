@@ -10,16 +10,24 @@ import './styles/_contact.scss';
 import './transitions/_contactTransitions.scss';
 import { leaveContactTransition } from './transitions/ContactTransitions';
 import { CurrentScreenContext } from '../../../current-screen-context';
+import { useNavigationType } from 'react-router-dom';
 
 const Contact = () => {
   const form = useRef() as MutableRefObject<HTMLFormElement>;
   const screenContext = useContext(CurrentScreenContext);
+  const [preventPopExit, setPreventPopExit] = useState(false);
+
+  const navType = useNavigationType();
 
   useEffect(() => {
+    if (navType === 'POP' && preventPopExit === false) {
+      setPreventPopExit(true);
+      return;
+    }
     if (screenContext.currentScreen !== 'contact') {
       leaveContactTransition();
     }
-  }, [screenContext]);
+  }, [navType, preventPopExit, screenContext]);
 
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailnput] = useState('');

@@ -19,12 +19,18 @@ const App = () => {
   }
 
   useEffect(() => {
-    window.onpopstate = e => {
-      window.location.reload();
-   }
+    var url = location.pathname.substring(1);
+    if (url.length === 0) {
+      url = 'home';
+    }
+    
+    setCurrentScreen(url);
   }, [location.pathname]);
 
-  const [currentScreen, setCurrentScreen] = useState(getUrl());
+  const [currentScreen, setCurrentScreen] = useState(() => {
+    return getUrl();
+  })
+
   const toggleCurrentScreen = (currentScreen: string) => { 
     setCurrentScreen(currentScreen);
   }
