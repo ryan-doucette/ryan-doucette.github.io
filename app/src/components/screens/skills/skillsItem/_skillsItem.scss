@@ -1,0 +1,139 @@
+@use "../../../../theme";
+@use "../../../../breakpoints";
+
+.skillsItem {
+    position: relative;
+    display: flex;
+    width: 80px;
+    margin-bottom: 45px;
+    border-top-left-radius: 44px;
+    border-bottom-left-radius: 44px;
+    border-top-right-radius: 44px;
+    border-bottom-right-radius: 44px;
+    height: 60px;
+    background-color: theme.$secondary;
+    // background-color: transparent;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    box-shadow: 2px 2px 24px rgba($color: #000000, $alpha: 0.8);
+}
+.skillsItem:hover {
+    background-color: theme.$secondary;
+    width: 100%;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+// https://codepen.io/cuonglh911/pen/wMwbZQ
+.skillItemIcon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -4px;
+    margin: 0 0;
+    width: 88px;
+}
+.shape {
+    stroke-dasharray: 0 540;
+    stroke-dashoffset: -474;
+    stroke-width: 14px;
+    stroke: theme.$alternate;
+    border-radius: 100%;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s, fill 0.5s ease-in-out;
+    fill: theme.$highlight;
+}
+.skillsItem:hover .shape {
+    fill: theme.$primary;
+    stroke-width: 4px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+    border-radius: 100%;
+}
+.skillItemTextContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    right: 0px;
+    opacity: 0%;
+    transition: 0.3s ease-in-out;
+    padding-right: 24px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    float: left; 
+    white-space: nowrap;
+    overflow: hidden;
+}
+.skillsItem:hover .skillItemTextContainer {
+    opacity: 100%;
+}
+.skillItemImage {
+    fill: theme.$alternate;
+    position: absolute;
+    width: 60px;
+    background-repeat: "no-repeat";
+    background-size: cover;
+}
+.skillItemText {
+    font-weight: bold;
+    color: theme.$alternate;
+    font-size: 16px;
+}
+
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: breakpoints.$tablet) {
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$desktop) {
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$big-desktop) {
+    .skillsItem {
+        height: 70px;
+    }
+    .skillsItem:hover {
+        width: 400px;
+    }
+    .skillItemTextContainer {
+        padding-right: 24px;
+    }
+    .skillItemIcon {
+        left: -3px;
+        width: 100px;
+    }
+    .skillItemImage {
+        width: 70px;
+    }
+    .skillItemText {
+        font-size: 20px;
+    }
+}
+
+/* ******************* SMALL MOBILE VIEW ******************* */
+@media (max-width: 340px) {
+    .skillsItem {
+        height: 45px;
+        width: 60px;
+    }
+    .skillItemTextContainer {
+        padding-right: 10px;
+    }
+    .skillItemIcon {
+        left: -3px;
+        width: 66px;
+    }
+    .skillItemImage {
+        width: 40px;
+    }
+    .skillItemText {
+        font-size: 11px;
+    }
+}
+@media (max-width: 270px) {
+    .skillsItem:hover {
+        width: 230px;
+    }
+}

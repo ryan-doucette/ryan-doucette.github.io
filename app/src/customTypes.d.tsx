@@ -14,4 +14,9 @@ declare module 'customTypes' {
         buttonLabel?: string,
         buttonLink?: string,
     }
+    export type skillsItem = {
+        identifier: string,
+        image: string,
+        label: string,
+    }
 }

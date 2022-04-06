@@ -97,7 +97,7 @@ const Contact = () => {
               <input className='formText inputBox' value={emailInput} onChange={(e) => setEmailnput(e.target.value)} type="email" name="email" />
               <label className='formTitle'>Message*</label>
               <textarea className='formText inputBox' value={messageInput} onChange={(e) => setMessageInput(e.target.value)} name="message" />
-              <input onClick={sendEmail} disabled={!validInput} className='formSubmitButton' id={!validInput ? 'buttonDisabled' : undefined} type="submit" value="SUBMIT" />
+              <input onClick={sendEmail} disabled={!validInput} className='formSubmitButton' id={!validInput ? 'buttonDisabled' : undefined} type="submit" value="SEND" />
             </form>
           </section>
         </div>

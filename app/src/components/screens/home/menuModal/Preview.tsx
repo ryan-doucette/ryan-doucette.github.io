@@ -21,7 +21,7 @@ const Preview = ({currentItem} : {currentItem:previewItem}) => {
                         target="_blank"
                         rel="noreferrer noopener"
                     >
-                            check it out
+                            CHECK IT OUT
                     </a>
                     :
                     <CurrentScreenContext.Consumer>
@@ -34,7 +34,7 @@ const Preview = ({currentItem} : {currentItem:previewItem}) => {
                                 className='tellMeMore' 
                                 id='more-button'
                             >
-                                {currentItem.identifier === 'contact' ? 'contact' : 'tell me more'}
+                                {currentItem.identifier === 'contact' ? 'CONTACT' : 'TELL ME MORE'}
                             </div>
                         )}
                     </CurrentScreenContext.Consumer>

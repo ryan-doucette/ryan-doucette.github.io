@@ -27,14 +27,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 130px;
+  width: 140px;
   height: 32px;
   background-color: transparent;
   margin-top: 18px;
   border: 2px theme.$alternate solid;
   border-radius: 8px;
   color: theme.$alternate;
-  font-size: 20px;
+  font-size: 16px;
   transition: 0.3s ease-in-out;
   text-decoration: none;
   cursor: pointer;
@@ -51,13 +51,6 @@
   }
   .previewImage {
     margin-bottom: 12px;
-  }
-  .tellMeMore {
-    width: 130px;
-    height: 32px;
-    border: 2px theme.$alternate solid;
-    border-radius: 8px;
-    font-size: 20px;
   }
 }
 
@@ -80,7 +73,7 @@
     height: 36px;
     border: 2px theme.$alternate solid;
     border-radius: 8px;
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
