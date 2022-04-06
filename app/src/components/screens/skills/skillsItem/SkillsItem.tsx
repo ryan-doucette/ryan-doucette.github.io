@@ -8,9 +8,12 @@ const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
   const [circleCx, setCircleCx] = useState<string | undefined>();
   const [circleCy, setCircleCy] = useState<string | undefined>();
   const [circleR, setCircleR] = useState<string | undefined>();
+  const [innerLabel, setInnerLabel] = useState<string | undefined>();
+  const [outerLabelLeft, setOuterLabelLeft] = useState<string | undefined>();
+  const [outerLabelRight, setOuterLabelRight] = useState<string | undefined>();
 
   const adjustIconSize = () => {
-    if (window.innerWidth < 340) {
+    if (window.innerWidth < 341) {
       setSvgWidth('66');
       setSvgHeight('66');
       setCircleCx('33');
@@ -36,12 +39,34 @@ const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
   // Run on initial load
   useEffect(() => {
     adjustIconSize();
-  }, []);
+    
+    if (window.innerWidth < 769) {
+      setInnerLabel(skillItem.innerLabelMobile);
+      setOuterLabelLeft(skillItem.outerLeftLabelMobile);
+      setOuterLabelRight(skillItem.outerRightLabelMobile);
+    }
+    else {
+      setInnerLabel(skillItem.innerLabelDesktop);
+      setOuterLabelLeft(skillItem.outerLeftLabelDesktop);
+      setOuterLabelRight(skillItem.outerRightLabelDesktop);
+    }    
+  }, [innerLabel, skillItem.innerLabelDesktop, skillItem.innerLabelMobile, skillItem.outerLeftLabelDesktop, skillItem.outerLeftLabelMobile, skillItem.outerRightLabelDesktop, skillItem.outerRightLabelMobile]);
 
   // Run when screen size is changed
   const handleWindowResize = useCallback(event => {
     adjustIconSize();
-  }, []); 
+    
+    if (window.innerWidth < 769) {
+      setInnerLabel(skillItem.innerLabelMobile);
+      setOuterLabelLeft(skillItem.outerLeftLabelMobile);
+      setOuterLabelRight(skillItem.outerRightLabelMobile);
+    }
+    else {
+      setInnerLabel(skillItem.innerLabelDesktop);
+      setOuterLabelLeft(skillItem.outerLeftLabelDesktop);
+      setOuterLabelRight(skillItem.outerRightLabelDesktop);
+    }
+  }, [skillItem.innerLabelDesktop, skillItem.innerLabelMobile, skillItem.outerLeftLabelDesktop, skillItem.outerLeftLabelMobile, skillItem.outerRightLabelDesktop, skillItem.outerRightLabelMobile]); 
 
   useEffect(() => {
     window.addEventListener('resize', handleWindowResize);
@@ -53,10 +78,10 @@ const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
 
 
   return (
-    <div className='skillFullContainer'>
+    <div className='skillFullContainer' id={'skills-item-' + skillItem.identifier}>
       <section className='skillsItem'>
         <div className='skillItemTextContainer'>
-          <div className='skillItemText'>{skillItem.label}</div>
+          <div className='skillItemText'>{innerLabel}</div>
         </div> 
         <div className="skillItemIcon">
           <img src={skillItem.image} alt='react' className='skillItemImage'/>
@@ -65,9 +90,9 @@ const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
           </svg>
         </div>
       </section>
-      <section className='skillOuterLabel' id={'skill-outer-label-' + skillItem.identifier}>
-        <div className='skillLabelLeft'>TEST</div>
-        <div className='skillLabelRight'>{skillItem.label}</div>
+      <section className='skillOuterLabel'>
+        <div className='skillLabelLeft'>{outerLabelLeft}</div>
+        <div className='skillLabelRight'>{outerLabelRight}</div>
       </section>
     </div>
   );

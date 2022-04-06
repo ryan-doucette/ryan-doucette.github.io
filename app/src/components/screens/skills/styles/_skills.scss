@@ -13,12 +13,20 @@
     z-index: 1;
     overflow-x: hidden;
 }
+.skillsTitle {
+    color: theme.$alternate;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+    white-space: normal;
+}
 .skillsItemsContainer {
     display: flex;
     height: fit-content;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
     width: 100%;
 }
 
@@ -30,10 +38,34 @@
     }
 }
 
+@media (min-width: breakpoints.$hide-burger-menu) {
+    .skillsTitle {
+        white-space: nowrap;
+    }
+}
+
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
+    .skillsItemsContainer {
+        margin-top: 40px;
+    }
+    .skillsTitle {
+       font-size: 40px;
+       margin-bottom: 40px;
+    }
+}
+
+/* ******************* SMALL MOBILE VIEW ******************* */
+@media (max-width: 340px) {
+    .skillsItemsContainer {
+        margin-top: 24px;
+    }
+    .skillsTitle {
+       font-size: 24px;
+       margin-bottom: 24px;
+    }
 }

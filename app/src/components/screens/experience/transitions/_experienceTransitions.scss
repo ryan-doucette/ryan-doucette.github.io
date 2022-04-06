@@ -25,27 +25,27 @@
 
 .leave-experience-preview-0 {
     opacity: 1;
-    animation: leave-experience 0.3s linear forwards 1s;
+    animation: leave-experience 0.3s linear forwards;
 }
 .leave-experience-preview-1 {
     opacity: 1;
-    animation: leave-experience 0.3s linear forwards 0.8s;
+    animation: leave-experience 0.3s linear forwards 0.2s;
 }
 .leave-experience-preview-2 {
     opacity: 1;
-    animation: leave-experience 0.3s linear forwards 0.6s;
+    animation: leave-experience 0.3s linear forwards 0.4s;
 }
 .leave-experience-preview-3 {
     opacity: 1;
-    animation: leave-experience 0.3s linear forwards 0.4s;
+    animation: leave-experience 0.3s linear forwards 0.6s;
 }
 .leave-experience-preview-4 {
     opacity: 1;
-    animation: leave-experience 0.3s linear forwards 0.2s;
+    animation: leave-experience 0.3s linear forwards 0.8s;
 }
 .leave-experience-preview-5 {
     opacity: 1;
-    animation: leave-experience 0.3s linear forwards;
+    animation: leave-experience 0.3s linear forwards 1s;
 }
 
 @keyframes enter-experience {

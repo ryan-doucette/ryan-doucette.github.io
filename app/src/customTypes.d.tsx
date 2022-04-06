@@ -17,6 +17,11 @@ declare module 'customTypes' {
     export type skillsItem = {
         identifier: string,
         image: string,
-        label: string,
+        innerLabelMobile: string,
+        innerLabelDesktop: string,
+        outerLeftLabelMobile: string,
+        outerRightLabelMobile: string,
+        outerLeftLabelDesktop: string,
+        outerRightLabelDesktop: string,
     }
 }

@@ -80,7 +80,7 @@ const Header = () => {
     <div className="header">
       <Icon />
       <section className='linksSection'>
-        <nav className="burgerMenu" role="navigation">
+        <nav className="burgerMenu" role="navigation" id='mobile-navigator'>
           <div id="menuToggle">
             <input checked={dropdownOpen} type="checkbox" onChange={() => toggleDropdown()} />
             <span></span>

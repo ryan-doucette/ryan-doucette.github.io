@@ -26,6 +26,7 @@ const Skills = () => {
   return (
     <div className="skills">
       <div className='skillsItemsContainer'>
+        <div className='skillsTitle' id='skills-title'>Some of my favorite technologies</div>
         { skillItems.map((item) => (
           <SkillsItem skillItem={item} key={item.identifier}/>
         ))  }

@@ -63,7 +63,7 @@
     height: 100%;
     right: 0px;
     opacity: 0%;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
     padding-right: 24px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -88,6 +88,7 @@
 }
 .skillsItem:hover ~ .skillOuterLabel {
     opacity: 0%;
+    transform: scaleX(140%);
 }
 .skillOuterLabel {
     z-index: 1;
@@ -103,6 +104,7 @@
     transition: 0.3s ease-in-out;
     color: theme.$alternate;
     font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
 }
 .skillLabelLeft {
     width: 300px;
@@ -115,14 +117,30 @@
     text-align: start;
 }
 
+@media (max-width: 383px) {
+    .skillItemText {
+        font-size: 12px;
+    }
+}
+
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
+    .skillFullContainer {
+        width: 350px;
+    }
+    .skillsItem:hover {
+        width: 350px;
+    }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {
     .skillFullContainer {
         margin-bottom: 24px;
+        width: 700px;
+    }
+    .skillsItem:hover {
+        width: 700px;
     }
 }
 
@@ -132,8 +150,12 @@
         height: 70px;
         width: 90px;
     }
+    .skillFullContainer {
+        margin-bottom: 24px;
+        width: 840px;
+    }
     .skillsItem:hover {
-        width: 400px;
+        width: 840px;
     }
     .skillItemTextContainer {
         padding-right: 24px;
@@ -149,15 +171,21 @@
         font-size: 20px;
     }
     .skillLabelLeft {
+        width: 400px;
         padding-right: 70px;
         text-align: end;
     }
     .skillLabelRight {
+        width: 400px;
         padding-left: 70px;
         text-align: start;
     }
     .skillFullContainer {
+        // width: ;
         margin-bottom: 40px;
+    }
+    .skillOuterLabel {
+        font-size: 24px;
     }
 }
 

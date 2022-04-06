@@ -1,6 +1,7 @@
 import { intialHomeEnterTransition } from './components/screens/home/transitions/HomeTransitions';
 import { enterContactTransition } from './components/screens/contact/transitions/ContactTransitions';
 import { enterExperienceTransition } from './components/screens/experience/transitions/ExperienceTransitions';
+import { enterSkillsTransition } from './components/screens/skills/transitions/SkillsTransitions';
 
 const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any) => {
     const transitionLength = () => {
@@ -12,7 +13,7 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
             case 'about':
                 return 1000;
             case 'skills':
-                return 1000;
+                return 2000;
             case 'experience':
                 return 1500;
             case 'experienceFull':
@@ -30,6 +31,7 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
             case 'about':
                 break;
             case 'skills':
+                enterSkillsTransition();
                 break;
             case 'experience':
                 enterExperienceTransition();
@@ -39,8 +41,20 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
                 break;
         } 
     }
+    const disableNavigation = () => {
+        document.getElementById('desktopHeader')!.style.pointerEvents = 'none';
+        document.getElementById('dropDown')!.style.pointerEvents = 'none';
+        document.getElementById('site-icon')!.style.pointerEvents = 'none';
+    }
+    const enableNavigation = () => {
+        document.getElementById('desktopHeader')!.style.pointerEvents = 'auto';
+        document.getElementById('dropDown')!.style.pointerEvents = 'auto';
+        document.getElementById('site-icon')!.style.pointerEvents = 'auto';
+    }
 
+    disableNavigation();
     setTimeout(() => {
+        enableNavigation();
         if(nextScreen === 'home') {
             navigate('/');
             addEnterTransitions();
