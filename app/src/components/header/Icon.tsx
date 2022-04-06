@@ -11,7 +11,8 @@ const Icon = () => {
         <CurrentScreenContext.Consumer>
             {({currentScreen, toggleCurrentScreen}) => (
                 <div 
-                    className="iconContainer" 
+                    className="iconContainer"
+                    id='site-icon'
                     onClick={() => {
                         if(currentScreen === 'menu') {
                             return;

@@ -1,26 +1,112 @@
-.enter-skills {
-    animation: enter-skills 1s linear forwards;
-  }
-.leave-skills {
-    animation: leave-skills 1s linear forwards;
+.enter-skills-title {
+    opacity: 0;
+    animation: enter-skills-title 0.3s linear forwards;
 }
+.enter-skills-item-react {
+    transform: scaleY(0);
+    animation: enter-skills 0.3s linear forwards;
+}
+.enter-skills-item-typeScript {
+    transform: scaleY(0);
+    animation: enter-skills 0.3s linear forwards 0.2s;
+}
+.enter-skills-item-java {
+    transform: scale(0);
+    animation: enter-skills 0.3s linear forwards 0.4s;
+}
+.enter-skills-item-python {
+    transform: scaleY(0);
+    animation: enter-skills 0.3s linear forwards 0.6s;
+}
+.enter-skills-item-html {
+    transform: scaleY(0);
+    animation: enter-skills 0.3s linear forwards 0.8s;
+}
+.enter-skills-item-scss {
+    transform: scaleY(0);
+    animation: enter-skills 0.3s linear forwards 1s;
+}
+.enter-skills-item-adobe {
+    transform: scaleY(0);
+    animation: enter-skills 0.3s linear forwards 1s;
+}
+.enter-skills-item-angular {
+    transform: scaleY(0);
+    animation: enter-skills 0.3s linear forwards 1s;
+}
+.enter-skills-title {
+    opacity: 0;
+    animation: enter-skills-title 0.3s linear forwards;
+}
+
+.leave-skills-title {
+    opacity: 1;
+    animation: leave-skills-title 0.3s linear forwards;
+}
+.leave-skills-item-react {
+    transform: scaleY(1);
+    animation: leave-skills 0.3s linear forwards;
+}
+.leave-skills-item-typeScript {
+    transform: scaleY(1);
+    animation: leave-skills 0.3s linear forwards 0.2s;
+}
+.leave-skills-item-java {
+    transform: scale(01);
+    animation: leave-skills 0.3s linear forwards 0.4s;
+}
+.leave-skills-item-python {
+    transform: scaleY(1);
+    animation: leave-skills 0.3s linear forwards 0.6s;
+}
+.leave-skills-item-html {
+    transform: scaleY(1);
+    animation: leave-skills 0.3s linear forwards 0.8s;
+}
+.leave-skills-item-scss {
+    transform: scaleY(1);
+    animation: leave-skills 0.3s linear forwards 1s;
+}
+.leave-skills-item-adobe {
+    transform: scaleY(1);
+    animation: leave-skills 0.3s linear forwards 1.2s;
+}
+.leave-skills-item-angular {
+    transform: scaleY(1);
+    animation: leave-skills 0.3s linear forwards 1.4s;
+}
+
 @keyframes enter-skills {
     0% {
-        // opacity: 0%;
-        // transform: translateY(20px);
+        transform: scaleY(0);
     }
     100% {
-        // opacity: 100%;
-        // transform: translateY(0px);
+        transform: scaleY(1);
     }
 }
 @keyframes leave-skills {
     0% {
-        // opacity: 100%;
-        // transform: translateY(0px);
+        transform: scaleY(1);
     }
     100% {
-        // opacity: 0%;
-        // transform: translateY(20px);
+        transform: scaleY(0);
+    }
+}
+@keyframes enter-skills-title {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes leave-skills-title {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0px);
     }
 }

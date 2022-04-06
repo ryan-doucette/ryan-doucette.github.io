@@ -16,7 +16,7 @@
 }
 body {
   background-color: #252a37;
-  /* background-color: green; */
+  min-width: 280px;
   height: 100%;
   width: 100%;
   position: relative;

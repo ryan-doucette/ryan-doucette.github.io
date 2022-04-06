@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useCallback} from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './screens/home/Home';
 import About from './screens/about/About';
 import Skills from './screens/skills/Skills';
@@ -10,6 +10,7 @@ import './_main.scss';
 
 const Main = () => {
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const location = useLocation();
 
   const adjustScreenHeight = () => {
     if (window.innerWidth < 769) {
@@ -42,7 +43,7 @@ const Main = () => {
   }, [handleWindowResize]);
 
     return (
-      <div className='screen minHeightController' style={{height: windowHeight}}>
+      <div className={location.pathname.substring(1) === 'skills' ? 'screen' : 'screen minHeightController'} style={{height: windowHeight}}>
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/about' element={<About/>}/>

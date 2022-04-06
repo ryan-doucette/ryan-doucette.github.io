@@ -1,0 +1,96 @@
+// eslint-disable-next-line
+import React from 'react';
+import reactImg from './skillsImages/skills-react-img.png';
+import typeScriptImg from './skillsImages/skills-ts-img.png';
+import javaImg from './skillsImages/skills-java-img.png';
+import pythonImg from './skillsImages/skills-python-img.png';
+import htmlImg from './skillsImages/skills-html-img.png';
+import scssImg from './skillsImages/skills-scss-img.png';
+import adobeImg from './skillsImages/skills-adobe-img.png';
+import angularImg from './skillsImages/skills-angular-img.png';
+import {skillsItem} from 'customTypes';
+
+const skillItems: skillsItem[] = [
+    {
+        identifier: 'react',
+        image: reactImg,
+        innerLabelMobile: 'My preferred frontend library',
+        innerLabelDesktop: "My preferred frontend library. I love their lifecycle hooks and JSX.",
+        outerLeftLabelMobile: '<React>',
+        outerRightLabelMobile: '</React>',
+        outerLeftLabelDesktop: '<React-ReactNative>',
+        outerRightLabelDesktop: '</React-ReactNative>',
+    },
+    {
+        identifier: 'typeScript',
+        image: typeScriptImg,
+        innerLabelMobile: "Builds my frontend projects",
+        innerLabelDesktop: "Builds my frontend projects. I'm a big fan of static typed languages.",
+        outerLeftLabelMobile: '<TS-JS>',
+        outerRightLabelMobile: '</TS-JS>',
+        outerLeftLabelDesktop: '<TypeScript-JavaScript>',
+        outerRightLabelDesktop: '</TypeScript-JavaScript>',
+    },
+    {
+        identifier: 'java',
+        image: javaImg,
+        innerLabelMobile: 'My go-to for object oriented',
+        innerLabelDesktop: 'My go-to langauge for working with object oriented systems.',
+        outerLeftLabelMobile: '<Java>',
+        outerRightLabelMobile: '</Java>',
+        outerLeftLabelDesktop: '<Java>',
+        outerRightLabelDesktop: '</Java>',
+    },
+    {
+        identifier: 'python',
+        image: pythonImg,
+        innerLabelMobile: 'For any algorithmic solutions',
+        innerLabelDesktop: 'For any algorithmic solutions. Data manipulation has never been so fun!',
+        outerLeftLabelMobile: '<Python>',
+        outerRightLabelMobile: '</Python>',
+        outerLeftLabelDesktop: '<Python>',
+        outerRightLabelDesktop: '</Python>',
+    },
+    {
+        identifier: 'html',
+        image: htmlImg,
+        innerLabelMobile: 'Structures my online projects',
+        innerLabelDesktop: 'Structures my online projects. Gained most of my knowledge from JSX.',
+        outerLeftLabelMobile: '<HTML5>',
+        outerRightLabelMobile: '</HTML5',
+        outerLeftLabelDesktop: '<HTML5>',
+        outerRightLabelDesktop: '</HTML5>',
+    },
+    {
+        identifier: 'scss',
+        image: scssImg,
+        innerLabelMobile: 'Makes my pages come to life',
+        innerLabelDesktop: 'Makes my pages come to life. SCSS is a must for me for organized styling.',
+        outerLeftLabelMobile: '<SCSS-CSS>',
+        outerRightLabelMobile: '</SCSS-CSS>',
+        outerLeftLabelDesktop: '<SCSS-CSS>',
+        outerRightLabelDesktop: '</SCSS-CSS>',
+    },
+    {
+        identifier: 'adobe',
+        image: adobeImg,
+        innerLabelMobile: 'I live in the Creative Cloud',
+        innerLabelDesktop: 'I live in the Creative Cloud. Primarily Illustrator, InDesign, and After Effects.',
+        outerLeftLabelMobile: '<Adobe>',
+        outerRightLabelMobile: '</Adobe>',
+        outerLeftLabelDesktop: '<Adobe>',
+        outerRightLabelDesktop: '</Adobe>',
+    },
+    {
+        identifier: 'angular',
+        image: angularImg,
+        innerLabelMobile: 'For out-of-box structure',
+        innerLabelDesktop: 'For out-of-box structure. Fantastic CLI to get an app running fast.',
+        outerLeftLabelMobile: '<Angular>',
+        outerRightLabelMobile: '</Angular>',
+        outerLeftLabelDesktop: '<Angular>',
+        outerRightLabelDesktop: '</Angular>',
+    },
+];
+
+export default skillItems;

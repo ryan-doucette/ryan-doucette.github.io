@@ -4,6 +4,8 @@ import './styles/_skills.scss';
 import './transitions/_skillsTransitions.scss';
 import { leaveSkillsTransition } from './transitions/SkillsTransitions';
 import { useNavigationType } from 'react-router-dom';
+import SkillsItem from './skillsItem/SkillsItem';
+import skillItems from './SkillsData';
 
 const Skills = () => {
   const screenContext = useContext(CurrentScreenContext);
@@ -23,7 +25,12 @@ const Skills = () => {
 
   return (
     <div className="skills">
- 
+      <div className='skillsItemsContainer'>
+        <div className='skillsTitle' id='skills-title'>Some of my favorite technologies</div>
+        { skillItems.map((item) => (
+          <SkillsItem skillItem={item} key={item.identifier}/>
+        ))  }
+      </div>
     </div>
   );
 }
