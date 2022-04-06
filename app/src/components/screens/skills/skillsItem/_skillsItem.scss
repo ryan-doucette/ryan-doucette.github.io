@@ -1,18 +1,25 @@
 @use "../../../../theme";
 @use "../../../../breakpoints";
-
+.skillFullContainer {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
 .skillsItem {
+    z-index: 2;
     position: relative;
     display: flex;
     width: 80px;
-    margin-bottom: 45px;
     border-top-left-radius: 44px;
     border-bottom-left-radius: 44px;
     border-top-right-radius: 44px;
     border-bottom-right-radius: 44px;
     height: 60px;
     background-color: theme.$secondary;
-    // background-color: transparent;
     justify-content: flex-end;
     align-items: center;
     transition: 0.5s ease-in-out;
@@ -79,7 +86,34 @@
     color: theme.$alternate;
     font-size: 16px;
 }
-
+.skillsItem:hover ~ .skillOuterLabel {
+    opacity: 0%;
+}
+.skillOuterLabel {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    text-align: start;
+    opacity: 100%;
+    transition: 0.3s ease-in-out;
+    color: theme.$alternate;
+    font-size: 16px;
+}
+.skillLabelLeft {
+    width: 300px;
+    padding-right: 60px;
+    text-align: end;
+}
+.skillLabelRight {
+    width: 300px;
+    padding-left: 60px;
+    text-align: start;
+}
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
@@ -87,12 +121,16 @@
 
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {
+    .skillFullContainer {
+        margin-bottom: 24px;
+    }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
     .skillsItem {
         height: 70px;
+        width: 90px;
     }
     .skillsItem:hover {
         width: 400px;
@@ -109,6 +147,17 @@
     }
     .skillItemText {
         font-size: 20px;
+    }
+    .skillLabelLeft {
+        padding-right: 70px;
+        text-align: end;
+    }
+    .skillLabelRight {
+        padding-left: 70px;
+        text-align: start;
+    }
+    .skillFullContainer {
+        margin-bottom: 40px;
     }
 }
 
@@ -131,9 +180,12 @@
     .skillItemText {
         font-size: 11px;
     }
-}
-@media (max-width: 270px) {
-    .skillsItem:hover {
-        width: 230px;
+    .skillLabelLeft {
+        padding-right: 45px;
+        text-align: end;
+    }
+    .skillLabelRight {
+        padding-left: 45px;
+        text-align: start;
     }
 }

@@ -53,16 +53,22 @@ const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
 
 
   return (
-    <div className='skillsItem'>
-      <div className='skillItemTextContainer'>
-        <div className='skillItemText'>{skillItem.label}</div>
-      </div> 
-      <div className="skillItemIcon">
-        <img src={skillItem.image} alt='react' className='skillItemImage'/>
-        <svg height={svgHeight} width={svgWidth} xmlns="http://www.w3.org/2000/svg">
-          <circle cx={circleCx} cy={circleCy} r={circleR} className="shape" id='skills-circle'/>
-        </svg>
-      </div>
+    <div className='skillFullContainer'>
+      <section className='skillsItem'>
+        <div className='skillItemTextContainer'>
+          <div className='skillItemText'>{skillItem.label}</div>
+        </div> 
+        <div className="skillItemIcon">
+          <img src={skillItem.image} alt='react' className='skillItemImage'/>
+          <svg height={svgHeight} width={svgWidth} xmlns="http://www.w3.org/2000/svg">
+            <circle cx={circleCx} cy={circleCy} r={circleR} className="shape" id='skills-circle'/>
+          </svg>
+        </div>
+      </section>
+      <section className='skillOuterLabel' id={'skill-outer-label-' + skillItem.identifier}>
+        <div className='skillLabelLeft'>TEST</div>
+        <div className='skillLabelRight'>{skillItem.label}</div>
+      </section>
     </div>
   );
 }
