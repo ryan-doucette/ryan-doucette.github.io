@@ -84,7 +84,7 @@ const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
           <div className='skillItemText'>{innerLabel}</div>
         </div> 
         <div className="skillItemIcon">
-          <img src={skillItem.image} alt='react' className='skillItemImage'/>
+          <img src={skillItem.image} alt={skillItem.identifier} className='skillItemImage'/>
           <svg height={svgHeight} width={svgWidth} xmlns="http://www.w3.org/2000/svg">
             <circle cx={circleCx} cy={circleCy} r={circleR} className="shape" id='skills-circle'/>
           </svg>
