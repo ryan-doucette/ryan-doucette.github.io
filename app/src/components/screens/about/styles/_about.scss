@@ -1,8 +1,36 @@
 @use "../../../../theme";
 @use "../../../../breakpoints";
 
-// .about {
-// }
+.about {
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+    z-index: 1;
+}
+.aboutFullContainer {
+    width: 100%;
+    // padding-top: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.aboutCarouselContainer {
+    width: 100%;
+    height: 74px;
+    display: flex;
+    justify-content: center;
+}
+.aboutPortalContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
@@ -14,4 +42,11 @@
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
+
+}
+
+@media (max-width: breakpoints.$small-mobile) {
+    .aboutCarouselContainer {
+        height: 55px;
+    }
 }

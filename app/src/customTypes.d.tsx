@@ -24,4 +24,10 @@ declare module 'customTypes' {
         outerLeftLabelDesktop: string,
         outerRightLabelDesktop: string,
     }
+    export type aboutItem = {
+        identifier: string,
+        carouselImage: string,
+        portalImage: string,
+        iLoveLabel: string,
+    }
 }

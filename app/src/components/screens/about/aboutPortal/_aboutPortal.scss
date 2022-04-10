@@ -1,0 +1,56 @@
+@use "../../../../theme";
+@use "../../../../breakpoints";
+
+.aboutPortal {
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.topPortal {
+    height: 15px;
+    width: 0px;
+    border-radius: 100%;
+    background-color: theme.$highlight;
+}
+.bottomPortal {
+    height: 15px;
+    width: 0px;
+    border-radius: 100%;
+    background-color: theme.$highlight;
+}
+.portalOpenClose {
+    animation: portal-open-close 0.75s ease-in-out forwards;
+}
+@keyframes portal-open-close {
+    0% {
+        width: 0px;
+    }
+    50% {
+        width: 225px;
+    }
+    100% {
+        width: 0px;
+    }
+}
+
+.imageStack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: breakpoints.$tablet) {
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$desktop) {
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$big-desktop) {
+}
