@@ -2,6 +2,40 @@
 @use "../../../../breakpoints";
 
 .aboutSign {
+    width: 260px;
+    height: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    padding-top: 15px;
+    padding-bottom: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    background-color: theme.$primary;
+    border: 7px solid theme.$secondary;
+    border-radius: 4px;
+}
+.aboutSignContent {
+    display: flex;
+    flex-direction: row;
+    transform-origin: bottom;
+    transition: 0.3s ease-in-out;
+}
+.aboutSignText{
+    color:theme.$alternate;
+    font-size:20px;
+    position:relative;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.aboutHeartImg {
+    height: 18px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 2px;
 }
 
 /* ******************* TABLET VIEW ******************* */
@@ -14,4 +48,28 @@
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
+}
+
+/* ******************* SMALL MOBILE VIEW ******************* */
+@media (max-width: breakpoints.$small-mobile) {
+    .aboutSign {
+        width: 220px;
+        height: 15px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        padding-left: 6px;
+        padding-right: 6px;
+        border: 5px solid theme.$secondary;
+    }
+    .aboutSignText{
+        font-size:16px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .aboutHeartImg {
+        height: 16px;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-top: 1px;
+    }
 }

@@ -8,7 +8,7 @@ import AboutPortal from './aboutPortal/AboutPortal';
 import AboutCarousel from './aboutCarousel/AboutCarousel';
 import AboutSign from './aboutSign/AboutSign';
 import aboutItems from './AboutData';
-import useInterval from '../../../customHooks/UseInterval';
+// import useInterval from '../../../customHooks/UseInterval';
 
 const About = () => {
   const screenContext = useContext(CurrentScreenContext);
@@ -16,7 +16,7 @@ const About = () => {
   const [currIndex, setCurrIndex] = useState(0);
   const aboutItemsLength = aboutItems.length;
 
-  const aboutItemDuration = 4000;
+  // const aboutItemDuration = 4000;
 
   // useInterval(() => {
   //     handleShiftRightPressed()
@@ -52,7 +52,7 @@ const About = () => {
       }
       else {
         setCurrIndex(currIndex + 1);
-      } 
+      }
     }, 750);
   }
 
