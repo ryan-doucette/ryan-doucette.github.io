@@ -6,42 +6,73 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 25px;
     margin-top: 25px;
 }
-.topPortal {
-    height: 15px;
-    width: 0px;
-    border-radius: 100%;
+.portalContainer {
+    position: absolute;
+    top: -380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+.portalCover {
+    width: 100%;
+    height: 435px;
     background-color: theme.$highlight;
 }
-.bottomPortal {
-    height: 15px;
+.portal {
     width: 0px;
-    border-radius: 100%;
-    background-color: theme.$highlight;
+    height: 8px;
+    border-radius: 10px;
+    background-color: theme.$alternate;
+    transform-origin: center;
 }
-.portalOpenClose {
-    animation: portal-open-close 0.75s ease-in-out forwards;
-}
-@keyframes portal-open-close {
-    0% {
-        width: 0px;
-    }
-    50% {
-        width: 225px;
-    }
-    100% {
-        width: 0px;
-    }
-}
-
 .imageStack {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.aboutImageHolder {
+    margin-top: 80px;
+}
+.aboutImage {
+    height: 330px;
+}
+.portalContainerTransition {
+    animation: portal-container-transition 1.5s ease-in-out forwards;
+}
+.portalTransition {
+    animation: portal-transition 1.5s ease-in-out forwards;
+}
+
+@keyframes portal-container-transition {
+    0% {
+        top: -380px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: -380px;
+    }
+}
+@keyframes portal-transition {
+    0% {
+        width: 0px;
+    }
+    20% {
+        width: 100%;
+    }
+    80% {
+        width: 100%;
+    }
+    100% {
+        width: 0px;
+    }
 }
 
 /* ******************* TABLET VIEW ******************* */
@@ -54,4 +85,70 @@
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
+    .aboutPortal {
+        height: 520px;
+        width: 100%;
+        margin-bottom: 25px;
+        margin-top: 25px;
+    }
+    .portalContainer {
+        top: -500px;
+        width: 380px;
+    }
+    .portalCover {
+        width: 100%;
+        height: 565px;
+    }
+    .portal {
+        height: 10px;
+        border-radius: 10px;
+    }
+    .aboutImageHolder {
+        margin-top: 82px;
+    }
+    .aboutImage {
+        height: 455px;
+    }
+    @keyframes portal-container-transition {
+        0% {
+            top: -500px;
+        }
+        50% {
+            top: -5px;
+        }
+        100% {
+            top: -500px;
+        }
+    }
+    @keyframes portal-transition {
+        0% {
+            width: 0px;
+        }
+        20% {
+            width: 100%;
+        }
+        80% {
+            width: 100%;
+        }
+        100% {
+            width: 0px;
+        }
+    }
+}
+
+@media (max-width: breakpoints.$small-mobile) {
+    @keyframes portal-transition {
+        0% {
+            width: 0px;
+        }
+        20% {
+            width: 260px;
+        }
+        80% {
+            width: 260px;
+        }
+        100% {
+            width: 0px;
+        }
+    }
 }

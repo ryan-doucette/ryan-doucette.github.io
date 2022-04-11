@@ -83,7 +83,7 @@
 .tubeSide {
     height: 100%;
     width: 24px;
-    background-color: theme.$secondary;
+    background-color: theme.$primary;
     border-radius: 4px;
     z-index: 2;
 }
@@ -92,7 +92,7 @@
     left: 0;
     margin-left: -55px;
     height: 60px;
-    background-color: rgba($color: theme.$alternate, $alpha: 0.1);
+    background-color: rgba($color: theme.$alternate, $alpha: 0.2);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -101,15 +101,14 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-.aboutCarouselPointer {
+.tubeSideConnector {
     position: absolute;
-    top: 0px;
-    left: 105px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 7px solid theme.$highlight;
+    bottom: 0;
+    width: 10px;
+    height: 30px;
+    margin: 7px;
+    margin-bottom: -20px;
+    background-color: theme.$secondary;
 }
 .tubeItem {
     height: 50px;
@@ -126,7 +125,7 @@
         background-color: transparent;
     }
     100% {
-        background-color: rgba($color: theme.$alternate, $alpha: 0.2);
+        background-color: rgba($color: theme.$alternate, $alpha: 0.3);
     }
 }
 .aboutItemDeselected {
@@ -134,7 +133,7 @@
 }
 @keyframes about-item-deselected {
     0% {
-        background-color: rgba($color: theme.$alternate, $alpha: 0.2);
+        background-color: rgba($color: theme.$alternate, $alpha: 0.3);
     }
     100% {
         background-color: transparent;
@@ -179,7 +178,52 @@
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
-
+    .aboutCarousel {
+        width: 300px;
+    }
+    .handle {
+        width: 6px;
+        height: 70px;
+    }
+    .handleBall {
+        width: 19px;
+        height: 19px;
+    }
+    .tube {
+        height: 80px;
+        margin-left: -74px;
+    }
+    .tubeSide {
+        width: 20px;
+    }
+    .tubeItem {
+        height: 68px;
+        width: 68px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+    @keyframes shift-tube-left {
+        0% {
+            transform: translateX(0px);
+        }
+        75% {
+            transform: translateX(-88px);
+        }
+        100% {
+            transform: translateX(-82px);
+        }
+    }
+    @keyframes shift-tube-right {
+        0% {
+            transform: translateX(0px);
+        }
+        75% {
+            transform: translateX(88px);
+        }
+        100% {
+            transform: translateX(82px);
+        }
+    }
 }
 
 /* ******************* SMALL MOBILE VIEW ******************* */ 
@@ -199,16 +243,6 @@
         height: 45px;
         margin-left: -50px;
     }
-    .aboutCarouselPointer {
-        position: absolute;
-        top: 0px;
-        left: 72px;
-        width: 0;
-        height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 5px solid theme.$highlight;
-    }
     .tubeSide {
         width: 14px;
     }
@@ -217,9 +251,6 @@
         width: 38px;
         margin-left: 3px;
         margin-right: 3px;
-    }
-    .shiftTubeLeft {
-        animation: shift-tube-left 0.75s ease-in-out forwards;
     }
     @keyframes shift-tube-left {
         0% {
@@ -231,9 +262,6 @@
         100% {
             transform: translateX(-45px);
         }
-    }
-    .shiftTubeRight {
-        animation: shift-tube-right 0.75s ease-in-out forwards;
     }
     @keyframes shift-tube-right {
         0% {

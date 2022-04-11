@@ -6,33 +6,101 @@
     position: relative;
     display: flex;
     justify-content: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    align-items: center;
     overflow: hidden;
+    z-index: 1;
+    background-color: theme.$highlight;
+}
+.aboutTopWire {
+    position: absolute;
+    top: 0;
+    height: 50%;
+    width: 8px;
+    background-color: theme.$alternate;
+    z-index: 1;
+}
+.aboutBottomPedestal {
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: 80px;
+    background-color: theme.$secondary;
     z-index: 1;
 }
 .aboutFullContainer {
+    position: relative;
     width: 100%;
+    height: 475px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: theme.$highlight;
+    z-index: 2;
+    overflow: hidden;
+}
+.aboutSignContainer {
+    position: absolute;
+    top: 0px;
+    z-index: 2;
 }
 .aboutCarouselContainer {
+    position: absolute;
+    bottom: 85px;
     width: 100%;
     height: 74px;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 .aboutPortalContainer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+}
+.aboutPedestalContainer {
+    position: absolute;
+    bottom: -5px;
+    width: calc(100% - 40px);
+    height: 35px;
+    background-color: theme.$secondary;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+.aboutPedestalTop {
+    width: 100%;
+    height: 16px;
+    margin-top: -8px;
+    border-radius: 100%;
+    background-color: theme.$primary;
+}
+.tubeSideBaseConnector {
+    bottom: 27px;
+    position: absolute;
+    width: 6px;
+    height: 58px;
+    background-color: theme.$secondary;
+    z-index: 3;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.tubeSideBaseConnectorLeft {
+    margin-right: 206px;
+}
+.tubeSideBaseConnectorRight {
+    margin-left: 206px;
 }
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
+    .aboutPedestalContainer {
+        width: 440px;
+    }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
@@ -41,11 +109,46 @@
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
-
+    .aboutFullContainer {
+        height: 600px;
+    }
+    .aboutCarouselContainer {
+        bottom: 120px;
+        height: 100px;
+    }
+    .tubeSideBaseConnector {
+        width: 8px;
+        bottom: 28px;
+        height: 92px;
+    }
+    .tubeSideBaseConnectorLeft {
+        margin-right: 280px;
+    }
+    .tubeSideBaseConnectorRight {
+        margin-left: 280px;
+    }
+    .aboutPedestalContainer {
+        width: 600px;
+    }
+    .aboutTopWire {
+        width: 9px;
+    }
+    .aboutBottomPedestal {
+        width: 130px;
+    }
 }
 
 @media (max-width: breakpoints.$small-mobile) {
     .aboutCarouselContainer {
         height: 55px;
+    }
+    .tubeSideBaseConnector {
+        width: 5px;
+    }
+    .tubeSideBaseConnectorLeft {
+        margin-right: 147px;
+    }
+    .tubeSideBaseConnectorRight {
+        margin-left: 147px;
     }
 }

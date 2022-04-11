@@ -12,9 +12,22 @@
     padding-left: 10px;
     padding-right: 10px;
     position: relative;
-    background-color: theme.$primary;
-    border: 7px solid theme.$secondary;
+    background-color: theme.$secondary;
+    border: 7px solid theme.$primary;
     border-radius: 4px;
+}
+.aboutPortalOpener {
+    position: absolute;
+    top: 45px;
+    left: 80px;
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 20px solid theme.$primary;
+    transition: 0.3s ease-in-out;
+    border-radius: 20px;
+    z-index: -1;
 }
 .aboutSignContent {
     display: flex;
@@ -30,7 +43,6 @@
     margin-right: 4px;
     font-family: 'Courier New', Courier, monospace;
 }
-
 .aboutHeartImg {
     height: 18px;
     margin-left: 4px;
@@ -48,6 +60,33 @@
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
+    .aboutSign {
+        width: 300px;
+        height: 20px;
+        padding-top: 18px;
+        padding-bottom: 21px;
+        padding-left: 8px;
+        padding-right: 8px;
+        border: 8px solid theme.$primary;
+    }
+    .aboutSignText{
+        font-size:23px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+    .aboutHeartImg {
+        height: 20px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: 3px;
+    }
+    .aboutPortalOpener {
+        top: 50px;
+        left: 78px;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-bottom: 30px solid theme.$primary;
+    }
 }
 
 /* ******************* SMALL MOBILE VIEW ******************* */
@@ -59,7 +98,7 @@
         padding-bottom: 15px;
         padding-left: 6px;
         padding-right: 6px;
-        border: 5px solid theme.$secondary;
+        border: 5px solid theme.$primary;
     }
     .aboutSignText{
         font-size:16px;
@@ -71,5 +110,9 @@
         margin-left: 4px;
         margin-right: 4px;
         margin-top: 1px;
+    }
+    .aboutPortalOpener {
+        top: 35px;
+        left: 55px;
     }
 }

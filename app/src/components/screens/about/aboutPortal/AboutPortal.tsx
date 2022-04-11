@@ -1,60 +1,51 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import './_aboutPortal.scss';
 import aboutItems from '../AboutData';
 
-const AboutPortal = ({currIndex} : {currIndex: number}) => {
-  const aboutItemsLength = aboutItems.length;
+const AboutPortal = ({currIndex, itemTransitioning} : {currIndex: number, itemTransitioning:boolean}) => {
+  const [firstLoad, setFirstLoad] = useState(true);
+
   useEffect(() => {
-    openClosePortal()
-  }, [currIndex])
+    portalTransition();
 
-  const openClosePortal = () => {
-    const topPortal = document.getElementById('topPortal');
-    const bottomPortal = document.getElementById('bottomPortal');
+    const aboutImage = document.getElementById('about-image');
+    if(firstLoad) {
+      setTimeout(() => {
+          aboutImage!.style.visibility = 'visible';
+          setFirstLoad(false);
+      }, 750);
+    }
+    setFirstLoad(false);
+  }, [firstLoad, itemTransitioning]);
 
-    topPortal!.classList.add('portalOpenClose');
-    bottomPortal!.classList.add('portalOpenClose');
+  const portalTransition = () => {
+    const portalContainer = document.getElementById('portal-container');
+    const portal = document.getElementById('portal');
+
+    portalContainer?.classList.add('portalContainerTransition');
+    portal?.classList.add('portalTransition');
 
     setTimeout(() => {
-      topPortal!.classList.remove('portalOpenClose');
-      bottomPortal!.classList.remove('portalOpenClose');
-    }, 750)
-  }
-
-  const getIndex = (offset: number) => {
-    if (offset === 1) {
-      if(currIndex === aboutItemsLength - 1) {
-        return 0;
-      }
-      else {
-        return currIndex + 1;
-      }
-    }
-    else {
-      if(currIndex === 0) {
-        return aboutItemsLength - 1;
-      }
-      else {
-        return currIndex - 1;
-      }
-    }
+      portalContainer?.classList.remove('portalContainerTransition');
+      portal?.classList.remove('portalTransition');
+    }, 1500)
   }
 
   return (
     <div className="aboutPortal">
-      <div className='topPortal' id='topPortal'/>
-        <div className='imageStack'>
-          <div className='aboutImageHolder'>
-            <img src={aboutItems[getIndex(-1)].portalImage} alt={aboutItems[getIndex(-1)].identifier}/>
-          </div>
-          <div className='aboutImageHolder'>
-            <img src={aboutItems[currIndex].portalImage} alt={aboutItems[currIndex].identifier}/>
-          </div>
-          <div className='aboutImageHolder'>
-            <img src={aboutItems[getIndex(1)].portalImage} alt={aboutItems[getIndex(1)].identifier}/>
-          </div>
+      <div className='portalContainer' id='portal-container'>
+        <div className='portalCover'/>
+        <div className='portal' id='portal'/>
+      </div>
+      <div className='imageStack'>
+        <div className='aboutImageHolder'>
+          <img className='aboutImage'
+            id='about-image'
+            style={{visibility: 'hidden'}}
+            src={aboutItems[currIndex].portalImage} 
+            alt={aboutItems[currIndex].identifier}/>
         </div>
-      <div className='bottomPortal' id='bottomPortal'/>
+      </div>
     </div>
   );
 }

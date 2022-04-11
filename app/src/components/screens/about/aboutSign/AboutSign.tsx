@@ -41,6 +41,7 @@ const AboutSign = ({currIndex} : {currIndex: number}) => {
 
   return (
     <div className="aboutSign">
+      <div className='aboutPortalOpener'></div>
       <div className='aboutSignContent' id='about-sign-content'>
         <div className='aboutSignText' id='about-text-start'></div>
         <img src={heart} alt='heart' id='about-heart' className='aboutHeartImg'/>

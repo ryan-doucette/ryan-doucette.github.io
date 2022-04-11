@@ -1,16 +1,16 @@
 import React from 'react';
 import './_aboutCarousel.scss';
 import aboutItems from '../AboutData';
-// import useInterval from '../../../../customHooks/UseInterval';
+import useInterval from '../../../../customHooks/UseInterval';
 
 const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currIndex: number, shiftLeftPressed: any, shiftRightPressed: any}) => {
     const aboutItemsLength = aboutItems.length;
-    // const aboutItemDuration = 4000;
+    const aboutItemDuration = 4000;
 
-    // useInterval(() => {
-    //     crankHandle('right');
-    //     shiftCarousel('right');
-    // }, aboutItemDuration); 
+    useInterval(() => {
+        crankHandle('right');
+        shiftCarousel('right');
+    }, aboutItemDuration); 
 
     const crankHandle = (side: string) => {
         if (side === 'left') {
@@ -48,8 +48,6 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
     
             setTimeout(() => {
                 tube?.classList.remove('shiftTubeRight');
-                leftHandle!.style.pointerEvents = 'auto';
-                rightHandle!.style.pointerEvents = 'auto';
                 selectedAboutItem?.classList.remove('aboutItemDeselected');
                 selectedAboutItem?.classList.add('aboutItemSelected');
             }, 750);
@@ -60,12 +58,14 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
     
             setTimeout(() => {
                 tube?.classList.remove('shiftTubeLeft');
-                leftHandle!.style.pointerEvents = 'auto';
-                rightHandle!.style.pointerEvents = 'auto';
                 selectedAboutItem?.classList.remove('aboutItemDeselected');
                 selectedAboutItem?.classList.add('aboutItemSelected');
             }, 750);
         }
+        setTimeout(() => {
+            leftHandle!.style.pointerEvents = 'auto';
+            rightHandle!.style.pointerEvents = 'auto';
+        }, 2250);
     };
 
     const getIndex = (index: number) => {
@@ -104,7 +104,6 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
                 <div className='handle'/>
             </div>
             <div className='tubeContainer'>
-                <div className='aboutCarouselPointer'/>
                 <div className='tubeSide tubeSideRight'/>
                 <div className='tube' id='tube'>
                     <img 
