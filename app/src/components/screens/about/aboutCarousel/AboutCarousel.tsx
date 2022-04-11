@@ -9,7 +9,6 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
 
     useInterval(() => {
         crankHandle('right');
-        shiftCarousel('right');
     }, aboutItemDuration); 
 
     const crankHandle = (side: string) => {
@@ -19,7 +18,7 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
 
             setTimeout(() => {
                 handle?.classList.remove('leftCrank');
-            }, 750);
+            }, 1000);
         }
         else if (side === 'right') {
             const handle = document.getElementById('right-handle');
@@ -27,46 +26,9 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
 
             setTimeout(() => {
                 handle?.classList.remove('rightCrank');
-            }, 750);
+            }, 1000);
         }
     }
-  
-    const shiftCarousel = (direction: string) => {
-        const leftHandle = document.getElementById('left-handle');
-        const rightHandle = document.getElementById('right-handle');
-        const selectedAboutItem = document.getElementById('selected-about-item');
-
-        selectedAboutItem?.classList.remove('aboutItemSelected');
-        selectedAboutItem?.classList.add('aboutItemDeselected');
-
-        leftHandle!.style.pointerEvents = 'none';
-        rightHandle!.style.pointerEvents = 'none';
-
-        if(direction === 'right') {
-            const tube = document.getElementById('tube');
-            tube?.classList.add('shiftTubeRight');
-    
-            setTimeout(() => {
-                tube?.classList.remove('shiftTubeRight');
-                selectedAboutItem?.classList.remove('aboutItemDeselected');
-                selectedAboutItem?.classList.add('aboutItemSelected');
-            }, 750);
-        }
-        else if (direction === 'left') {
-            const tube = document.getElementById('tube');
-            tube?.classList.add('shiftTubeLeft');
-    
-            setTimeout(() => {
-                tube?.classList.remove('shiftTubeLeft');
-                selectedAboutItem?.classList.remove('aboutItemDeselected');
-                selectedAboutItem?.classList.add('aboutItemSelected');
-            }, 750);
-        }
-        setTimeout(() => {
-            leftHandle!.style.pointerEvents = 'auto';
-            rightHandle!.style.pointerEvents = 'auto';
-        }, 2250);
-    };
 
     const getIndex = (index: number) => {
         if(index < 0) {
@@ -96,7 +58,6 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
                 id='left-handle' 
                 onClick={() => {
                     crankHandle('left'); 
-                    shiftCarousel('left'); 
                     shiftLeftPressed();
                 }}
             >
@@ -140,7 +101,6 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
                 id='right-handle' 
                 onClick={() => {
                     crankHandle('right'); 
-                    shiftCarousel('right');
                     shiftRightPressed();
                 }}
             >

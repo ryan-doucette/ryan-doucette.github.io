@@ -20,7 +20,7 @@ const About = () => {
   const aboutItemDuration = 4000;
 
   useInterval(() => {
-      handleShiftRightPressed()
+      handleShiftRightPressed();
   }, aboutItemDuration);
 
   const navType = useNavigationType();
@@ -36,8 +36,22 @@ const About = () => {
   }, [navType, preventPopExit, screenContext]);
 
   const handleShiftLeftPressed = () => {
+    const leftHandle = document.getElementById('left-handle');
+    leftHandle!.style.pointerEvents = 'none';
+
+    const tube = document.getElementById('tube');
+    tube?.classList.add('shiftTubeLeft');
+
+    const selectedAboutItem = document.getElementById('selected-about-item');
+    selectedAboutItem?.classList.remove('aboutItemSelected');
+    selectedAboutItem?.classList.add('aboutItemDeselected');
+
     setItemTransitioning(true);
     setTimeout(() => {
+      tube?.classList.remove('shiftTubeLeft');
+      selectedAboutItem?.classList.remove('aboutItemDeselected');
+      selectedAboutItem?.classList.add('aboutItemSelected');
+      
       if(currIndex === 0) {
         setCurrIndex(aboutItemsLength - 1);
       }
@@ -46,11 +60,29 @@ const About = () => {
       }
       setItemTransitioning(false); 
     }, 750);
+
+    setTimeout(() => {
+      leftHandle!.style.pointerEvents = 'auto';
+  }, 2250);
   }
 
   const handleShiftRightPressed = () => {
+    const rightHandle = document.getElementById('right-handle');
+    rightHandle!.style.pointerEvents = 'none';
+
+    const tube = document.getElementById('tube');
+    tube?.classList.add('shiftTubeRight');
+
+    const selectedAboutItem = document.getElementById('selected-about-item');
+    selectedAboutItem?.classList.remove('aboutItemSelected');
+    selectedAboutItem?.classList.add('aboutItemDeselected');
+
     setItemTransitioning(true);
     setTimeout(() => {
+      tube?.classList.remove('shiftTubeRight');
+      selectedAboutItem?.classList.remove('aboutItemDeselected');
+      selectedAboutItem?.classList.add('aboutItemSelected');
+
       if(currIndex === aboutItemsLength - 1) {
         setCurrIndex(0);
       }
@@ -59,6 +91,9 @@ const About = () => {
       }
       setItemTransitioning(false);
     }, 750);
+    setTimeout(() => {
+      rightHandle!.style.pointerEvents = 'auto';
+  }, 2250);
   }
 
   return (
