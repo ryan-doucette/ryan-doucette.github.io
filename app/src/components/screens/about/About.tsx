@@ -9,6 +9,7 @@ import AboutCarousel from './aboutCarousel/AboutCarousel';
 import AboutSign from './aboutSign/AboutSign';
 import aboutItems from './AboutData';
 import useInterval from '../../../customHooks/UseInterval';
+import { enterAboutTransition } from './transitions/AboutTransitions';
 
 const About = () => {
   const screenContext = useContext(CurrentScreenContext);
@@ -27,6 +28,7 @@ const About = () => {
 
   useEffect(() => {
     if (navType === 'POP' && preventPopExit === false) {
+      enterAboutTransition();
       setPreventPopExit(true);
       return;
     }
@@ -82,36 +84,38 @@ const About = () => {
 
   return (
     <div className="about">
-      <div className='aboutTopWire'/>
-      <div className='aboutFullContainer'>
-        <div className='aboutSignContainer'>
-          <AboutSign currIndex={currIndex}/>
+      <section className='aboutPortalSection' id='about-portal-section'>
+        <div className='aboutTopWire'/>
+        <div className='aboutFullContainer'>
+          <div className='aboutSignContainer'>
+            <AboutSign currIndex={currIndex}/>
+          </div>
+          <div className='aboutPortalContainer'>
+            <AboutPortal currIndex={currIndex} itemTransitioning={itemTransitioning}/>
+          </div>
+          <div className='aboutCarouselContainer'>
+            <AboutCarousel 
+              currIndex={currIndex}
+              shiftLeftPressed={() => {
+                handleShiftLeftPressed()
+              }}
+              shiftRightPressed={() => {
+                handleShiftRightPressed()
+              }}
+            />
+          </div>
+          <div className='tubeSideBaseConnector tubeSideBaseConnectorLeft'>
+            <div className='tubeSideBasePole'/>
+          </div>
+          <div className='tubeSideBaseConnector tubeSideBaseConnectorRight'>
+            <div className='tubeSideBasePole'/>
+          </div>
+          <section className='aboutPedestalContainer'>
+              <div className='aboutPedestalTop'/>
+          </section>
         </div>
-        <div className='aboutPortalContainer'>
-          <AboutPortal currIndex={currIndex} itemTransitioning={itemTransitioning}/>
-        </div>
-        <div className='aboutCarouselContainer'>
-          <AboutCarousel 
-            currIndex={currIndex}
-            shiftLeftPressed={() => {
-              handleShiftLeftPressed()
-            }}
-            shiftRightPressed={() => {
-              handleShiftRightPressed()
-            }}
-          />
-        </div>
-        <div className='tubeSideBaseConnector tubeSideBaseConnectorLeft'>
-          <div className='tubeSideBasePole'/>
-        </div>
-        <div className='tubeSideBaseConnector tubeSideBaseConnectorRight'>
-          <div className='tubeSideBasePole'/>
-        </div>
-        <section className='aboutPedestalContainer'>
-            <div className='aboutPedestalTop'/>
-        </section>
-      </div>
-      <div className='aboutBottomPedestal'/>
+        <div className='aboutBottomPedestal'/>
+      </section>
     </div>
   );
 }

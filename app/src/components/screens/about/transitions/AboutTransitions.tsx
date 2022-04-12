@@ -1,12 +1,12 @@
 export const enterAboutTransition = () => {
-    // const contactElement = document.getElementById('contactContainer');
+    const aboutPortalSection = document.getElementById('about-portal-section');
 
-    // contactElement?.classList.add('enter-contact');
-    // contactElement?.classList.remove('leave-contact');
+    aboutPortalSection?.classList.add('enter-about');
+    aboutPortalSection?.classList.remove('leave-about');
 }
 export const leaveAboutTransition = () => {
-    // const contactElement = document.getElementById('contactContainer');
+    const aboutPortalSection = document.getElementById('about-portal-section');
 
-    // contactElement?.classList.add('leave-contact');
-    // contactElement?.classList.remove('enter-contact');
+    aboutPortalSection?.classList.add('leave-about');
+    aboutPortalSection?.classList.remove('enter-about');
 }
