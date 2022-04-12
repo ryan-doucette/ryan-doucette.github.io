@@ -9,6 +9,7 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
 
     useInterval(() => {
         crankHandle('right');
+        shiftTubeItemsAnimation();
     }, aboutItemDuration); 
 
     const crankHandle = (side: string) => {
@@ -51,6 +52,32 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
         }
     }
 
+    const shiftTubeItemsAnimation = () => {
+        const tubeItem1 = document.getElementById('tube-item-1');
+        const tubeItem2 = document.getElementById('tube-item-2');
+        const tubeItem3 = document.getElementById('selected-about-item');
+        const tubeItem4 = document.getElementById('tube-item-4');
+        const tubeItem5 = document.getElementById('tube-item-5');
+
+        tubeItem3?.classList.remove('itemSelectedIndicator');
+        
+        tubeItem1?.classList.add('shiftTube');
+        tubeItem2?.classList.add('shiftTube');
+        tubeItem3?.classList.add('shiftTubeSelected');
+        tubeItem4?.classList.add('shiftTube');
+        tubeItem5?.classList.add('shiftTube');
+
+        setTimeout(() => {
+            tubeItem3?.classList.add('itemSelectedIndicator');
+
+            tubeItem1?.classList.remove('shiftTube');
+            tubeItem2?.classList.remove('shiftTube');
+            tubeItem3?.classList.remove('shiftTubeSelected');
+            tubeItem4?.classList.remove('shiftTube');
+            tubeItem5?.classList.remove('shiftTube');
+        }, 1000)
+    }
+
     return (
         <div className="aboutCarousel">
             <div 
@@ -59,6 +86,7 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
                 onClick={() => {
                     crankHandle('left'); 
                     shiftLeftPressed();
+                    shiftTubeItemsAnimation();
                 }}
             >
                 <div className='handleBall'/>
@@ -71,27 +99,31 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
                         src={aboutItems[getIndex(2)].carouselImage} 
                         className='tubeItem' 
                         alt={aboutItems[getIndex(2)].identifier}
+                        id='tube-item-1'
                     />
                     <img
                         src={aboutItems[getIndex(1)].carouselImage} 
                         className='tubeItem' 
                         alt={aboutItems[getIndex(1)].identifier}
+                        id='tube-item-2'
                     />
                     <img
                         id='selected-about-item'
                         src={aboutItems[currIndex].carouselImage}
-                        className='tubeItem aboutItemSelected'
+                        className='tubeItem itemSelectedIndicator'
                         alt={aboutItems[currIndex].identifier}
                     />
                     <img
                         src={aboutItems[getIndex(-1)].carouselImage} 
                         className='tubeItem' 
                         alt={aboutItems[getIndex(-1)].identifier}
+                        id='tube-item-4'
                     />
                     <img
                         src={aboutItems[getIndex(-2)].carouselImage} 
                         className='tubeItem' 
                         alt={aboutItems[getIndex(-2)].identifier}
+                        id='tube-item-5'
                     />
                 </div>
                 <div className='tubeSide tubeSideLeft'/>
@@ -102,6 +134,7 @@ const AboutCarousel = ({currIndex, shiftLeftPressed, shiftRightPressed} : {currI
                 onClick={() => {
                     crankHandle('right'); 
                     shiftRightPressed();
+                    shiftTubeItemsAnimation();
                 }}
             >
                 <div className='handleBall'/>

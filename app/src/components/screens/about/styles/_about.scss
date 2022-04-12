@@ -82,18 +82,21 @@
 .tubeSideBaseConnector {
     bottom: 27px;
     position: absolute;
-    width: 6px;
     height: 58px;
-    background-color: theme.$secondary;
     z-index: 3;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
+.tubeSideBasePole {
+    width: 6px;
+    height: 58px;
+    background-color: theme.$secondary;
+}
 .tubeSideBaseConnectorLeft {
-    margin-right: 206px;
+    padding-right: 206px;
 }
 .tubeSideBaseConnectorRight {
-    margin-left: 206px;
+    padding-left: 206px;
 }
 
 /* ******************* TABLET VIEW ******************* */
@@ -117,15 +120,19 @@
         height: 100px;
     }
     .tubeSideBaseConnector {
-        width: 8px;
         bottom: 28px;
         height: 92px;
     }
+    .tubeSideBasePole {
+        width: 8px;
+        height: 92px;
+        background-color: theme.$secondary;
+    }
     .tubeSideBaseConnectorLeft {
-        margin-right: 280px;
+        padding-right: 280px;
     }
     .tubeSideBaseConnectorRight {
-        margin-left: 280px;
+        padding-left: 280px;
     }
     .aboutPedestalContainer {
         width: 600px;
@@ -142,13 +149,15 @@
     .aboutCarouselContainer {
         height: 55px;
     }
-    .tubeSideBaseConnector {
+    .tubeSideBasePole {
         width: 5px;
+        height: 55px;
+        background-color: theme.$secondary;
     }
     .tubeSideBaseConnectorLeft {
-        margin-right: 147px;
+        padding-right: 146px;
     }
     .tubeSideBaseConnectorRight {
-        margin-left: 147px;
+        padding-left: 146px;
     }
 }

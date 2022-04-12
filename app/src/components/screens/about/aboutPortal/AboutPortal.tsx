@@ -7,13 +7,21 @@ const AboutPortal = ({currIndex, itemTransitioning} : {currIndex: number, itemTr
 
   useEffect(() => {
     portalTransition();
+    const leftHandle = document.getElementById('left-handle');
+    leftHandle!.style.pointerEvents = 'none';
+    const rightHandle = document.getElementById('right-handle');
+    rightHandle!.style.pointerEvents = 'none';
 
     const aboutImage = document.getElementById('about-image');
     if(firstLoad) {
       setTimeout(() => {
-          aboutImage!.style.visibility = 'visible';
-          setFirstLoad(false);
+        aboutImage!.style.visibility = 'visible';
+        setFirstLoad(false);
       }, 750);
+      setTimeout(() => {
+        leftHandle!.style.pointerEvents = 'auto';
+        rightHandle!.style.pointerEvents = 'auto';
+      }, 1500);
     }
     setFirstLoad(false);
   }, [firstLoad, itemTransitioning]);
