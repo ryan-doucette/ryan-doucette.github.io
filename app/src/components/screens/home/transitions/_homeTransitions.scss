@@ -20,6 +20,7 @@
   animation: show-footer-intial 0.9s linear forwards;
 }
 .hide-footer {
+  pointer-events: none;
   animation: hide-footer 0.65s linear forwards;
 }
 

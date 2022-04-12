@@ -13,7 +13,7 @@ const experienceItems: experienceItem[] = [
         identifier: 'smartsheet',
         title: 'Smartsheet',
         subtitle: 'Frontend Dev Internship',
-        description: '',
+        description: 'I start my internship at Smartsheet in May 2022. More details coming soon!',
         image: smartsheetImg,
         buttonLabel: 'SMARTSHEET.COM',
         buttonLink: 'https://www.smartsheet.com/',
