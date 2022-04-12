@@ -12,6 +12,7 @@ import aboutItems from './AboutData';
 import useInterval from '../../../customHooks/UseInterval';
 import { enterAboutTransition } from './transitions/AboutTransitions';
 import CloseButton from '../home/menuModal/CloseButton';
+import {introText, bodyText} from './BioData'
 
 const About = () => {
   const screenContext = useContext(CurrentScreenContext);
@@ -126,7 +127,16 @@ const About = () => {
         <div className='aboutBottomPedestal'/>
       </section>
       <section className='bioSection' id='bio-section'>
-        <div className='bioCloseButtonContainer' id='bio-close-button' onClick={() => leaveBioScreen()}>
+        <section className='bioTextContainer'>
+          <div className='bioText bioIntroText'>
+                {introText}
+          </div>
+          <div className='bioText'>
+              {bodyText}
+          </div>
+        </section>
+      </section>
+      <div className='bioCloseButtonContainer' id='bio-close-button' onClick={() => leaveBioScreen()}>
           <CloseButton
               backgroundColor={'white'}
               xColor={'#252a37'}
@@ -134,9 +144,7 @@ const About = () => {
               hoverBackgroundColor={'#50596d'}
               hoverXColor={'white'}
           />
-        </div>
-        <h1 style={{color: 'white'}}>TEST</h1>
-      </section>
+      </div>
     </div>
   );
 }
