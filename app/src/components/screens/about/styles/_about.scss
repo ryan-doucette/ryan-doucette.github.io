@@ -43,6 +43,7 @@
     align-items: center;
     overflow: hidden;
     background-color: theme.$highlight;
+    z-index: 2;
 }
 .aboutTopWire {
     position: absolute;

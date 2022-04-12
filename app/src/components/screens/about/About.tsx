@@ -1,7 +1,8 @@
 import React, {useContext, useState, useEffect} from 'react';
 import { CurrentScreenContext } from '../../../current-screen-context';
-import { leaveAboutTransition } from './transitions/AboutTransitions';
+import { leaveAboutTransition, enterBioScreen, leaveBioScreen } from './transitions/AboutTransitions';
 import './styles/_about.scss';
+import './styles/_bio.scss';
 import './transitions/_aboutTransitions.scss';
 import { useNavigationType } from 'react-router-dom';
 import AboutPortal from './aboutPortal/AboutPortal';
@@ -10,6 +11,7 @@ import AboutSign from './aboutSign/AboutSign';
 import aboutItems from './AboutData';
 import useInterval from '../../../customHooks/UseInterval';
 import { enterAboutTransition } from './transitions/AboutTransitions';
+import CloseButton from '../home/menuModal/CloseButton';
 
 const About = () => {
   const screenContext = useContext(CurrentScreenContext);
@@ -85,7 +87,13 @@ const About = () => {
   return (
     <div className="about">
       <section className='aboutPortalSection' id='about-portal-section'>
-        <div className='bioButton' id='bio-button'>BIO</div>
+        <div
+          className='bioButton'
+          id='bio-button'
+          onClick={() => {enterBioScreen()}}
+        >
+          BIO
+        </div>
         <div className='aboutTopWire'/>
         <div className='aboutFullContainer'>
           <div className='aboutSignContainer'>
@@ -116,6 +124,18 @@ const About = () => {
           </section>
         </div>
         <div className='aboutBottomPedestal'/>
+      </section>
+      <section className='bioSection' id='bio-section'>
+        <div className='bioCloseButtonContainer' id='bio-close-button' onClick={() => leaveBioScreen()}>
+          <CloseButton
+              backgroundColor={'white'}
+              xColor={'#252a37'}
+              changeColorOnHover={true}
+              hoverBackgroundColor={'#50596d'}
+              hoverXColor={'white'}
+          />
+        </div>
+        <h1 style={{color: 'white'}}>TEST</h1>
       </section>
     </div>
   );

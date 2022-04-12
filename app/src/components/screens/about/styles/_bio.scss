@@ -1,0 +1,67 @@
+@use "../../../../theme";
+@use "../../../../breakpoints";
+
+.bioSection {
+    width: 100%;
+    opacity: 0%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.bioCloseButtonContainer {
+    opacity: 0%;
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    border-radius: 100%;
+    box-shadow: 2px 2px 16px rgba($color: #000000, $alpha: 0.5);
+  }
+  
+  .bioCloseButtonContainer:hover {
+    transform: scale(120%);
+    -webkit-transform: scale(1.2, 1.2);
+  }
+
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: breakpoints.$tablet) {
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$desktop) {
+    .bioCloseButtonContainer {
+        top: 30px;
+        right: 68px;
+        width: 55px;
+        height: 55px;
+      }
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$big-desktop) {
+    .bioCloseButtonContainer {
+        top: 40px;
+        right: 82px;
+        width: 60px;
+        height: 60px;
+      }
+}
+
+@media (max-width: breakpoints.$small-mobile) {
+    .bioCloseButtonContainer {
+        top: 12px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+      }
+}
