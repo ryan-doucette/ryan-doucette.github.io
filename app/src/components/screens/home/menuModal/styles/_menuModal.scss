@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   white-space: nowrap;
+  background-color: theme.$highlight;
 }
 .previewsContainer {
   width: 85%;
@@ -32,12 +33,6 @@
 .closeButtonContainer:hover {
   transform: scale(120%);
   -webkit-transform: scale(1.2, 1.2);
-}
-
-.menuBackground {
-  background: linear-gradient(-45deg, #e35e67, #6D7891 );
-  background-size: 400% 400%;
-  animation: gradient 12s ease infinite;
 }
 
 @keyframes gradient {

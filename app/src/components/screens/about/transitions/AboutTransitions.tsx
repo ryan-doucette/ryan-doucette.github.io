@@ -11,16 +11,22 @@ export const enterAboutTransition = () => {
 export const leaveAboutTransition = () => {
     const aboutPortalSection = document.getElementById('about-portal-section');
     const bioButton = document.getElementById('bio-button');
-    const bioSection = document.getElementById('bio-section');
 
     aboutPortalSection?.classList.add('leave-about');
     aboutPortalSection?.classList.remove('enter-about');
 
     bioButton?.classList.add('bio-button-leave');
     bioButton?.classList.remove('bio-button-enter');
+}
+export const leaveAboutBioTransition = () => {
+    const bioSection = document.getElementById('bio-section');
+    const bioCloseButton = document.getElementById('bio-close-button');
 
     bioSection?.classList.add('bio-section-closed');
     bioSection?.classList.remove('bio-section-open');
+    
+    bioCloseButton?.classList.add('bio-section-closed');
+    bioCloseButton?.classList.remove('bio-section-open');
 }
 export const enterBioScreen = () => {
     const aboutPortalSection = document.getElementById('about-portal-section');

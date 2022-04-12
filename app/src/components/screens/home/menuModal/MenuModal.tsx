@@ -6,7 +6,7 @@ import PreviewCarousel from './PreviewCarousel';
 
 const MenuModal = ({menuIsRevealed, closeButtonPressed} : {menuIsRevealed: boolean | undefined, closeButtonPressed: MouseEventHandler}) => {
     return (
-        <div className="menuModal menuBackground">
+        <div className="menuModal">
             <section className='previewsContainer' id='previewCarousel'>
                 <PreviewCarousel menuRevealed={menuIsRevealed}/>
             </section>

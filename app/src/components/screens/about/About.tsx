@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from 'react';
 import { CurrentScreenContext } from '../../../current-screen-context';
-import { leaveAboutTransition, enterBioScreen, leaveBioScreen } from './transitions/AboutTransitions';
+import { leaveAboutTransition, enterBioScreen, leaveBioScreen, leaveAboutBioTransition } from './transitions/AboutTransitions';
 import './styles/_about.scss';
 import './styles/_bio.scss';
 import './transitions/_aboutTransitions.scss';
@@ -20,6 +20,7 @@ const About = () => {
   const [currIndex, setCurrIndex] = useState(0);
   const [itemTransitioning, setItemTransitioning] = useState(false);
   const aboutItemsLength = aboutItems.length;
+  const [bioOpen, setBioOpen] = useState(false);
 
   const aboutItemDuration = 4000;
 
@@ -36,9 +37,14 @@ const About = () => {
       return;
     }
     if (screenContext.currentScreen !== 'about') {
-      leaveAboutTransition();
+      if (bioOpen) {
+        leaveAboutBioTransition();
+      }
+      else {
+        leaveAboutTransition();
+      }
     }
-  }, [navType, preventPopExit, screenContext]);
+  }, [bioOpen, navType, preventPopExit, screenContext]);
 
   const handleShiftLeftPressed = () => {
     const leftHandle = document.getElementById('left-handle');
@@ -91,7 +97,7 @@ const About = () => {
         <div
           className='bioButton'
           id='bio-button'
-          onClick={() => {enterBioScreen()}}
+          onClick={() => {enterBioScreen(); setBioOpen(true)}}
         >
           BIO
         </div>
@@ -136,7 +142,7 @@ const About = () => {
           </div>
         </section>
       </section>
-      <div className='bioCloseButtonContainer' id='bio-close-button' onClick={() => leaveBioScreen()}>
+      <div className='bioCloseButtonContainer' id='bio-close-button' onClick={() => {leaveBioScreen(); setBioOpen(false)}}>
           <CloseButton
               backgroundColor={'white'}
               xColor={'#252a37'}
