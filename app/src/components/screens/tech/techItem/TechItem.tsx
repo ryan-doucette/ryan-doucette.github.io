@@ -1,8 +1,8 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import './_skillsItem.scss';
-import { skillsItem } from 'customTypes';
+import './_techItem.scss';
+import { techItem } from 'customTypes';
 
-const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
+const TechItem = ({skillItem} : {skillItem: techItem}) => {
   const [svgWidth, setSvgWidth] = useState<string | undefined>();
   const [svgHeight, setSvgHeight] = useState<string | undefined>();
   const [circleCx, setCircleCx] = useState<string | undefined>();
@@ -78,15 +78,15 @@ const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
 
 
   return (
-    <div className='skillFullContainer' id={'skills-item-' + skillItem.identifier}>
-      <section className='skillsItem'>
+    <div className='skillFullContainer' id={'tech-item-' + skillItem.identifier}>
+      <section className='techItem'>
         <div className='skillItemTextContainer'>
           <div className='skillItemText'>{innerLabel}</div>
         </div> 
         <div className="skillItemIcon">
           <img src={skillItem.image} alt={skillItem.identifier} className='skillItemImage'/>
           <svg height={svgHeight} width={svgWidth} xmlns="http://www.w3.org/2000/svg">
-            <circle cx={circleCx} cy={circleCy} r={circleR} className="shape" id='skills-circle'/>
+            <circle cx={circleCx} cy={circleCy} r={circleR} className="shape" id='tech-circle'/>
           </svg>
         </div>
       </section>
@@ -98,4 +98,4 @@ const SkillsItem = ({skillItem} : {skillItem: skillsItem}) => {
   );
 }
 
-export default SkillsItem;
+export default TechItem;

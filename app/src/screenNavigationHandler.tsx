@@ -1,7 +1,7 @@
 import { intialHomeEnterTransition } from './components/screens/home/transitions/HomeTransitions';
 import { enterContactTransition } from './components/screens/contact/transitions/ContactTransitions';
 import { enterExperienceTransition } from './components/screens/experience/transitions/ExperienceTransitions';
-import { enterSkillsTransition } from './components/screens/skills/transitions/SkillsTransitions';
+import { enterTechTransition } from './components/screens/tech/transitions/TechTransitions';
 import { enterAboutTransition } from './components/screens/about/transitions/AboutTransitions';
 
 const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any) => {
@@ -13,7 +13,7 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
                 return 1800;
             case 'about':
                 return 500;
-            case 'skills':
+            case 'tech':
                 return 2000;
             case 'experience':
                 return 1500;
@@ -32,8 +32,8 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
             case 'about':
                 enterAboutTransition();
                 break;
-            case 'skills':
-                enterSkillsTransition();
+            case 'tech':
+                enterTechTransition();
                 break;
             case 'experience':
                 enterExperienceTransition();

@@ -1,7 +1,7 @@
 @use "../../../../theme";
 @use "../../../../breakpoints";
 
-.skills {
+.tech {
     height: 100%;
     position: relative;
     display: flex;
@@ -13,7 +13,7 @@
     z-index: 1;
     overflow-x: hidden;
 }
-.skillsTitle {
+.techTitle {
     color: theme.$alternate;
     font-weight: bold;
     font-size: 32px;
@@ -21,7 +21,7 @@
     margin-bottom: 30px;
     white-space: normal;
 }
-.skillsItemsContainer {
+.techItemsContainer {
     display: flex;
     height: fit-content;
     flex-direction: column;
@@ -32,14 +32,14 @@
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
-    .skillsItemsContainer {
+    .techItemsContainer {
         width: 335px;
         padding-bottom: 40px;
     }
 }
 
 @media (min-width: breakpoints.$hide-burger-menu) {
-    .skillsTitle {
+    .techTitle {
         white-space: nowrap;
     }
 }
@@ -50,10 +50,10 @@
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
-    .skillsItemsContainer {
+    .techItemsContainer {
         margin-top: 40px;
     }
-    .skillsTitle {
+    .techTitle {
        font-size: 40px;
        margin-bottom: 40px;
     }
@@ -61,10 +61,10 @@
 
 /* ******************* SMALL MOBILE VIEW ******************* */
 @media (max-width: 340px) {
-    .skillsItemsContainer {
+    .techItemsContainer {
         margin-top: 24px;
     }
-    .skillsTitle {
+    .techTitle {
        font-size: 24px;
        margin-bottom: 24px;
     }

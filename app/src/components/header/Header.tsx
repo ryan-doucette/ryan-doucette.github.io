@@ -11,7 +11,7 @@ const Header = () => {
 
   const currentPath = useLocation().pathname;
   const currentTab: string = currentPath === '/' ? 'home' : currentPath.slice(1);
-  const tabCategories: string[] = ['home', 'about', 'skills', 'experience', 'contact'];
+  const tabCategories: string[] = ['home', 'about', 'tech', 'experience', 'contact'];
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [currTab, setCurrTab] = useState(currentTab);

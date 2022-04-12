@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React from 'react';
 import aboutImg from './previewImgs/aboutPreviewImg.png';
-import skillsImg from './previewImgs/skillsPreviewImg.png';
+import techImg from './previewImgs/techPreviewImg.png';
 import experienceImg from './previewImgs/experiencePreviewImg.png';
 import ruumzyImg from './previewImgs/ruumzyPreviewImg.png';
 import contactImg from './previewImgs/contactPreviewImg.png';
@@ -16,10 +16,10 @@ const previewItems: previewItem[] = [
         image: aboutImg
     },
     {
-        identifier: 'skills',
+        identifier: 'tech',
         description: "Fluency within computer science and design is important to me",
-        link: 'skills',
-        image: skillsImg,
+        link: 'tech',
+        image: techImg,
     },
     {
         identifier: 'experience',

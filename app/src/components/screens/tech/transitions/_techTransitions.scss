@@ -1,0 +1,112 @@
+.enter-tech-title {
+    opacity: 0;
+    animation: enter-tech-title 0.3s linear forwards;
+}
+.enter-tech-item-react {
+    transform: scaleY(0);
+    animation: enter-tech 0.3s linear forwards;
+}
+.enter-tech-item-typeScript {
+    transform: scaleY(0);
+    animation: enter-tech 0.3s linear forwards 0.2s;
+}
+.enter-tech-item-java {
+    transform: scale(0);
+    animation: enter-tech 0.3s linear forwards 0.4s;
+}
+.enter-tech-item-python {
+    transform: scaleY(0);
+    animation: enter-tech 0.3s linear forwards 0.6s;
+}
+.enter-tech-item-html {
+    transform: scaleY(0);
+    animation: enter-tech 0.3s linear forwards 0.8s;
+}
+.enter-tech-item-scss {
+    transform: scaleY(0);
+    animation: enter-tech 0.3s linear forwards 1s;
+}
+.enter-tech-item-adobe {
+    transform: scaleY(0);
+    animation: enter-tech 0.3s linear forwards 1s;
+}
+.enter-tech-item-angular {
+    transform: scaleY(0);
+    animation: enter-tech 0.3s linear forwards 1s;
+}
+.enter-tech-title {
+    opacity: 0;
+    animation: enter-tech-title 0.3s linear forwards;
+}
+
+.leave-tech-title {
+    opacity: 1;
+    animation: leave-tech-title 0.3s linear forwards;
+}
+.leave-tech-item-react {
+    transform: scaleY(1);
+    animation: leave-tech 0.3s linear forwards;
+}
+.leave-tech-item-typeScript {
+    transform: scaleY(1);
+    animation: leave-tech 0.3s linear forwards 0.2s;
+}
+.leave-tech-item-java {
+    transform: scale(01);
+    animation: leave-tech 0.3s linear forwards 0.4s;
+}
+.leave-tech-item-python {
+    transform: scaleY(1);
+    animation: leave-tech 0.3s linear forwards 0.6s;
+}
+.leave-tech-item-html {
+    transform: scaleY(1);
+    animation: leave-tech 0.3s linear forwards 0.8s;
+}
+.leave-tech-item-scss {
+    transform: scaleY(1);
+    animation: leave-tech 0.3s linear forwards 1s;
+}
+.leave-tech-item-adobe {
+    transform: scaleY(1);
+    animation: leave-tech 0.3s linear forwards 1.2s;
+}
+.leave-tech-item-angular {
+    transform: scaleY(1);
+    animation: leave-tech 0.3s linear forwards 1.4s;
+}
+
+@keyframes enter-tech {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+@keyframes leave-tech {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
+@keyframes enter-tech-title {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes leave-tech-title {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+}

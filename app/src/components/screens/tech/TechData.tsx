@@ -1,16 +1,16 @@
 // eslint-disable-next-line
 import React from 'react';
-import reactImg from './skillsImages/skills-react-img.png';
-import typeScriptImg from './skillsImages/skills-ts-img.png';
-import javaImg from './skillsImages/skills-java-img.png';
-import pythonImg from './skillsImages/skills-python-img.png';
-import htmlImg from './skillsImages/skills-html-img.png';
-import scssImg from './skillsImages/skills-scss-img.png';
-import adobeImg from './skillsImages/skills-adobe-img.png';
-import angularImg from './skillsImages/skills-angular-img.png';
-import {skillsItem} from 'customTypes';
+import reactImg from './techImages/tech-react-img.png';
+import typeScriptImg from './techImages/tech-ts-img.png';
+import javaImg from './techImages/tech-java-img.png';
+import pythonImg from './techImages/tech-python-img.png';
+import htmlImg from './techImages/tech-html-img.png';
+import scssImg from './techImages/tech-scss-img.png';
+import adobeImg from './techImages/tech-adobe-img.png';
+import angularImg from './techImages/tech-angular-img.png';
+import {techItem} from 'customTypes';
 
-const skillItems: skillsItem[] = [
+const skillItems: techItem[] = [
     {
         identifier: 'react',
         image: reactImg,

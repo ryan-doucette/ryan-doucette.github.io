@@ -2,7 +2,7 @@ import React, {useEffect, useState, useCallback} from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './screens/home/Home';
 import About from './screens/about/About';
-import Skills from './screens/skills/Skills';
+import Tech from './screens/tech/Tech';
 import Experience from './screens/experience/Experience';
 import Contact from './screens/contact/Contact';
 
@@ -43,11 +43,11 @@ const Main = () => {
   }, [handleWindowResize]);
 
     return (
-      <div className={location.pathname.substring(1) === 'skills' ? 'screen' : 'screen minHeightController'} style={{height: windowHeight}}>
+      <div className={location.pathname.substring(1) === 'tech' ? 'screen' : 'screen minHeightController'} style={{height: windowHeight}}>
         <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/about' element={<About/>}/>
-            <Route path='/skills' element={<Skills/>}/>
+            <Route path='/tech' element={<Tech/>}/>
             <Route path='/experience' element={<Experience/>}/>
             <Route path='/contact' element={<Contact/>}/>
         </Routes>

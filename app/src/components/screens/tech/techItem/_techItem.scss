@@ -9,7 +9,7 @@
     align-items: center;
     margin-bottom: 16px;
 }
-.skillsItem {
+.techItem {
     z-index: 2;
     position: relative;
     display: flex;
@@ -25,7 +25,7 @@
     transition: 0.5s ease-in-out;
     box-shadow: 2px 2px 24px rgba($color: #000000, $alpha: 0.8);
 }
-.skillsItem:hover {
+.techItem:hover {
     background-color: theme.$secondary;
     width: 100%;
     border-top-right-radius: 16px;
@@ -50,7 +50,7 @@
     transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s, fill 0.5s ease-in-out;
     fill: theme.$highlight;
 }
-.skillsItem:hover .shape {
+.techItem:hover .shape {
     fill: theme.$primary;
     stroke-width: 4px;
     stroke-dashoffset: 0;
@@ -71,7 +71,7 @@
     white-space: nowrap;
     overflow: hidden;
 }
-.skillsItem:hover .skillItemTextContainer {
+.techItem:hover .skillItemTextContainer {
     opacity: 100%;
 }
 .skillItemImage {
@@ -86,7 +86,7 @@
     color: theme.$alternate;
     font-size: 16px;
 }
-.skillsItem:hover ~ .skillOuterLabel {
+.techItem:hover ~ .skillOuterLabel {
     opacity: 0%;
     transform: scaleX(140%);
 }
@@ -128,7 +128,7 @@
     .skillFullContainer {
         width: 350px;
     }
-    .skillsItem:hover {
+    .techItem:hover {
         width: 350px;
     }
 }
@@ -139,14 +139,14 @@
         margin-bottom: 24px;
         width: 700px;
     }
-    .skillsItem:hover {
+    .techItem:hover {
         width: 700px;
     }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
-    .skillsItem {
+    .techItem {
         height: 70px;
         width: 90px;
     }
@@ -154,7 +154,7 @@
         margin-bottom: 24px;
         width: 840px;
     }
-    .skillsItem:hover {
+    .techItem:hover {
         width: 840px;
     }
     .skillItemTextContainer {
@@ -191,7 +191,7 @@
 
 /* ******************* SMALL MOBILE VIEW ******************* */
 @media (max-width: 340px) {
-    .skillsItem {
+    .techItem {
         height: 45px;
         width: 60px;
     }
