@@ -6,9 +6,11 @@
 }
 .showCloseButton {
     animation: showCloseButton 2s linear forwards;
+    display: flex;
 }
 .hideCloseButton {
     animation: hideCloseButton 0.3s 0.2s linear forwards;
+    display: flex;
 }
   
 @keyframes showPreview {

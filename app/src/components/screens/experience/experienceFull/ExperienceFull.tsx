@@ -22,7 +22,13 @@ const ExperienceFull = ({closeButtonPressed, currentItem} : {currentItem:experie
     return (
         <div className='experienceFullContainer'>
             <div className='experienceCloseButtonContainer' onClick={closeButtonPressed}>
-                <CloseButton/>
+                <CloseButton
+                    backgroundColor='#252a37'
+                    xColor='white'
+                    changeColorOnHover={false}
+                    hoverBackgroundColor={''}
+                    hoverXColor={''}
+                />
             </div>
             <div className='experienceFullImageContainer'>
                 <img className='experienceFullImage' src={currentItem?.image} alt={currentItem?.title + ' image'}/>

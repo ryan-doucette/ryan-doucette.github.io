@@ -85,6 +85,7 @@ const About = () => {
   return (
     <div className="about">
       <section className='aboutPortalSection' id='about-portal-section'>
+        <div className='bioButton' id='bio-button'>BIO</div>
         <div className='aboutTopWire'/>
         <div className='aboutFullContainer'>
           <div className='aboutSignContainer'>

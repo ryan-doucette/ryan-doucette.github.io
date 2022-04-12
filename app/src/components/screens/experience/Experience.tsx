@@ -102,7 +102,13 @@ const Experience = () => {
         </section>
         <section className='resumeButtonOpenContents' id='resume-button-open-contents'>
           <div className='resumeCloseButton' onClick={() => setResumeButtonContainerOpen(false)}>
-            <CloseButton/>
+            <CloseButton
+              backgroundColor='#252a37'
+              xColor='white'
+              changeColorOnHover={false}
+              hoverBackgroundColor={''}
+              hoverXColor={''}
+            />
           </div>
           <a 
             href={resume}
