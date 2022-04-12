@@ -1,0 +1,235 @@
+@use "../../../../theme";
+@use "../../../../breakpoints";
+
+.aboutCarousel {
+    width: 230px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+.handleContainer {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+} 
+.handle {
+    width: 5px;
+    height: 60px;
+    background-color: theme.$alternate;
+    z-index: 1;
+}
+.handleBall {
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: theme.$secondary;
+    margin-bottom: -2px;
+    z-index: 2;
+}
+.leftHandle {
+    transform: rotate(-45deg);
+    transform-origin: bottom;
+    left: 0px;
+    bottom: 50%;
+}
+.rightHandle {
+    transform: rotate(45deg);
+    transform-origin: bottom;
+    right: 0px;
+    bottom: 50%;
+}
+.leftCrank {
+    animation: left-crank 0.75s ease-in-out;
+}
+@keyframes left-crank {
+    0% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(-135deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+.rightCrank {
+    animation: right-crank 0.75s ease-in-out;
+}
+@keyframes right-crank {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(135deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+.tubeContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.tubeSide {
+    height: 100%;
+    width: 24px;
+    background-color: theme.$primary;
+    border-radius: 4px;
+    z-index: 2;
+}
+.tube {
+    position: absolute;
+    left: 0;
+    margin-left: -55px;
+    height: 60px;
+    background-color: rgba($color: theme.$alternate, $alpha: 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    transition: 0.75s ease-in-out;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.tubeSideConnector {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 30px;
+    margin: 7px;
+    margin-bottom: -20px;
+    background-color: theme.$secondary;
+}
+.tubeItem {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.shiftTube {
+    animation: shift-tube 1s ease-in-out forwards;
+}
+.shiftTubeSelected {
+    animation: shift-tube-selected 1s ease-in-out forwards;
+}
+.itemSelectedIndicator {
+    animation: about-item-selected 0.3s ease-in-out forwards;
+}
+@keyframes about-item-selected {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: rgba($color: theme.$alternate, $alpha: 0.3);
+    }
+}
+
+@keyframes shift-tube {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(0);
+    }
+    90% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes shift-tube-selected {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(0);
+    }
+    90% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ******************* TABLET VIEW ******************* */
+@media (min-width: breakpoints.$tablet) {
+}
+
+/* ******************* DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$desktop) {
+}
+
+/* ******************* BIG DESKTOP VIEW ******************* */
+@media (min-width: breakpoints.$big-desktop) {
+    .aboutCarousel {
+        width: 300px;
+    }
+    .handle {
+        width: 6px;
+        height: 70px;
+    }
+    .handleBall {
+        width: 19px;
+        height: 19px;
+    }
+    .tube {
+        height: 80px;
+        margin-left: -74px;
+    }
+    .tubeSide {
+        width: 20px;
+    }
+    .tubeItem {
+        height: 68px;
+        width: 68px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+}
+
+/* ******************* SMALL MOBILE VIEW ******************* */ 
+@media (max-width: breakpoints.$small-mobile) {
+    .aboutCarousel {
+        width: 160px;
+    }
+    .handle {
+        width: 5px;
+        height: 50px;
+    }
+    .handleBall {
+        width: 16px;
+        height: 16px;
+    }
+    .tube {
+        height: 45px;
+        margin-left: -50px;
+    }
+    .tubeSide {
+        width: 14px;
+    }
+    .tubeItem {
+        height: 38px;
+        width: 38px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+}

@@ -2,6 +2,7 @@ import { intialHomeEnterTransition } from './components/screens/home/transitions
 import { enterContactTransition } from './components/screens/contact/transitions/ContactTransitions';
 import { enterExperienceTransition } from './components/screens/experience/transitions/ExperienceTransitions';
 import { enterSkillsTransition } from './components/screens/skills/transitions/SkillsTransitions';
+import { enterAboutTransition } from './components/screens/about/transitions/AboutTransitions';
 
 const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any) => {
     const transitionLength = () => {
@@ -11,7 +12,7 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
             case 'menu': 
                 return 1800;
             case 'about':
-                return 1000;
+                return 500;
             case 'skills':
                 return 2000;
             case 'experience':
@@ -29,6 +30,7 @@ const handleNavigate = (nextScreen: string, currentScreen: string, navigate: any
                 intialHomeEnterTransition();
                 break;
             case 'about':
+                enterAboutTransition();
                 break;
             case 'skills':
                 enterSkillsTransition();

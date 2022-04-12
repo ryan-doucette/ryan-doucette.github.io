@@ -98,16 +98,19 @@ const Header = () => {
                         key={category} 
                         onClick={() => {
                           closeDropdown(); 
-                          setTimeout(() => {
-                            if(currentScreen === 'menu' && category === 'home') {
-                              return;
-                            }
-                            else {
-                              updateTab(category);
-                              toggleCurrentScreen(category);
-                              handleNavigate(category, currentScreen, navigate);
-                            }
-                          }, 500);
+                          if (currentScreen === category) {
+                            return;
+                          }
+                          else if(currentScreen === 'menu' && category === 'home') {
+                            return;
+                          }
+                          else {
+                            setTimeout(() => {
+                                updateTab(category);
+                                toggleCurrentScreen(category);
+                                handleNavigate(category, currentScreen, navigate);
+                            }, 500);
+                          }
                         }}>
                           { category.charAt(0).toUpperCase() + category.slice(1) }
                       </ul>
@@ -126,7 +129,10 @@ const Header = () => {
                       className={currTab === category ? 'selected links' : 'links'} 
                       id={ category.toLowerCase() } 
                       onClick={() => {
-                        if(currentScreen === 'menu' && category === 'home') {
+                        if (currentScreen === category) {
+                          return;
+                        }
+                        else if(currentScreen === 'menu' && category === 'home') {
                           return;
                         }
                         else {

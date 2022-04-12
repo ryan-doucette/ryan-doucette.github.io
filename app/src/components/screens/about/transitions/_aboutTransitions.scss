@@ -1,26 +1,77 @@
 .enter-about {
-    animation: enter-about 1s linear forwards;
-  }
-.leave-about {
-    animation: leave-about 1s linear forwards;
+    animation: enter-about 0.3s linear forwards;
 }
+.leave-about {
+    animation: leave-about 0.3s linear forwards;
+}
+.bio-button-enter {
+    pointer-events:all;
+    animation: bio-button-enter 0.3s linear forwards;
+}
+.bio-button-leave {
+    pointer-events: none;
+    animation: bio-button-leave 0.3s linear forwards;
+}
+.bio-section-open {
+    animation: bio-section-open 0.3s linear forwards;
+}
+.bio-section-closed {
+    animation: bio-section-closed 0.3s linear forwards;
+}
+
 @keyframes enter-about {
     0% {
-        // opacity: 0%;
-        // transform: translateY(20px);
+        height: 0%;
     }
     100% {
-        // opacity: 100%;
-        // transform: translateY(0px);
+        height: 100%;
     }
 }
 @keyframes leave-about {
     0% {
-        // opacity: 100%;
-        // transform: translateY(0px);
+        height: 100%;
     }
     100% {
-        // opacity: 0%;
-        // transform: translateY(20px);
+        height: 0%;
+    }
+}
+@keyframes bio-button-enter {
+    0% {
+        opacity: 0%;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}
+@keyframes bio-button-leave {
+    0% {
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateY(20px);
+    }
+}
+@keyframes bio-section-open {
+    0% {
+        opacity: 0%;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}
+@keyframes bio-section-closed {
+    0% {
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0%;
+        transform: translateY(20px);
     }
 }
