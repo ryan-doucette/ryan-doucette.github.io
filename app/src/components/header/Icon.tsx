@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './styles/_icon.scss';
 import { CurrentScreenContext } from '../../current-screen-context';
 import handleNavigate from '../../screenNavigationHandler';
+import websiteIcon from './images/new-website-icon.png';
 
 const Icon = () => {
     const navigate = useNavigate();
@@ -23,12 +24,13 @@ const Icon = () => {
                         }
                     }}
                 >
-                    <div className='topTriangle'/>
+                    {/* <div className='topTriangle'/>
                     <div className='bottomTriangle'/>
                     <div className='lightningBoltContainer'>
                         <div className='topLightningBolt'/>
                         <div className='bottomLightningBolt'/>
-                    </div>
+                    </div> */}
+                    <img className='websiteIcon' src={websiteIcon} alt='icon'/>
                 </div>
             )}
         </CurrentScreenContext.Consumer>

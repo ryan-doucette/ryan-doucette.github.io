@@ -2,8 +2,8 @@
 @use "../../../breakpoints";
 
 .iconContainer {
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   margin-left: 24px;
   display: flex;
   align-items: center;
@@ -13,206 +13,28 @@
   border: none;
   cursor: pointer;
 }
-
-.topTriangle {
-  bottom: 10px;
-  width: 0;
-  height: 0;
-  border-left: 18.5px solid transparent;
-  border-right: 18.5px solid transparent;
-  border-bottom: 22px solid theme.$primary;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.35s;
+.iconContainer:hover .websiteIcon {
+  transform: scale(-1) rotate(180deg);
 }
 
-.bottomTriangle {
-  bottom: 10px;
-  width: 0;
-  height: 0;
-  border-left: 18.5px solid transparent;
-  border-right: 18.5px solid transparent;
-  border-top: 22px solid theme.$alternate;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.35s;
+.websiteIcon {
+  width: 100%;
+  transition: 0.2s ease-in-out;
 }
-
-.lightningBoltContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.topLightningBolt {
-  position: absolute;
-  top: 19.9px;
-  margin-left: 5.5px;
-  transform: rotate(130.5deg);
-  width: 0;
-  height: 0;
-  border-left: 20.56px solid transparent;
-  border-right: 8.87px solid transparent;
-  border-bottom: 10px solid theme.$highlight;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.35s;
-}
-
-.bottomLightningBolt {
-  position: absolute;
-  bottom: 20px;
-  margin-right: 5.5px;
-  transform: rotate(130.5deg) scaleY(-1) scaleX(-1);
-  width: 0;
-  height: 0;
-  border-left: 20.56px solid transparent;
-  border-right: 8.87px solid transparent;
-  border-bottom: 10px solid theme.$highlight;
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.35s;
-}
-.iconContainer:hover .topTriangle {
-  transform: translateX(-7.5px);
-  border-bottom: 22px solid theme.$highlight;
-}
-
-.iconContainer:hover .bottomTriangle {
-  transform: translateX(7.5px);
-  border-top: 22px solid theme.$primary;
-}
-
-.iconContainer:hover .topLightningBolt {
-  transition-duration: 0.25s;
-  border-bottom: 10px solid theme.$alternate;
-}
-
-.iconContainer:hover .bottomLightningBolt {
-  transition-duration: 0.25s;
-  border-bottom: 10px solid theme.$alternate;
-}
-
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {
-  @media not all and (min-resolution: 0.001dpcm) {
-    @supports (-webkit-appearance: none) {
-      .lightningBoltContainer {
-        margin-right: 5px;
-      }
-    }
-  }
-
   .iconContainer {
-    width: 70px;
-    height: 70px;
+    width: 62px;
+    height: 62px;
     margin-left: 50px;
-  }
-
-  .topTriangle {
-    bottom: 10px;
-    border-left: 24px solid transparent;
-    border-right: 24px solid transparent;
-    border-bottom: 28.6px solid theme.$primary;
-  }
-
-  .bottomTriangle {
-    bottom: 10px;
-    border-left: 24px solid transparent;
-    border-right: 24px solid transparent;
-    border-top: 28.6px solid theme.$alternate;
-  }
-
-  .topLightningBolt {
-    top: 24px;
-    margin-left: 5.5px;
-    transform: rotate(131.5deg);
-    border-left: 26.73px solid transparent;
-    border-right: 11.5px solid transparent;
-    border-bottom: 13px solid theme.$highlight;
-  }
-
-  .bottomLightningBolt {
-    bottom: 23.8px;
-    margin-right: 5.5px;
-    transform: rotate(131.5deg) scaleY(-1) scaleX(-1);
-    border-left: 26.73px solid transparent;
-    border-right: 11.5px solid transparent;
-    border-bottom: 13px solid theme.$highlight;
-  }
-  .iconContainer:hover .topTriangle {
-    transform: translateX(-9.25px);
-    border-bottom: 28.6px solid theme.$highlight;
-  }
-
-  .iconContainer:hover .bottomTriangle {
-    transform: translateX(9.25px);
-    border-top: 28.6px solid theme.$primary;
-  }
-
-  .iconContainer:hover .topLightningBolt {
-    transition-duration: 0.25s;
-    border-bottom: 13px solid theme.$alternate;
-  }
-
-  .iconContainer:hover .bottomLightningBolt {
-    transition-duration: 0.25s;
-    border-bottom: 13px solid theme.$alternate;
   }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
   .iconContainer {
-    width: 80px;
-    height: 80px;
+    width: 72spx;
+    height: 72px;
     margin-left: 55px;
-  }
-
-  .topTriangle {
-    bottom: 10px;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 35.75px solid theme.$primary;
-  }
-
-  .bottomTriangle {
-    bottom: 10px;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 35.75px solid theme.$alternate;
-  }
-
-  .topLightningBolt {
-    top: 24.85px;
-    margin-left: 9.5px;
-    transform: rotate(131.5deg);
-    border-left: 33.41px solid transparent;
-    border-right: 14.38px solid transparent;
-    border-bottom: 16.25px solid theme.$highlight;
-  }
-
-  .bottomLightningBolt {
-    bottom: 25px;
-    margin-right: 9.5px;
-    transform: rotate(131.5deg) scaleY(-1) scaleX(-1);
-    border-left: 33.41px solid transparent;
-    border-right: 14.38px solid transparent;
-    border-bottom: 16.25px solid theme.$highlight;
-  }
-  .iconContainer:hover .topTriangle {
-    transform: translateX(-12px);
-    border-bottom: 35.75px solid theme.$highlight;
-  }
-
-  .iconContainer:hover .bottomTriangle {
-    transform: translateX(12px);
-    border-top: 35.75px solid theme.$primary;
-  }
-
-  .iconContainer:hover .topLightningBolt {
-    transition-duration: 0.25s;
-    border-bottom: 16.25px solid theme.$alternate;
-  }
-
-  .iconContainer:hover .bottomLightningBolt {
-    transition-duration: 0.25s;
-    border-bottom: 16.25px solid theme.$alternate;
   }
 }
