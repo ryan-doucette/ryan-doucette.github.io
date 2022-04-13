@@ -36,9 +36,11 @@ const Main = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('orientationchange', handleWindowResize);
 
     return () => {
       window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener('orientationchange', handleWindowResize);
     };
   }, [handleWindowResize]);
 
