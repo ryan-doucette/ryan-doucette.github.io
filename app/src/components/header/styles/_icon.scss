@@ -12,14 +12,17 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  border-radius: 100%;
 }
 .iconContainer:hover .websiteIcon {
   transform: scale(-1) rotate(180deg);
+  background-color: rgba($color: (theme.$alternate), $alpha: 0.1);
 }
 
 .websiteIcon {
   width: 100%;
   transition: 0.2s ease-in-out;
+  border-radius: 100%;
 }
 /* ******************* DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$desktop) {

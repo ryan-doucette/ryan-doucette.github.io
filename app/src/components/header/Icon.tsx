@@ -15,7 +15,8 @@ const Icon = () => {
                     className="iconContainer"
                     id='site-icon'
                     onClick={() => {
-                        if(currentScreen === 'menu') {
+                        console.log(currentScreen);
+                        if(currentScreen === 'home' || currentScreen === 'menu') {
                             return;
                         }
                         else {
@@ -24,13 +25,12 @@ const Icon = () => {
                         }
                     }}
                 >
-                    {/* <div className='topTriangle'/>
-                    <div className='bottomTriangle'/>
-                    <div className='lightningBoltContainer'>
-                        <div className='topLightningBolt'/>
-                        <div className='bottomLightningBolt'/>
-                    </div> */}
-                    <img className='websiteIcon' src={websiteIcon} alt='icon'/>
+                    <img
+                        className='websiteIcon' 
+                        id='website-icon'
+                        src={websiteIcon} 
+                        alt='icon'
+                    />
                 </div>
             )}
         </CurrentScreenContext.Consumer>
