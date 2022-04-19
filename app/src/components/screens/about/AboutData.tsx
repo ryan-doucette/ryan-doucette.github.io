@@ -18,8 +18,19 @@ import musicCarouselImage from './images/carousel/about-music-carousel-image.png
 import uiUxCarouselImage from './images/carousel/about-ui-ux-design-carousel-image.png';
 
 import guitarPortalImage from './images/portal/about-guitar-portal-image.png';
-import guitarTest1 from './images/portal/guitarTest1.png';
-import guitarTest2 from './images/portal/guitarTest2.png';
+import arsenalPortalImage from './images/portal/about-arsenal-portal-image.png';
+import travelPortalImage from './images/portal/about-travel-portal-image.png';
+import beachPortalImage from './images/portal/about-beach-portal-image.png';
+import pingPongPortalImage from './images/portal/about-ping-pong-portal-image.png';
+import liftingPortalImage from './images/portal/about-lifting-portal-image.png';
+import bladeRunnerPortalImage from './images/portal/about-blade-runner-portal-image.png';
+import skatePortalImage from './images/portal/about-skate-portal-image.png';
+import bostonPortalImage from './images/portal/about-boston-portal-image.png';
+import ssbPortalImage from './images/portal/about-ssb-portal-image.png';
+import musicPortalImage from './images/portal/about-music-portal-image.png';
+import animationsPortalImage from './images/portal/about-animations-portal-image.png';
+import uiUxPortalImage from './images/portal/about-ui-ux-portal-image.png';
+import programmingPortalImage from './images/portal/about-programming-portal-image.png';
 
 const aboutItems: aboutItem[] = [
     {
@@ -31,92 +42,79 @@ const aboutItems: aboutItem[] = [
     {
         identifier: 'surf-skate-snow',
         carouselImage: skateCarouselImage,
-        portalImage: guitarTest2, 
-        // portalImage: 'me on a skateboard',
+        portalImage: skatePortalImage, 
         iLoveLabel: 'SURF_SKATE_SNOW' 
     },
     {
         identifier: 'travel',
         carouselImage: travelCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me with luggage',
+        portalImage: travelPortalImage, 
         iLoveLabel: 'TRAVELING' 
     },
     {
         identifier: 'arsenal',
         carouselImage: arsenalCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me in arsenal kit',
+        portalImage: arsenalPortalImage, 
         iLoveLabel: 'ARSENAL_FC' 
     },
     {
         identifier: 'boston',
         carouselImage: bostonCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me in celtics uniform?',
+        portalImage: bostonPortalImage, 
         iLoveLabel: 'BOSTON' 
     },
     {
         identifier: 'blade-runner',
         carouselImage: bladeRunnerCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me in bladerunner outfit',
+        portalImage: bladeRunnerPortalImage, 
         iLoveLabel: 'BLADE_RUNNER' 
     },
     {
         identifier: 'programming',
         carouselImage: programmingCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me behind a laptop screen',
+        portalImage: programmingPortalImage, 
         iLoveLabel: 'PROGRAMMING' 
     },
     {
         identifier: 'lifting',
         carouselImage: liftingCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me lifting',
+        portalImage: liftingPortalImage, 
         iLoveLabel: 'LIFTING' 
     },
     {
         identifier: 'super-smash-bros',
         carouselImage: ssbCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me as captain falcon',
+        portalImage: ssbPortalImage, 
         iLoveLabel: 'SUPER_SMASH_BROS' 
     },
     {
         identifier: 'animations',
         carouselImage: animationsCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me as keyframes (one before and after that are like greyed out)',
+        portalImage: animationsPortalImage, 
         iLoveLabel: 'ANIMATIONS' 
     },
     {
         identifier: 'ui-ux-design',
         carouselImage: uiUxCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: '',
+        portalImage: uiUxPortalImage, 
         iLoveLabel: 'UI_UX_DESIGN' 
     },
     {
         identifier: 'eighties-music',
         carouselImage: musicCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me in eighties outfit',
+        portalImage: musicPortalImage, 
         iLoveLabel: "EIGHTIES_MUSIC" 
     },
     {
         identifier: 'beach',
         carouselImage: beachCarouselImage,
-        portalImage: guitarPortalImage, 
-        // portalImage: 'me in beach attire',
+        portalImage: beachPortalImage, 
         iLoveLabel: 'THE_BEACH' 
     },
     {
         identifier: 'ping-pong',
         carouselImage: pingPongCarouselImage,
-        portalImage: guitarTest1, 
-        // portalImage: 'me with a ping pong paddle',
+        portalImage: pingPongPortalImage, 
         iLoveLabel: 'PING_PONG' 
     },
 ];
