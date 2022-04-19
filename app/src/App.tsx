@@ -6,6 +6,7 @@ import { CurrentScreenContext } from './current-screen-context';
 import { useLocation } from 'react-router-dom';
 
 const App = () => {
+  document.title = 'Ryan Doucette'; 
   const location = useLocation();
 
   const getUrl = () => {
@@ -31,7 +32,7 @@ const App = () => {
     return getUrl();
   })
 
-  const toggleCurrentScreen = (currentScreen: string) => { 
+  const toggleCurrentScreen = (currentScreen: string) => {
     setCurrentScreen(currentScreen);
   }
 
