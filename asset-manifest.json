@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8416c286.css",
+    "main.js": "/static/js/main.1e07ebe6.js",
+    "static/media/ryan_doucette_resume_2021_2022.pdf": "/static/media/ryan_doucette_resume_2021_2022.bf00003e1e5827600dd6.pdf",
+    "static/media/ssga-experience-img.png": "/static/media/ssga-experience-img.b8700d5c140120081955.png",
+    "static/media/new-website-icon.png": "/static/media/new-website-icon.88c426d3b952b90c72e9.png",
+    "static/media/tech-react-img.png": "/static/media/tech-react-img.916e26d8bce772140f3d.png",
+    "static/media/experiencePreviewImg.png": "/static/media/experiencePreviewImg.94085dfb216bfc238947.png",
+    "static/media/aboutPreviewImg.png": "/static/media/aboutPreviewImg.e2db520c678f466075d0.png",
+    "static/media/scrutiny-experience-img.png": "/static/media/scrutiny-experience-img.ede0ccb50e85c31523a1.png",
+    "static/media/blueport-experience-img.png": "/static/media/blueport-experience-img.33565e4025719accead6.png",
+    "static/media/contactPreviewImg.png": "/static/media/contactPreviewImg.91092ef49cc1886b3cfd.png",
+    "static/media/techPreviewImg.png": "/static/media/techPreviewImg.1a80f08691d4314aa3c0.png",
+    "static/media/ruumzyPreviewImg.png": "/static/media/ruumzyPreviewImg.87440d5ce13f4fca1827.png",
+    "static/media/my-website-experience-img.png": "/static/media/my-website-experience-img.2b650b60d540561ba0b5.png",
+    "static/media/ruumzy-experience-img.png": "/static/media/ruumzy-experience-img.adbaf86582a3e117c93e.png",
+    "static/media/about-travel-portal-image.png": "/static/media/about-travel-portal-image.d07f9cb115b93057999b.png",
+    "static/media/about-animations-portal-image.png": "/static/media/about-animations-portal-image.fcf6d4d96a0bdeb917f8.png",
+    "static/media/about-arsenal-portal-image.png": "/static/media/about-arsenal-portal-image.cc2b92f54c3d9ce15c0c.png",
+    "static/media/about-ping-pong-portal-image.png": "/static/media/about-ping-pong-portal-image.a1a4f45c00e9a5ba9ed0.png",
+    "static/media/resume.png": "/static/media/resume.adb03259055f017bb053.png",
+    "static/media/smartsheet-experience-img.png": "/static/media/smartsheet-experience-img.4c901761503a772a779c.png",
+    "static/media/tech-adobe-img.png": "/static/media/tech-adobe-img.5d5c02feb777fddac860.png",
+    "index.html": "/index.html",
+    "main.8416c286.css.map": "/static/css/main.8416c286.css.map",
+    "main.1e07ebe6.js.map": "/static/js/main.1e07ebe6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8416c286.css",
+    "static/js/main.1e07ebe6.js"
+  ]
+}
