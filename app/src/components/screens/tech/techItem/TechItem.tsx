@@ -80,14 +80,16 @@ const TechItem = ({skillItem} : {skillItem: techItem}) => {
   return (
     <div className='skillFullContainer' id={'tech-item-' + skillItem.identifier}>
       <section className='techItem'>
-        <div className='skillItemTextContainer'>
-          <div className='skillItemText'>{innerLabel}</div>
-        </div> 
-        <div className="skillItemIcon">
-          <img src={skillItem.image} alt={skillItem.identifier} className='skillItemImage'/>
-          <svg height={svgHeight} width={svgWidth} xmlns="http://www.w3.org/2000/svg">
-            <circle cx={circleCx} cy={circleCy} r={circleR} className="shape" id='tech-circle'/>
-          </svg>
+        <div className='techItemBackground'>
+          <div className='skillItemTextContainer'>
+            <div className='skillItemText'>{innerLabel}</div>
+          </div> 
+          <div className="skillItemIcon">
+            <img src={skillItem.image} alt={skillItem.identifier} className='skillItemImage'/>
+            <svg height={svgHeight} width={svgWidth} xmlns="http://www.w3.org/2000/svg">
+              <circle cx={circleCx} cy={circleCy} r={circleR} className="shape" id='tech-circle'/>
+            </svg>
+          </div>
         </div>
       </section>
       <section className='skillOuterLabel'>

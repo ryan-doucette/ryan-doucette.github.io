@@ -111,6 +111,7 @@ textarea {
   min-height: 23px;
 }
 .formSubmitButton {
+  text-align: center;
   cursor: pointer;
   width: 150px;
   height: 40px;
@@ -139,6 +140,10 @@ textarea {
   transform: scale(1.1);
   box-shadow: 1px 1px 7px rgba($color: #000000, $alpha: 0.6);
 }
+.formSubmitButton:focus {
+  border-radius: 100px;
+}
+
 input:focus {
   outline: none;
   border: 1px solid theme.$highlight;

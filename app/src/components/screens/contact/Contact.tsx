@@ -40,19 +40,34 @@ const Contact = () => {
     toast("Email coppied to clipboard.");
   };
 
-  const sendEmail = (e: any) => {
-    e.preventDefault();
+  const checkValidEmail = (email: string) => {
+    // https://stackoverflow.com/questions/46155/whats-the-best-way-to-validate-an-email-address-in-javascript
+    return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  }
 
-    emailjs.sendForm('service_q1tyh1j', 'template_w56wgdz', form.current, 'D5NkrUoF8woFcFdfW')
-      .then((result) => {
-        toast("Your message has been successfully sent!");
-      }, (error) => {
-          toast.error("There was a problem sending your message, please contact me directly instead. Sorry for the inconvenience.");
+  const sendEmail = (e: any) => {
+    console.log(checkValidEmail(emailInput));
+    if (checkValidEmail(emailInput)) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_q1tyh1j', 'template_w56wgdz', form.current, 'D5NkrUoF8woFcFdfW')
+        .then((result) => {
+          toast("Your message has been successfully sent!");
+        }, (error) => {
+            toast.error("There was a problem sending your message, please contact me directly instead. Sorry for the inconvenience.");
       });
 
       setNameInput('');
       setEmailnput('');
       setMessageInput('');
+    }
+    else {
+      toast.error("Message not sent, must be a valid email.");
+    }
   };
 
   return (
@@ -84,8 +99,24 @@ const Contact = () => {
               >
                 <div id='emailToCopy'>doucette.ry@northeastern.edu</div>
               </div>
-              <a href='https://github.com/ryan-doucette/' className='infoIcon' id='githubIcon' style={{ backgroundImage:`url(${githubIcon})`}}> </a>
-              <a href='https://www.linkedin.com/in/ryan-doucette/' className='infoIcon' id='linkedInIcon' style={{ backgroundImage:`url(${linkedinIcon})`}}> </a>
+              <a 
+                href='https://github.com/ryan-doucette/'
+                className='infoIcon' 
+                id='githubIcon' 
+                style={{ backgroundImage:`url(${githubIcon})`}}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+              </a>
+              <a
+                href='https://www.linkedin.com/in/ryan-doucette/'
+                className='infoIcon'
+                id='linkedInIcon'
+                style={{ backgroundImage:`url(${linkedinIcon})`}}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+              </a>
             </div>
           </section>
           <section className='inputContainer formSection formText'>
@@ -97,7 +128,7 @@ const Contact = () => {
               <input className='formText inputBox' value={emailInput} onChange={(e) => setEmailnput(e.target.value)} type="email" name="email" />
               <label className='formTitle'>Message*</label>
               <textarea className='formText inputBox' value={messageInput} onChange={(e) => setMessageInput(e.target.value)} name="message" />
-              <input onClick={sendEmail} disabled={!validInput} className='formSubmitButton' id={!validInput ? 'buttonDisabled' : undefined} type="submit" value="SEND" />
+              <input onClick={sendEmail} disabled={!validInput} className='formSubmitButton' id={!validInput ? 'buttonDisabled' : undefined} value="SEND" type='submit'/>
             </form>
           </section>
         </div>

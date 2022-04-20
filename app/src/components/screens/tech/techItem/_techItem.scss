@@ -13,23 +13,30 @@
     z-index: 2;
     position: relative;
     display: flex;
-    width: 80px;
-    border-top-left-radius: 44px;
-    border-bottom-left-radius: 44px;
-    border-top-right-radius: 44px;
-    border-bottom-right-radius: 44px;
-    height: 60px;
-    background-color: theme.$secondary;
+    width: fit-content;
+    max-width: 80px;
+    height: 100%;
     justify-content: flex-end;
     align-items: center;
     transition: 0.5s ease-in-out;
+    margin-right: 9px;
+}
+.techItemBackground {
+    height: 60px;
+    border-radius: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: theme.$secondary;
     box-shadow: 2px 2px 24px rgba($color: #000000, $alpha: 0.8);
 }
 .techItem:hover {
-    background-color: theme.$secondary;
-    width: 100%;
+    max-width: 100%;;
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
+    margin-right: 0px;
 }
 // https://codepen.io/cuonglh911/pen/wMwbZQ
 .skillItemIcon {
@@ -64,7 +71,7 @@
     right: 0px;
     opacity: 0%;
     transition: 0.5s ease-in-out;
-    padding-right: 24px;
+    padding-right: 30px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     float: left; 
@@ -85,10 +92,10 @@
     font-weight: bold;
     color: theme.$alternate;
     font-size: 16px;
+    margin-left: 100px;
 }
 .techItem:hover ~ .skillOuterLabel {
     opacity: 0%;
-    transform: scaleX(140%);
 }
 .skillOuterLabel {
     z-index: 1;
@@ -98,7 +105,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
     text-align: start;
     opacity: 100%;
     transition: 0.3s ease-in-out;
@@ -107,12 +113,10 @@
     font-family: 'Courier New', Courier, monospace;
 }
 .skillLabelLeft {
-    width: 300px;
     padding-right: 60px;
     text-align: end;
 }
 .skillLabelRight {
-    width: 300px;
     padding-left: 60px;
     text-align: start;
 }
@@ -121,16 +125,13 @@
     .skillItemText {
         font-size: 12px;
     }
+    .skillOuterLabel {
+        font-size: 14px;
+    }
 }
 
 /* ******************* TABLET VIEW ******************* */
 @media (min-width: breakpoints.$tablet) {
-    .skillFullContainer {
-        width: 350px;
-    }
-    .techItem:hover {
-        width: 350px;
-    }
 }
 
 /* ******************* DESKTOP VIEW ******************* */
@@ -140,25 +141,27 @@
         width: 700px;
     }
     .techItem:hover {
-        width: 700px;
+        max-width: 100%;
+    }
+    .skillItemText {
+        margin-left: 110px;
     }
 }
 
 /* ******************* BIG DESKTOP VIEW ******************* */
 @media (min-width: breakpoints.$big-desktop) {
     .techItem {
-        height: 70px;
-        width: 90px;
+        height: 100%;
+        width: fit-content;
+        max-width: 90px;
+        margin-right: 15px;
     }
     .skillFullContainer {
         margin-bottom: 24px;
         width: 840px;
     }
-    .techItem:hover {
-        width: 840px;
-    }
     .skillItemTextContainer {
-        padding-right: 24px;
+        padding-right: 34px;
     }
     .skillItemIcon {
         left: -3px;
@@ -169,34 +172,37 @@
     }
     .skillItemText {
         font-size: 20px;
+        margin-left: 120px;
     }
     .skillLabelLeft {
-        width: 400px;
         padding-right: 70px;
         text-align: end;
     }
     .skillLabelRight {
-        width: 400px;
         padding-left: 70px;
         text-align: start;
     }
     .skillFullContainer {
-        // width: ;
         margin-bottom: 40px;
     }
     .skillOuterLabel {
         font-size: 24px;
+    }
+    .techItemBackground {
+        height: 70px;
     }
 }
 
 /* ******************* SMALL MOBILE VIEW ******************* */
 @media (max-width: 340px) {
     .techItem {
-        height: 45px;
-        width: 60px;
+        height: 100%;
+        width: fit-content;
+        max-width: 60px;
+        margin-right: 3px;
     }
     .skillItemTextContainer {
-        padding-right: 10px;
+        padding-right: 20px;
     }
     .skillItemIcon {
         left: -3px;
@@ -206,6 +212,10 @@
         width: 40px;
     }
     .skillItemText {
+        font-size: 10px;
+        margin-left: 75px;
+    }
+    .skillOuterLabel {
         font-size: 11px;
     }
     .skillLabelLeft {
@@ -215,5 +225,8 @@
     .skillLabelRight {
         padding-left: 45px;
         text-align: start;
+    }
+    .techItemBackground {
+        height: 45px;
     }
 }
