@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.fe94f07b.css",
-    "main.js": "/static/js/main.522f8d0e.js",
-    "static/media/ryan_doucette_resume_2021_2022.pdf": "/static/media/ryan_doucette_resume_2021_2022.bf00003e1e5827600dd6.pdf",
+    "main.js": "/static/js/main.b3dbc600.js",
+    "static/media/resume_2022_2023.pdf": "/static/media/resume_2022_2023.3c89c566e8de8e0bcc92.pdf",
     "static/media/ssga-experience-img.png": "/static/media/ssga-experience-img.b8700d5c140120081955.png",
     "static/media/new-website-icon.png": "/static/media/new-website-icon.88c426d3b952b90c72e9.png",
     "static/media/tech-react-img.png": "/static/media/tech-react-img.916e26d8bce772140f3d.png",
@@ -24,10 +24,10 @@
     "static/media/tech-adobe-img.png": "/static/media/tech-adobe-img.5d5c02feb777fddac860.png",
     "index.html": "/index.html",
     "main.fe94f07b.css.map": "/static/css/main.fe94f07b.css.map",
-    "main.522f8d0e.js.map": "/static/js/main.522f8d0e.js.map"
+    "main.b3dbc600.js.map": "/static/js/main.b3dbc600.js.map"
   },
   "entrypoints": [
     "static/css/main.fe94f07b.css",
-    "static/js/main.522f8d0e.js"
+    "static/js/main.b3dbc600.js"
   ]
 }
