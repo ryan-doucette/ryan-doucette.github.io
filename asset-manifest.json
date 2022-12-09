@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe94f07b.css",
-    "main.js": "/static/js/main.daa8edf4.js",
+    "main.css": "/static/css/main.86f3bb44.css",
+    "main.js": "/static/js/main.f92635e3.js",
     "static/media/webequity-img.png": "/static/media/webequity-img.727c9c5f1fb912aed846.png",
     "static/media/resume_2022_2023.pdf": "/static/media/resume_2022_2023.3c89c566e8de8e0bcc92.pdf",
     "static/media/ssga-experience-img.png": "/static/media/ssga-experience-img.b8700d5c140120081955.png",
@@ -24,11 +24,11 @@
     "static/media/smartsheet-experience-img.png": "/static/media/smartsheet-experience-img.4c901761503a772a779c.png",
     "static/media/tech-adobe-img.png": "/static/media/tech-adobe-img.5d5c02feb777fddac860.png",
     "index.html": "/index.html",
-    "main.fe94f07b.css.map": "/static/css/main.fe94f07b.css.map",
-    "main.daa8edf4.js.map": "/static/js/main.daa8edf4.js.map"
+    "main.86f3bb44.css.map": "/static/css/main.86f3bb44.css.map",
+    "main.f92635e3.js.map": "/static/js/main.f92635e3.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe94f07b.css",
-    "static/js/main.daa8edf4.js"
+    "static/css/main.86f3bb44.css",
+    "static/js/main.f92635e3.js"
   ]
 }
